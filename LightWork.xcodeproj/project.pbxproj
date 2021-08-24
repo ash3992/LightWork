@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */; };
+		BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */; };
+		BE65B1D726D5610B00E05EE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D626D5610B00E05EE0 /* ViewController.swift */; };
+		BE65B1DA26D5610B00E05EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE65B1D826D5610B00E05EE0 /* Main.storyboard */; };
+		BE65B1DC26D5610D00E05EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE65B1DB26D5610D00E05EE0 /* Assets.xcassets */; };
+		BE65B1DF26D5610D00E05EE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE65B1DD26D5610D00E05EE0 /* LaunchScreen.storyboard */; };
+		BE65B1EA26D5610E00E05EE0 /* LightWorkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1E926D5610E00E05EE0 /* LightWorkTests.swift */; };
+		BE65B1F526D5610E00E05EE0 /* LightWorkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1F426D5610E00E05EE0 /* LightWorkUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE65B1E626D5610E00E05EE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE65B1C726D5610B00E05EE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE65B1CE26D5610B00E05EE0;
+			remoteInfo = LightWork;
+		};
+		BE65B1F126D5610E00E05EE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE65B1C726D5610B00E05EE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE65B1CE26D5610B00E05EE0;
+			remoteInfo = LightWork;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE65B1CF26D5610B00E05EE0 /* LightWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BE65B1D626D5610B00E05EE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE65B1D926D5610B00E05EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE65B1DB26D5610D00E05EE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE65B1DE26D5610D00E05EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE65B1E026D5610D00E05EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE65B1E526D5610E00E05EE0 /* LightWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE65B1E926D5610E00E05EE0 /* LightWorkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightWorkTests.swift; sourceTree = "<group>"; };
+		BE65B1EB26D5610E00E05EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE65B1F026D5610E00E05EE0 /* LightWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE65B1F426D5610E00E05EE0 /* LightWorkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightWorkUITests.swift; sourceTree = "<group>"; };
+		BE65B1F626D5610E00E05EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE65B1CC26D5610B00E05EE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE65B1E226D5610E00E05EE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE65B1ED26D5610E00E05EE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE65B1C626D5610B00E05EE0 = {
+			isa = PBXGroup;
+			children = (
+				BE65B1D126D5610B00E05EE0 /* LightWork */,
+				BE65B1E826D5610E00E05EE0 /* LightWorkTests */,
+				BE65B1F326D5610E00E05EE0 /* LightWorkUITests */,
+				BE65B1D026D5610B00E05EE0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE65B1D026D5610B00E05EE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE65B1CF26D5610B00E05EE0 /* LightWork.app */,
+				BE65B1E526D5610E00E05EE0 /* LightWorkTests.xctest */,
+				BE65B1F026D5610E00E05EE0 /* LightWorkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE65B1D126D5610B00E05EE0 /* LightWork */ = {
+			isa = PBXGroup;
+			children = (
+				BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */,
+				BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */,
+				BE65B1D626D5610B00E05EE0 /* ViewController.swift */,
+				BE65B1D826D5610B00E05EE0 /* Main.storyboard */,
+				BE65B1DB26D5610D00E05EE0 /* Assets.xcassets */,
+				BE65B1DD26D5610D00E05EE0 /* LaunchScreen.storyboard */,
+				BE65B1E026D5610D00E05EE0 /* Info.plist */,
+			);
+			path = LightWork;
+			sourceTree = "<group>";
+		};
+		BE65B1E826D5610E00E05EE0 /* LightWorkTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE65B1E926D5610E00E05EE0 /* LightWorkTests.swift */,
+				BE65B1EB26D5610E00E05EE0 /* Info.plist */,
+			);
+			path = LightWorkTests;
+			sourceTree = "<group>";
+		};
+		BE65B1F326D5610E00E05EE0 /* LightWorkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE65B1F426D5610E00E05EE0 /* LightWorkUITests.swift */,
+				BE65B1F626D5610E00E05EE0 /* Info.plist */,
+			);
+			path = LightWorkUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE65B1CE26D5610B00E05EE0 /* LightWork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE65B1F926D5610E00E05EE0 /* Build configuration list for PBXNativeTarget "LightWork" */;
+			buildPhases = (
+				BE65B1CB26D5610B00E05EE0 /* Sources */,
+				BE65B1CC26D5610B00E05EE0 /* Frameworks */,
+				BE65B1CD26D5610B00E05EE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LightWork;
+			productName = LightWork;
+			productReference = BE65B1CF26D5610B00E05EE0 /* LightWork.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE65B1E426D5610E00E05EE0 /* LightWorkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE65B1FC26D5610E00E05EE0 /* Build configuration list for PBXNativeTarget "LightWorkTests" */;
+			buildPhases = (
+				BE65B1E126D5610E00E05EE0 /* Sources */,
+				BE65B1E226D5610E00E05EE0 /* Frameworks */,
+				BE65B1E326D5610E00E05EE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE65B1E726D5610E00E05EE0 /* PBXTargetDependency */,
+			);
+			name = LightWorkTests;
+			productName = LightWorkTests;
+			productReference = BE65B1E526D5610E00E05EE0 /* LightWorkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE65B1EF26D5610E00E05EE0 /* LightWorkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE65B1FF26D5610E00E05EE0 /* Build configuration list for PBXNativeTarget "LightWorkUITests" */;
+			buildPhases = (
+				BE65B1EC26D5610E00E05EE0 /* Sources */,
+				BE65B1ED26D5610E00E05EE0 /* Frameworks */,
+				BE65B1EE26D5610E00E05EE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE65B1F226D5610E00E05EE0 /* PBXTargetDependency */,
+			);
+			name = LightWorkUITests;
+			productName = LightWorkUITests;
+			productReference = BE65B1F026D5610E00E05EE0 /* LightWorkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE65B1C726D5610B00E05EE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					BE65B1CE26D5610B00E05EE0 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					BE65B1E426D5610E00E05EE0 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = BE65B1CE26D5610B00E05EE0;
+					};
+					BE65B1EF26D5610E00E05EE0 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = BE65B1CE26D5610B00E05EE0;
+					};
+				};
+			};
+			buildConfigurationList = BE65B1CA26D5610B00E05EE0 /* Build configuration list for PBXProject "LightWork" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE65B1C626D5610B00E05EE0;
+			productRefGroup = BE65B1D026D5610B00E05EE0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE65B1CE26D5610B00E05EE0 /* LightWork */,
+				BE65B1E426D5610E00E05EE0 /* LightWorkTests */,
+				BE65B1EF26D5610E00E05EE0 /* LightWorkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE65B1CD26D5610B00E05EE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE65B1DF26D5610D00E05EE0 /* LaunchScreen.storyboard in Resources */,
+				BE65B1DC26D5610D00E05EE0 /* Assets.xcassets in Resources */,
+				BE65B1DA26D5610B00E05EE0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE65B1E326D5610E00E05EE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE65B1EE26D5610E00E05EE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE65B1CB26D5610B00E05EE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE65B1D726D5610B00E05EE0 /* ViewController.swift in Sources */,
+				BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */,
+				BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE65B1E126D5610E00E05EE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE65B1EA26D5610E00E05EE0 /* LightWorkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE65B1EC26D5610E00E05EE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE65B1F526D5610E00E05EE0 /* LightWorkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE65B1E726D5610E00E05EE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE65B1CE26D5610B00E05EE0 /* LightWork */;
+			targetProxy = BE65B1E626D5610E00E05EE0 /* PBXContainerItemProxy */;
+		};
+		BE65B1F226D5610E00E05EE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE65B1CE26D5610B00E05EE0 /* LightWork */;
+			targetProxy = BE65B1F126D5610E00E05EE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE65B1D826D5610B00E05EE0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE65B1D926D5610B00E05EE0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE65B1DD26D5610D00E05EE0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE65B1DE26D5610D00E05EE0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE65B1F726D5610E00E05EE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BE65B1F826D5610E00E05EE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE65B1FA26D5610E00E05EE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LightWork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ashton.LightWork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE65B1FB26D5610E00E05EE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LightWork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ashton.LightWork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BE65B1FD26D5610E00E05EE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LightWorkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ashton.LightWorkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightWork.app/LightWork";
+			};
+			name = Debug;
+		};
+		BE65B1FE26D5610E00E05EE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LightWorkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ashton.LightWorkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightWork.app/LightWork";
+			};
+			name = Release;
+		};
+		BE65B20026D5610E00E05EE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LightWorkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ashton.LightWorkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LightWork;
+			};
+			name = Debug;
+		};
+		BE65B20126D5610E00E05EE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LightWorkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ashton.LightWorkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LightWork;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE65B1CA26D5610B00E05EE0 /* Build configuration list for PBXProject "LightWork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE65B1F726D5610E00E05EE0 /* Debug */,
+				BE65B1F826D5610E00E05EE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE65B1F926D5610E00E05EE0 /* Build configuration list for PBXNativeTarget "LightWork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE65B1FA26D5610E00E05EE0 /* Debug */,
+				BE65B1FB26D5610E00E05EE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE65B1FC26D5610E00E05EE0 /* Build configuration list for PBXNativeTarget "LightWorkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE65B1FD26D5610E00E05EE0 /* Debug */,
+				BE65B1FE26D5610E00E05EE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE65B1FF26D5610E00E05EE0 /* Build configuration list for PBXNativeTarget "LightWorkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE65B20026D5610E00E05EE0 /* Debug */,
+				BE65B20126D5610E00E05EE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE65B1C726D5610B00E05EE0 /* Project object */;
+}
