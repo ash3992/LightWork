@@ -55,7 +55,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitButtonPushed(_ sender: Any) {
         
-        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespaces) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+      /*  if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespaces) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
             
             
             textView.text? = "Please fill out all forms to contuine."
@@ -79,7 +79,30 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 }
             }
            
+        }*/
+        if self.businessToggle.isOn == false{
+            self.personArray.removeAll()
+            self.personArray.append(self.firstNameTextField.text!)
+            self.personArray.append(self.lastNameTextField.text!)
+            self.personArray.append(self.emailTextField.text!)
+          //  personArray.append(passwordTextField.text!)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpCustomerViewController") as! SignUpCustomerViewController
+            nextViewController.personArray = self.personArray
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+                
+                
+              
+                
+            
+            
+        }else{
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpBusinessViewController") as! SignUpBusinessViewController
+               // nextViewController.personArray = self.personArray
+                self.navigationController?.pushViewController(nextViewController, animated: true)
         }
+
  
      /*   let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpBusinessViewController") as! SignUpBusinessViewController

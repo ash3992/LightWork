@@ -534,6 +534,7 @@ of your choosing.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="businessAddressView" destination="kUp-Dd-Rkk" id="Keg-jg-UCK"/>
                         <outlet property="businessTextView" destination="fy4-35-dBv" id="8xY-zm-jym"/>
                         <outlet property="dropDownLabel" destination="tiZ-9m-uSJ" id="VTt-px-S5O"/>
                         <outlet property="dropDownView" destination="42N-0j-Mgh" id="eq6-kJ-Idf"/>
@@ -545,6 +546,21 @@ of your choosing.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oi8-ov-j49" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1991.3043478260872" y="2059.8214285714284"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1jz-w6-tZE">
+            <objects>
+                <viewController id="zk1-xd-x8J" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wMi-0W-RJe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zDz-Od-ouj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8to-J6-7ji" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2743" y="2060"/>
         </scene>
         <!--Sign Up Customer View Controller-->
         <scene sceneID="8dm-ax-Dfb">

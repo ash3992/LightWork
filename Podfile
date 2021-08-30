@@ -12,6 +12,8 @@ pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
 pod 'FirebaseUI/Storage'
 pod 'DropDown'
+pod 'GooglePlaces', '4.2.0'
+
 
   target 'LightWorkTests' do
     inherit! :search_paths

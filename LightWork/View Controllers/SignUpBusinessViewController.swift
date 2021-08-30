@@ -11,6 +11,7 @@ import Photos
 import FirebaseStorage
 import Firebase
 import FirebaseStorageUI
+import GooglePlaces
 
 class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -19,6 +20,7 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var wordCountLabel: UILabel!
     @IBOutlet weak var businessTextView: UITextView!
     @IBOutlet weak var imageViewProfile: UIImageView!
+    @IBOutlet weak var businessAddressView: UITextField!
     @IBOutlet weak var imageViewBusiness: UIImageView!
     var personalPhtotoPushed = false
     var businessPhotoPushed = false
@@ -29,6 +31,7 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        businessAddressView.delegate = self
         businessTextView.delegate = self
         dropDownLabel.text = "Please select a business category"
         dropDown.anchorView = dropDownView
@@ -118,6 +121,32 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
     }
     imagePickerController.dismiss(animated: true, completion: nil)
 }
+    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+        let autocompleteController = GMSAutocompleteViewController()
+           autocompleteController.delegate = self
+
+   /*        // Specify the place data types to return.
+           let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
+             UInt(GMSPlaceField.placeID.rawValue))!
+           autocompleteController.placeFields = fields
+
+           // Specify a filter.
+           let filter = GMSAutocompleteFilter()
+           filter.type = .address
+           autocompleteController.autocompleteFilter = filter*/
+
+           // Display the autocomplete view controller.
+           present(autocompleteController, animated: true, completion: nil)
+    //perform you action here
+      //  zipTextView.resignFirstResponder()
+     //   let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+       //   let nextViewController = storyBoard.instantiateViewController(withIdentifier: "zipCodeViewController") as! ZipCodeViewController
+       // nextViewController.delegate = self
+       //   self.navigationController?.pushViewController(nextViewController, animated: true)
+        print("Yesss")
+       // zipTextView.resignFirstResponder()
+    return true
+    }
     
     /*
     // MARK: - Navigation
@@ -128,5 +157,36 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+extension SignUpBusinessViewController: GMSAutocompleteViewControllerDelegate {
+
+  // Handle the user's selection.
+  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+  //  print("Place name: \(place.formattedAddress)")
+ //   print("Place ID: \(place.placeID)")
+   // print("Place attributions: \(place.attributions)")
+    businessAddressView.text = place.formattedAddress
+    dismiss(animated: true, completion: nil)
+  }
+
+  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+    // TODO: handle the error.
+    print("Error: ", error.localizedDescription)
+  }
+
+  // User canceled the operation.
+  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+    dismiss(animated: true, completion: nil)
+  }
+
+  // Turn the network activity indicator on and off again.
+  func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+  }
+
+  func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+  }
 
 }

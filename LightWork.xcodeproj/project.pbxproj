@@ -253,6 +253,7 @@
 				BE65B1CC26D5610B00E05EE0 /* Frameworks */,
 				BE65B1CD26D5610B00E05EE0 /* Resources */,
 				661D944E1E0365B56BB6E327 /* [CP] Embed Pods Frameworks */,
+				3A04A4F2F261CAA8FAE97D54 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,6 +292,7 @@
 				BE65B1ED26D5610E00E05EE0 /* Frameworks */,
 				BE65B1EE26D5610E00E05EE0 /* Resources */,
 				DD7D81C6356A6712DFB8EF8A /* [CP] Embed Pods Frameworks */,
+				28649DF172A78929FBEF264D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,6 +381,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		28649DF172A78929FBEF264D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightWork-LightWorkUITests/Pods-LightWork-LightWorkUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightWork-LightWorkUITests/Pods-LightWork-LightWorkUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LightWork-LightWorkUITests/Pods-LightWork-LightWorkUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A04A4F2F261CAA8FAE97D54 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightWork/Pods-LightWork-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightWork/Pods-LightWork-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LightWork/Pods-LightWork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		40682932F07D8A42A0A5B283 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
