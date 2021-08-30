@@ -3,18 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A70246EFB0293066FB4336E /* Pods_LightWork_LightWorkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7A3DAF4F7EC92C5136F25E /* Pods_LightWork_LightWorkUITests.framework */; };
+		7DD2C104CA7F401555484367 /* Pods_LightWorkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA4F365F0F2D61A4251AF58 /* Pods_LightWorkTests.framework */; };
+		B84C430846EC48CAA3F1E5C0 /* Pods_LightWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A25B0E0139323AFB75E8BBE /* Pods_LightWork.framework */; };
+		BE3AACFE26D5FDB9007A210A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACFD26D5FDB9007A210A /* ProfileViewController.swift */; };
+		BE3FF96B26D71BD900F930AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE3FF96A26D71BD900F930AC /* GoogleService-Info.plist */; };
+		BE3FF97126D724AB00F930AC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF97026D724AB00F930AC /* SignInViewController.swift */; };
+		BE3FF99D26D85C0F00F930AC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */; };
+		BE3FF9A226D95A7500F930AC /* SignUpCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF9A126D95A7500F930AC /* SignUpCustomerViewController.swift */; };
+		BE3FF9B126D96A5A00F930AC /* ZipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF9B026D96A5A00F930AC /* ZipTableViewCell.swift */; };
+		BE3FF9B626D973B900F930AC /* ZipCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF9B526D973B900F930AC /* ZipCodeViewController.swift */; };
+		BE3FF9D726D979D400F930AC /* ZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF9D626D979D400F930AC /* ZipCode.swift */; };
+		BE3FF9DC26D97D7300F930AC /* zips.json in Resources */ = {isa = PBXBuildFile; fileRef = BE3FF9DB26D97D7300F930AC /* zips.json */; };
+		BE3FFA4A26DC208E00F930AC /* SignUpBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */; };
+		BE5E43D526D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E43D426D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png */; };
 		BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */; };
 		BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */; };
-		BE65B1D726D5610B00E05EE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D626D5610B00E05EE0 /* ViewController.swift */; };
 		BE65B1DA26D5610B00E05EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE65B1D826D5610B00E05EE0 /* Main.storyboard */; };
 		BE65B1DC26D5610D00E05EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE65B1DB26D5610D00E05EE0 /* Assets.xcassets */; };
 		BE65B1DF26D5610D00E05EE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE65B1DD26D5610D00E05EE0 /* LaunchScreen.storyboard */; };
 		BE65B1EA26D5610E00E05EE0 /* LightWorkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1E926D5610E00E05EE0 /* LightWorkTests.swift */; };
 		BE65B1F526D5610E00E05EE0 /* LightWorkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1F426D5610E00E05EE0 /* LightWorkUITests.swift */; };
+		BE65B20926D564D900E05EE0 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B20826D564D900E05EE0 /* HomeScreenViewController.swift */; };
+		BE6967C426D5964800B64CAF /* umit-yildirim-9OB46apMbC4-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE6967C326D5964800B64CAF /* umit-yildirim-9OB46apMbC4-unsplash.jpg */; };
+		BE6FE21E26D57F9000781282 /* Group 49.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6FE21D26D57F9000781282 /* Group 49.png */; };
+		BE6FE23E26D5843E00781282 /* profile_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6FE23B26D5843E00781282 /* profile_icon.png */; };
+		BE6FE23F26D5843E00781282 /* logIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6FE23C26D5843E00781282 /* logIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +53,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A25B0E0139323AFB75E8BBE /* Pods_LightWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1357C42048218013C90A6838 /* Pods-LightWork-LightWorkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWork-LightWorkUITests.debug.xcconfig"; path = "Target Support Files/Pods-LightWork-LightWorkUITests/Pods-LightWork-LightWorkUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		16F6616BACA2CCCF436A1108 /* Pods-LightWork-LightWorkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWork-LightWorkUITests.release.xcconfig"; path = "Target Support Files/Pods-LightWork-LightWorkUITests/Pods-LightWork-LightWorkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3FD77DF7ACB3EE210342F2CB /* Pods-LightWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWork.release.xcconfig"; path = "Target Support Files/Pods-LightWork/Pods-LightWork.release.xcconfig"; sourceTree = "<group>"; };
+		800865FA2FD4F51EACE53020 /* Pods-LightWorkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWorkTests.release.xcconfig"; path = "Target Support Files/Pods-LightWorkTests/Pods-LightWorkTests.release.xcconfig"; sourceTree = "<group>"; };
+		852580EDCEC4649E08CD4BA7 /* Pods-LightWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWork.debug.xcconfig"; path = "Target Support Files/Pods-LightWork/Pods-LightWork.debug.xcconfig"; sourceTree = "<group>"; };
+		BE3AACFD26D5FDB9007A210A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BE3FF96A26D71BD900F930AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE3FF97026D724AB00F930AC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		BE3FF9A126D95A7500F930AC /* SignUpCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCustomerViewController.swift; sourceTree = "<group>"; };
+		BE3FF9B026D96A5A00F930AC /* ZipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipTableViewCell.swift; sourceTree = "<group>"; };
+		BE3FF9B526D973B900F930AC /* ZipCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeViewController.swift; sourceTree = "<group>"; };
+		BE3FF9D626D979D400F930AC /* ZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCode.swift; sourceTree = "<group>"; };
+		BE3FF9DB26D97D7300F930AC /* zips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = zips.json; path = ../../zips.json; sourceTree = "<group>"; };
+		BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBusinessViewController.swift; sourceTree = "<group>"; };
+		BE5E43D426D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "findIcon.png 14-11-32-792.png"; path = "../../../findIcon.png 14-11-32-792.png"; sourceTree = "<group>"; };
+		BE5E43DC26D6C059007D69D5 /* logIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logIcon.png; sourceTree = "<group>"; };
+		BE5E43DD26D6C05D007D69D5 /* profile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_icon.png; sourceTree = "<group>"; };
+		BE5E43DE26D6C062007D69D5 /* profile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_icon.png; path = "../../../Final Project/LightWork Artbroads/profile_icon.png"; sourceTree = "<group>"; };
+		BE5E43DF26D6C066007D69D5 /* logIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logIcon.png; path = "../../../Final Project/LightWork Artbroads/logIcon.png"; sourceTree = "<group>"; };
+		BE5E43E026D6C069007D69D5 /* profile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_icon.png; path = "../../../Final Project/LightWork Artbroads/profile_icon.png"; sourceTree = "<group>"; };
+		BE5E43E126D6C071007D69D5 /* logIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logIcon.png; path = "../../../Final Project/LightWork Artbroads/logIcon.png"; sourceTree = "<group>"; };
 		BE65B1CF26D5610B00E05EE0 /* LightWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BE65B1D626D5610B00E05EE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE65B1D926D5610B00E05EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE65B1DB26D5610D00E05EE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE65B1DE26D5610D00E05EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +89,14 @@
 		BE65B1F026D5610E00E05EE0 /* LightWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE65B1F426D5610E00E05EE0 /* LightWorkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightWorkUITests.swift; sourceTree = "<group>"; };
 		BE65B1F626D5610E00E05EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE65B20826D564D900E05EE0 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		BE6967C326D5964800B64CAF /* umit-yildirim-9OB46apMbC4-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "umit-yildirim-9OB46apMbC4-unsplash.jpg"; path = "../../../Downloads/umit-yildirim-9OB46apMbC4-unsplash.jpg"; sourceTree = "<group>"; };
+		BE6FE21D26D57F9000781282 /* Group 49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Group 49.png"; path = "../../Final Project/LightWork Artbroads/Group 49.png"; sourceTree = "<group>"; };
+		BE6FE23B26D5843E00781282 /* profile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_icon.png; path = "../../Final Project/LightWork Artbroads/profile_icon.png"; sourceTree = "<group>"; };
+		BE6FE23C26D5843E00781282 /* logIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logIcon.png; path = "../../Final Project/LightWork Artbroads/logIcon.png"; sourceTree = "<group>"; };
+		CDA4F365F0F2D61A4251AF58 /* Pods_LightWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F135804EFC0F78D76CBA86E9 /* Pods-LightWorkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWorkTests.debug.xcconfig"; path = "Target Support Files/Pods-LightWorkTests/Pods-LightWorkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE7A3DAF4F7EC92C5136F25E /* Pods_LightWork_LightWorkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWork_LightWorkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B84C430846EC48CAA3F1E5C0 /* Pods_LightWork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DD2C104CA7F401555484367 /* Pods_LightWorkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +120,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A70246EFB0293066FB4336E /* Pods_LightWork_LightWorkUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		451070889DEB5E3C917366EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				852580EDCEC4649E08CD4BA7 /* Pods-LightWork.debug.xcconfig */,
+				3FD77DF7ACB3EE210342F2CB /* Pods-LightWork.release.xcconfig */,
+				1357C42048218013C90A6838 /* Pods-LightWork-LightWorkUITests.debug.xcconfig */,
+				16F6616BACA2CCCF436A1108 /* Pods-LightWork-LightWorkUITests.release.xcconfig */,
+				F135804EFC0F78D76CBA86E9 /* Pods-LightWorkTests.debug.xcconfig */,
+				800865FA2FD4F51EACE53020 /* Pods-LightWorkTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4CD89672DF7FA261D406B1BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A25B0E0139323AFB75E8BBE /* Pods_LightWork.framework */,
+				FE7A3DAF4F7EC92C5136F25E /* Pods_LightWork_LightWorkUITests.framework */,
+				CDA4F365F0F2D61A4251AF58 /* Pods_LightWorkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE3FF96F26D721CF00F930AC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */,
+				BE3FF97026D724AB00F930AC /* SignInViewController.swift */,
+				BE3FF9A126D95A7500F930AC /* SignUpCustomerViewController.swift */,
+				BE65B20826D564D900E05EE0 /* HomeScreenViewController.swift */,
+				BE3FF9B526D973B900F930AC /* ZipCodeViewController.swift */,
+				BE3AACFD26D5FDB9007A210A /* ProfileViewController.swift */,
+				BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		BE65B1C626D5610B00E05EE0 = {
 			isa = PBXGroup;
 			children = (
+				BE3FF96A26D71BD900F930AC /* GoogleService-Info.plist */,
 				BE65B1D126D5610B00E05EE0 /* LightWork */,
 				BE65B1E826D5610E00E05EE0 /* LightWorkTests */,
 				BE65B1F326D5610E00E05EE0 /* LightWorkUITests */,
 				BE65B1D026D5610B00E05EE0 /* Products */,
+				451070889DEB5E3C917366EC /* Pods */,
+				4CD89672DF7FA261D406B1BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +190,21 @@
 		BE65B1D126D5610B00E05EE0 /* LightWork */ = {
 			isa = PBXGroup;
 			children = (
+				BE3FF96F26D721CF00F930AC /* View Controllers */,
+				BE6967CB26D5FAB100B64CAF /* Images */,
 				BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */,
+				BE3FF9DB26D97D7300F930AC /* zips.json */,
 				BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */,
-				BE65B1D626D5610B00E05EE0 /* ViewController.swift */,
 				BE65B1D826D5610B00E05EE0 /* Main.storyboard */,
+				BE3FF9B026D96A5A00F930AC /* ZipTableViewCell.swift */,
 				BE65B1DB26D5610D00E05EE0 /* Assets.xcassets */,
 				BE65B1DD26D5610D00E05EE0 /* LaunchScreen.storyboard */,
+				BE6FE23C26D5843E00781282 /* logIcon.png */,
+				BE6FE23B26D5843E00781282 /* profile_icon.png */,
+				BE6967C326D5964800B64CAF /* umit-yildirim-9OB46apMbC4-unsplash.jpg */,
+				BE6FE21D26D57F9000781282 /* Group 49.png */,
 				BE65B1E026D5610D00E05EE0 /* Info.plist */,
+				BE3FF9D626D979D400F930AC /* ZipCode.swift */,
 			);
 			path = LightWork;
 			sourceTree = "<group>";
@@ -128,6 +227,20 @@
 			path = LightWorkUITests;
 			sourceTree = "<group>";
 		};
+		BE6967CB26D5FAB100B64CAF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BE5E43DC26D6C059007D69D5 /* logIcon.png */,
+				BE5E43DF26D6C066007D69D5 /* logIcon.png */,
+				BE5E43E126D6C071007D69D5 /* logIcon.png */,
+				BE5E43DD26D6C05D007D69D5 /* profile_icon.png */,
+				BE5E43DE26D6C062007D69D5 /* profile_icon.png */,
+				BE5E43E026D6C069007D69D5 /* profile_icon.png */,
+				BE5E43D426D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE65B1F926D5610E00E05EE0 /* Build configuration list for PBXNativeTarget "LightWork" */;
 			buildPhases = (
+				40682932F07D8A42A0A5B283 /* [CP] Check Pods Manifest.lock */,
 				BE65B1CB26D5610B00E05EE0 /* Sources */,
 				BE65B1CC26D5610B00E05EE0 /* Frameworks */,
 				BE65B1CD26D5610B00E05EE0 /* Resources */,
+				661D944E1E0365B56BB6E327 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE65B1FC26D5610E00E05EE0 /* Build configuration list for PBXNativeTarget "LightWorkTests" */;
 			buildPhases = (
+				CA8CE070B8A586E77A004577 /* [CP] Check Pods Manifest.lock */,
 				BE65B1E126D5610E00E05EE0 /* Sources */,
 				BE65B1E226D5610E00E05EE0 /* Frameworks */,
 				BE65B1E326D5610E00E05EE0 /* Resources */,
@@ -170,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE65B1FF26D5610E00E05EE0 /* Build configuration list for PBXNativeTarget "LightWorkUITests" */;
 			buildPhases = (
+				55249B63D047ADD49C507624 /* [CP] Check Pods Manifest.lock */,
 				BE65B1EC26D5610E00E05EE0 /* Sources */,
 				BE65B1ED26D5610E00E05EE0 /* Frameworks */,
 				BE65B1EE26D5610E00E05EE0 /* Resources */,
+				DD7D81C6356A6712DFB8EF8A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,8 +350,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE65B1DF26D5610D00E05EE0 /* LaunchScreen.storyboard in Resources */,
+				BE6FE21E26D57F9000781282 /* Group 49.png in Resources */,
+				BE3FF96B26D71BD900F930AC /* GoogleService-Info.plist in Resources */,
+				BE3FF9DC26D97D7300F930AC /* zips.json in Resources */,
+				BE5E43D526D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png in Resources */,
 				BE65B1DC26D5610D00E05EE0 /* Assets.xcassets in Resources */,
 				BE65B1DA26D5610B00E05EE0 /* Main.storyboard in Resources */,
+				BE6FE23E26D5843E00781282 /* profile_icon.png in Resources */,
+				BE6FE23F26D5843E00781282 /* logIcon.png in Resources */,
+				BE6967C426D5964800B64CAF /* umit-yildirim-9OB46apMbC4-unsplash.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +378,125 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40682932F07D8A42A0A5B283 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LightWork-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55249B63D047ADD49C507624 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LightWork-LightWorkUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		661D944E1E0365B56BB6E327 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightWork/Pods-LightWork-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightWork/Pods-LightWork-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LightWork/Pods-LightWork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA8CE070B8A586E77A004577 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LightWorkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD7D81C6356A6712DFB8EF8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightWork-LightWorkUITests/Pods-LightWork-LightWorkUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightWork-LightWorkUITests/Pods-LightWork-LightWorkUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LightWork-LightWorkUITests/Pods-LightWork-LightWorkUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BE65B1CB26D5610B00E05EE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE65B1D726D5610B00E05EE0 /* ViewController.swift in Sources */,
+				BE3FF99D26D85C0F00F930AC /* SignUpViewController.swift in Sources */,
 				BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */,
 				BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */,
+				BE3AACFE26D5FDB9007A210A /* ProfileViewController.swift in Sources */,
+				BE3FF9A226D95A7500F930AC /* SignUpCustomerViewController.swift in Sources */,
+				BE3FFA4A26DC208E00F930AC /* SignUpBusinessViewController.swift in Sources */,
+				BE3FF97126D724AB00F930AC /* SignInViewController.swift in Sources */,
+				BE3FF9D726D979D400F930AC /* ZipCode.swift in Sources */,
+				BE65B20926D564D900E05EE0 /* HomeScreenViewController.swift in Sources */,
+				BE3FF9B626D973B900F930AC /* ZipCodeViewController.swift in Sources */,
+				BE3FF9B126D96A5A00F930AC /* ZipTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +669,7 @@
 		};
 		BE65B1FA26D5610E00E05EE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 852580EDCEC4649E08CD4BA7 /* Pods-LightWork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,6 +688,7 @@
 		};
 		BE65B1FB26D5610E00E05EE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FD77DF7ACB3EE210342F2CB /* Pods-LightWork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,6 +707,7 @@
 		};
 		BE65B1FD26D5610E00E05EE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F135804EFC0F78D76CBA86E9 /* Pods-LightWorkTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +729,7 @@
 		};
 		BE65B1FE26D5610E00E05EE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 800865FA2FD4F51EACE53020 /* Pods-LightWorkTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +751,7 @@
 		};
 		BE65B20026D5610E00E05EE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1357C42048218013C90A6838 /* Pods-LightWork-LightWorkUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +771,7 @@
 		};
 		BE65B20126D5610E00E05EE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16F6616BACA2CCCF436A1108 /* Pods-LightWork-LightWorkUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
