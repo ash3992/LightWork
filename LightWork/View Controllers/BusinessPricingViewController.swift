@@ -32,6 +32,7 @@ class BusinessPricingViewController: UIViewController, UITextViewDelegate {
             showAlertAllInfoNeeded()
         }else{
             print("Transtion")
+            personArray.append(pircingTextView.text)
         }
     }
     
