@@ -97,9 +97,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             
             
         }else{
+            self.personArray.removeAll()
+            self.personArray.append(self.firstNameTextField.text!)
+            self.personArray.append(self.lastNameTextField.text!)
+            self.personArray.append(self.emailTextField.text!)
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpBusinessViewController") as! SignUpBusinessViewController
-               // nextViewController.personArray = self.personArray
+                nextViewController.personArray = self.personArray
                 self.navigationController?.pushViewController(nextViewController, animated: true)
         }
 

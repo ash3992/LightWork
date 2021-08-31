@@ -302,16 +302,6 @@ of your choosing.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Please add your business name, description, category, profile picture, and business profile to continue." textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PW-dt-7gy">
-                                <rect key="frame" x="39" y="44" width="336" height="119"/>
-                                <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="119" id="KJQ-Ky-pTQ"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Me4-NI-9LX">
                                 <rect key="frame" x="30" y="209" width="336" height="34"/>
                                 <constraints>
@@ -431,6 +421,7 @@ of your choosing.</string>
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="SubmitButtonPushed:" destination="GzL-i6-top" eventType="touchUpInside" id="zgF-eD-lDO"/>
                                     <action selector="submitButtonPushed:" destination="n6L-fK-OVi" eventType="touchUpInside" id="0qQ-GD-AqD"/>
                                     <action selector="submitButtonPushed:" destination="uHX-Qd-8dh" eventType="touchUpInside" id="ho4-az-Tac"/>
                                     <action selector="submitButtonPushed:" destination="2Vx-sI-lnw" eventType="touchUpInside" id="yEk-eS-PO9"/>
@@ -460,7 +451,7 @@ of your choosing.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4SR-oz-rl0">
-                                <rect key="frame" x="232" y="624" width="143" height="128"/>
+                                <rect key="frame" x="232" y="624" width="143" height="128.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLt-kw-sN8">
                                 <rect key="frame" x="334" y="413" width="32" height="18"/>
@@ -480,6 +471,16 @@ of your choosing.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Please add your business name, description, category, profile picture, and business profile to continue." textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PW-dt-7gy">
+                                <rect key="frame" x="36" y="61" width="336" height="102"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="KJQ-Ky-pTQ"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SL4-Pb-wbl"/>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -488,13 +489,13 @@ of your choosing.</string>
                             <constraint firstItem="yPl-8f-r5F" firstAttribute="leading" secondItem="SL4-Pb-wbl" secondAttribute="leading" constant="25" id="2bo-jx-wA7"/>
                             <constraint firstItem="kUp-Dd-Rkk" firstAttribute="top" secondItem="PeZ-Ac-GNu" secondAttribute="bottom" constant="34" id="4Mf-35-vQ1"/>
                             <constraint firstItem="42N-0j-Mgh" firstAttribute="leading" secondItem="NfC-bR-oGG" secondAttribute="leading" id="8F7-a1-YAE"/>
-                            <constraint firstItem="6PW-dt-7gy" firstAttribute="top" secondItem="SL4-Pb-wbl" secondAttribute="top" id="AAz-fd-H7H"/>
+                            <constraint firstItem="6PW-dt-7gy" firstAttribute="top" secondItem="SL4-Pb-wbl" secondAttribute="top" constant="17" id="AAz-fd-H7H"/>
                             <constraint firstItem="4SR-oz-rl0" firstAttribute="centerX" secondItem="OAz-gt-wzu" secondAttribute="centerX" id="AEB-qb-1f1"/>
-                            <constraint firstItem="6PW-dt-7gy" firstAttribute="leading" secondItem="SL4-Pb-wbl" secondAttribute="leading" constant="39" id="CAU-PQ-cZH"/>
+                            <constraint firstItem="6PW-dt-7gy" firstAttribute="leading" secondItem="SL4-Pb-wbl" secondAttribute="leading" constant="36" id="CAU-PQ-cZH"/>
                             <constraint firstItem="kUp-Dd-Rkk" firstAttribute="leading" secondItem="lFy-FC-NBl" secondAttribute="leading" id="DfZ-EX-dwp"/>
                             <constraint firstItem="ydS-hJ-BHt" firstAttribute="leading" secondItem="fy4-35-dBv" secondAttribute="leading" id="ET4-I8-4Hd"/>
                             <constraint firstItem="Me4-NI-9LX" firstAttribute="top" secondItem="4U1-QO-73N" secondAttribute="bottom" constant="17" id="Fhl-ox-IRE"/>
-                            <constraint firstItem="6PW-dt-7gy" firstAttribute="centerX" secondItem="5ZH-gd-e1R" secondAttribute="centerX" id="Hbg-mM-GGJ"/>
+                            <constraint firstItem="6PW-dt-7gy" firstAttribute="centerX" secondItem="5ZH-gd-e1R" secondAttribute="centerX" constant="-3" id="Hbg-mM-GGJ"/>
                             <constraint firstItem="OAz-gt-wzu" firstAttribute="leading" secondItem="yPl-8f-r5F" secondAttribute="trailing" constant="32" id="Irn-9o-fXP"/>
                             <constraint firstItem="PeZ-Ac-GNu" firstAttribute="centerY" secondItem="XLt-kw-sN8" secondAttribute="centerY" id="JYT-io-p65"/>
                             <constraint firstItem="fy4-35-dBv" firstAttribute="trailing" secondItem="XLt-kw-sN8" secondAttribute="trailing" id="KRj-be-Dna"/>
@@ -515,7 +516,7 @@ of your choosing.</string>
                             <constraint firstItem="1Jp-9c-eYw" firstAttribute="leading" secondItem="SL4-Pb-wbl" secondAttribute="leading" constant="34" id="aBQ-f1-5dA"/>
                             <constraint firstItem="yPl-8f-r5F" firstAttribute="firstBaseline" secondItem="OAz-gt-wzu" secondAttribute="firstBaseline" id="b3i-eb-fcW"/>
                             <constraint firstItem="SL4-Pb-wbl" firstAttribute="bottom" secondItem="lFy-FC-NBl" secondAttribute="bottom" constant="10" id="d15-fq-Ui1"/>
-                            <constraint firstItem="6PW-dt-7gy" firstAttribute="trailing" secondItem="4SR-oz-rl0" secondAttribute="trailing" id="fqF-Mv-rmB"/>
+                            <constraint firstItem="6PW-dt-7gy" firstAttribute="trailing" secondItem="4SR-oz-rl0" secondAttribute="trailing" constant="-3" id="fqF-Mv-rmB"/>
                             <constraint firstItem="4U1-QO-73N" firstAttribute="top" secondItem="6PW-dt-7gy" secondAttribute="bottom" constant="8" id="hZl-t7-oU7"/>
                             <constraint firstItem="42N-0j-Mgh" firstAttribute="top" secondItem="1Jp-9c-eYw" secondAttribute="bottom" constant="18" id="hhw-yU-yb9"/>
                             <constraint firstItem="NfC-bR-oGG" firstAttribute="top" secondItem="4SR-oz-rl0" secondAttribute="top" id="hzJ-4Y-Cfy"/>
@@ -529,17 +530,19 @@ of your choosing.</string>
                             <constraint firstItem="lFy-FC-NBl" firstAttribute="top" secondItem="yPl-8f-r5F" secondAttribute="bottom" constant="27" id="ypF-5G-bbd"/>
                             <constraint firstItem="4U1-QO-73N" firstAttribute="leading" secondItem="SL4-Pb-wbl" secondAttribute="leading" constant="30" id="yv4-h2-Avu"/>
                             <constraint firstItem="kUp-Dd-Rkk" firstAttribute="top" secondItem="bHC-lx-0NH" secondAttribute="bottom" constant="17" id="z3r-al-oah"/>
-                            <constraint firstItem="6PW-dt-7gy" firstAttribute="centerX" secondItem="lFy-FC-NBl" secondAttribute="centerX" id="zOb-eR-cKQ"/>
+                            <constraint firstItem="6PW-dt-7gy" firstAttribute="centerX" secondItem="lFy-FC-NBl" secondAttribute="centerX" constant="-3" id="zOb-eR-cKQ"/>
                             <constraint firstItem="1Jp-9c-eYw" firstAttribute="top" secondItem="kUp-Dd-Rkk" secondAttribute="bottom" constant="31" id="zdx-fY-QuN"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="businessAddressView" destination="kUp-Dd-Rkk" id="Keg-jg-UCK"/>
+                        <outlet property="businessNameTextView" destination="Me4-NI-9LX" id="Nmd-uC-VNW"/>
                         <outlet property="businessTextView" destination="fy4-35-dBv" id="8xY-zm-jym"/>
                         <outlet property="dropDownLabel" destination="tiZ-9m-uSJ" id="VTt-px-S5O"/>
                         <outlet property="dropDownView" destination="42N-0j-Mgh" id="eq6-kJ-Idf"/>
                         <outlet property="imageViewBusiness" destination="4SR-oz-rl0" id="rD7-dC-Aqd"/>
                         <outlet property="imageViewProfile" destination="NfC-bR-oGG" id="c7B-sE-TZ4"/>
+                        <outlet property="submitButton" destination="lFy-FC-NBl" id="dKx-DC-RyZ"/>
                         <outlet property="wordCountLabel" destination="PeZ-Ac-GNu" id="MNc-m3-rdS"/>
                     </connections>
                 </viewController>
@@ -560,7 +563,7 @@ of your choosing.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8to-J6-7ji" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2743" y="2060"/>
+            <point key="canvasLocation" x="2736" y="2060"/>
         </scene>
         <!--Sign Up Customer View Controller-->
         <scene sceneID="8dm-ax-Dfb">

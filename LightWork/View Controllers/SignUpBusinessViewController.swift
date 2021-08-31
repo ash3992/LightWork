@@ -21,10 +21,16 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var businessTextView: UITextView!
     @IBOutlet weak var imageViewProfile: UIImageView!
     @IBOutlet weak var businessAddressView: UITextField!
+    @IBOutlet weak var businessNameTextView: UITextField!
     @IBOutlet weak var imageViewBusiness: UIImageView!
+    @IBOutlet weak var submitButton: UIButton!
     var personalPhtotoPushed = false
     var businessPhotoPushed = false
+    var urlToSendProfile : URL!
+    var urlToSendBusinees : URL!
+    var personArray = [String]()
     let dropDown = DropDown()
+    var catogoryPicked : String!
     var imagePickerController = UIImagePickerController()
     let dropDownValues = ["electrical installation and maintenance", "plumbing", "bricklaying", "plastering", "carpentry and joinery", "gas installation and maintenance", "air conditioning and refrigeration"]
     override func viewDidLoad() {
@@ -33,6 +39,8 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
         // Do any additional setup after loading the view.
         businessAddressView.delegate = self
         businessTextView.delegate = self
+        submitButton.layer.cornerRadius = 14
+        navigationItem.title = "Sign up: Business"
         dropDownLabel.text = "Please select a business category"
         dropDown.anchorView = dropDownView
         dropDown.dataSource = dropDownValues
@@ -42,6 +50,7 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
           print("Selected item: \(item) at index: \(index)")
             self.dropDownLabel.text = item
+            self.catogoryPicked = item
         }
        
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
@@ -57,7 +66,30 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
         dropDown.show()
         
     }
-  
+    @IBAction func SubmitButtonPushed(_ sender: Any) {
+        if (businessNameTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" || businessAddressView.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" || businessTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" || urlToSendProfile == nil || urlToSendBusinees == nil || catogoryPicked == nil){
+            //NEED BUSINNESS CATOGORY TOO!!!!!!!!!!!
+          // showAlertAllInfoNeeded()
+            print("Problem")
+            
+            
+        }else{
+            personArray.append(businessNameTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+            personArray.append(businessAddressView.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+            personArray.append(businessTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+            personArray.append(catogoryPicked)
+            personArray.append(urlToSendProfile.absoluteString)
+            personArray.append(urlToSendBusinees.absoluteString)
+            print("Created")
+        }
+    }
+    func showAlertAllInfoNeeded(){
+        let alert = UIAlertController(title: "Attention", message: "All info is needed to continue.", preferredStyle: .alert)
+           self.present(alert, animated: true, completion: nil)
+           Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+        
+    }
+    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
         let numberOfChars = newText.count
@@ -107,45 +139,28 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
            // urlToSend = url
             
           //  uploadToCloud(fileURL: url)
-        }
+        
         
     if let pickedImage = info[.originalImage] as? UIImage {
         if personalPhtotoPushed == true{
             imageViewProfile.image = pickedImage
+            urlToSendProfile = url
             
         }else{
             imageViewBusiness.image = pickedImage
+            urlToSendBusinees = url
         }
         
       //  imageViewProfile.image = pickedImage
     }
     imagePickerController.dismiss(animated: true, completion: nil)
+        }
 }
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
         let autocompleteController = GMSAutocompleteViewController()
            autocompleteController.delegate = self
-
-   /*        // Specify the place data types to return.
-           let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
-             UInt(GMSPlaceField.placeID.rawValue))!
-           autocompleteController.placeFields = fields
-
-           // Specify a filter.
-           let filter = GMSAutocompleteFilter()
-           filter.type = .address
-           autocompleteController.autocompleteFilter = filter*/
-
-           // Display the autocomplete view controller.
            present(autocompleteController, animated: true, completion: nil)
-    //perform you action here
-      //  zipTextView.resignFirstResponder()
-     //   let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-       //   let nextViewController = storyBoard.instantiateViewController(withIdentifier: "zipCodeViewController") as! ZipCodeViewController
-       // nextViewController.delegate = self
-       //   self.navigationController?.pushViewController(nextViewController, animated: true)
-        print("Yesss")
-       // zipTextView.resignFirstResponder()
-    return true
+            return true
     }
     
     /*
@@ -159,6 +174,7 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
     */
 
 }
+
 extension SignUpBusinessViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.
