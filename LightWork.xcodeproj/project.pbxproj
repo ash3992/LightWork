@@ -20,6 +20,7 @@
 		BE3FF9D726D979D400F930AC /* ZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF9D626D979D400F930AC /* ZipCode.swift */; };
 		BE3FF9DC26D97D7300F930AC /* zips.json in Resources */ = {isa = PBXBuildFile; fileRef = BE3FF9DB26D97D7300F930AC /* zips.json */; };
 		BE3FFA4A26DC208E00F930AC /* SignUpBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */; };
+		BE3FFAAB26DDD9FB00F930AC /* BusinessPricingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFAAA26DDD9FB00F930AC /* BusinessPricingViewController.swift */; };
 		BE5E43D526D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E43D426D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png */; };
 		BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */; };
 		BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */; };
@@ -69,6 +70,7 @@
 		BE3FF9D626D979D400F930AC /* ZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCode.swift; sourceTree = "<group>"; };
 		BE3FF9DB26D97D7300F930AC /* zips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = zips.json; path = ../../zips.json; sourceTree = "<group>"; };
 		BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBusinessViewController.swift; sourceTree = "<group>"; };
+		BE3FFAAA26DDD9FB00F930AC /* BusinessPricingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPricingViewController.swift; sourceTree = "<group>"; };
 		BE5E43D426D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "findIcon.png 14-11-32-792.png"; path = "../../../findIcon.png 14-11-32-792.png"; sourceTree = "<group>"; };
 		BE5E43DC26D6C059007D69D5 /* logIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logIcon.png; sourceTree = "<group>"; };
 		BE5E43DD26D6C05D007D69D5 /* profile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_icon.png; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				BE3FF9A126D95A7500F930AC /* SignUpCustomerViewController.swift */,
 				BE65B20826D564D900E05EE0 /* HomeScreenViewController.swift */,
 				BE3FF9B526D973B900F930AC /* ZipCodeViewController.swift */,
+				BE3FFAAA26DDD9FB00F930AC /* BusinessPricingViewController.swift */,
 				BE3AACFD26D5FDB9007A210A /* ProfileViewController.swift */,
 				BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */,
 			);
@@ -531,6 +534,7 @@
 				BE3FF97126D724AB00F930AC /* SignInViewController.swift in Sources */,
 				BE3FF9D726D979D400F930AC /* ZipCode.swift in Sources */,
 				BE65B20926D564D900E05EE0 /* HomeScreenViewController.swift in Sources */,
+				BE3FFAAB26DDD9FB00F930AC /* BusinessPricingViewController.swift in Sources */,
 				BE3FF9B626D973B900F930AC /* ZipCodeViewController.swift in Sources */,
 				BE3FF9B126D96A5A00F930AC /* ZipTableViewCell.swift in Sources */,
 			);
