@@ -21,6 +21,9 @@
 		BE3FF9DC26D97D7300F930AC /* zips.json in Resources */ = {isa = PBXBuildFile; fileRef = BE3FF9DB26D97D7300F930AC /* zips.json */; };
 		BE3FFA4A26DC208E00F930AC /* SignUpBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */; };
 		BE3FFAAB26DDD9FB00F930AC /* BusinessPricingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFAAA26DDD9FB00F930AC /* BusinessPricingViewController.swift */; };
+		BE3FFAB326DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFAB226DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift */; };
+		BE3FFABB26DF14B600F930AC /* SignUpBusinessHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFABA26DF14B600F930AC /* SignUpBusinessHoursViewController.swift */; };
+		BE3FFAC326E18B9E00F930AC /* SearchingContractorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFAC226E18B9E00F930AC /* SearchingContractorViewController.swift */; };
 		BE5E43D526D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E43D426D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png */; };
 		BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */; };
 		BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */; };
@@ -71,6 +74,9 @@
 		BE3FF9DB26D97D7300F930AC /* zips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = zips.json; path = ../../zips.json; sourceTree = "<group>"; };
 		BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBusinessViewController.swift; sourceTree = "<group>"; };
 		BE3FFAAA26DDD9FB00F930AC /* BusinessPricingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPricingViewController.swift; sourceTree = "<group>"; };
+		BE3FFAB226DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBusinessDaysViewController.swift; sourceTree = "<group>"; };
+		BE3FFABA26DF14B600F930AC /* SignUpBusinessHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBusinessHoursViewController.swift; sourceTree = "<group>"; };
+		BE3FFAC226E18B9E00F930AC /* SearchingContractorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingContractorViewController.swift; sourceTree = "<group>"; };
 		BE5E43D426D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "findIcon.png 14-11-32-792.png"; path = "../../../findIcon.png 14-11-32-792.png"; sourceTree = "<group>"; };
 		BE5E43DC26D6C059007D69D5 /* logIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logIcon.png; sourceTree = "<group>"; };
 		BE5E43DD26D6C05D007D69D5 /* profile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_icon.png; sourceTree = "<group>"; };
@@ -155,12 +161,15 @@
 		BE3FF96F26D721CF00F930AC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE3FFAB226DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift */,
 				BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */,
 				BE3FF97026D724AB00F930AC /* SignInViewController.swift */,
 				BE3FF9A126D95A7500F930AC /* SignUpCustomerViewController.swift */,
+				BE3FFABA26DF14B600F930AC /* SignUpBusinessHoursViewController.swift */,
 				BE65B20826D564D900E05EE0 /* HomeScreenViewController.swift */,
 				BE3FF9B526D973B900F930AC /* ZipCodeViewController.swift */,
 				BE3FFAAA26DDD9FB00F930AC /* BusinessPricingViewController.swift */,
+				BE3FFAC226E18B9E00F930AC /* SearchingContractorViewController.swift */,
 				BE3AACFD26D5FDB9007A210A /* ProfileViewController.swift */,
 				BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */,
 			);
@@ -525,10 +534,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3FFABB26DF14B600F930AC /* SignUpBusinessHoursViewController.swift in Sources */,
 				BE3FF99D26D85C0F00F930AC /* SignUpViewController.swift in Sources */,
 				BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */,
 				BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */,
 				BE3AACFE26D5FDB9007A210A /* ProfileViewController.swift in Sources */,
+				BE3FFAB326DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift in Sources */,
+				BE3FFAC326E18B9E00F930AC /* SearchingContractorViewController.swift in Sources */,
 				BE3FF9A226D95A7500F930AC /* SignUpCustomerViewController.swift in Sources */,
 				BE3FFA4A26DC208E00F930AC /* SignUpBusinessViewController.swift in Sources */,
 				BE3FF97126D724AB00F930AC /* SignInViewController.swift in Sources */,

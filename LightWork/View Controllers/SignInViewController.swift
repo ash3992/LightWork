@@ -16,6 +16,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     let database = Firestore.firestore()
+    let dropDownValues = ["General Contractor", "Carpenter", "Electrician", "Drywaller", "Plastering", "Painter", "Wallpaper Installer", "Heating and Air-Conditioning (HVAC)", "Mason", "Roofer", "Excavator", "Demolition", "Landscapers", "Concrete Specialist", "Ironworker", "Steelworker", "Tile Setting", "Floor Laying", "Glass and Glazing", "Special Trade Contractors"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,8 +71,8 @@ class SignInViewController: UIViewController {
     }
     func writeData(){
         let docRef = database.document("/users/ashtonwatson101@gmail.com")
-        docRef.setData(["text":"working..."])
-        docRef.setData(["something":"haha", "dkdld": "ddnnd"])
+      //  docRef.setData(["text":"working..."])
+        docRef.setData(["something":"haha", "dkdld": dropDownValues])
         
     }
     

@@ -33,6 +33,10 @@ class BusinessPricingViewController: UIViewController, UITextViewDelegate {
         }else{
             print("Transtion")
             personArray.append(pircingTextView.text)
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpBusinessDaysViewController") as! SignUpBusinessDaysViewController
+               nextViewController.personArray = self.personArray
+                self.navigationController?.pushViewController(nextViewController, animated: true)
         }
     }
     
