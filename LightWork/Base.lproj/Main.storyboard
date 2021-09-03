@@ -36,6 +36,9 @@ of your choosing.</string>
                                 <state key="normal" title="Find your contracor">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Czu-c7-Dht" kind="show" id="UXR-LY-jOC"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="umit-yildirim-9OB46apMbC4-unsplash.jpg" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7i-YX-ZIx">
                                 <rect key="frame" x="0.0" y="57" width="414" height="299"/>
@@ -48,8 +51,8 @@ of your choosing.</string>
                                 </constraints>
                                 <items>
                                     <barButtonItem title="findIcon" image="findIcon.png 14-11-32-792.png" id="6h3-zR-mc9"/>
-                                    <barButtonItem title="logIcon" image="logIcon.png" width="369" id="BMk-mp-unH"/>
-                                    <barButtonItem title="profileIcon" image="profile_icon.png" width="153" id="lTo-Yz-fHd">
+                                    <barButtonItem title="logIcon" image="logIcon.png 01-13-44-672.png" width="369" id="BMk-mp-unH"/>
+                                    <barButtonItem title="profileIcon" image="profile_icon.png 01-09-45-277.png" width="153" id="lTo-Yz-fHd">
                                         <connections>
                                             <segue destination="GZ2-YI-WVV" kind="show" id="dxu-aC-z8O"/>
                                         </connections>
@@ -95,43 +98,10 @@ of your choosing.</string>
                     <view key="view" contentMode="scaleToFill" id="70n-T7-AhI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sn0-8v-2nJ">
-                                <rect key="frame" x="0.0" y="98" width="414" height="798"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="XJD-VD-od4" style="IBUITableViewCellStyleDefault" id="vtG-jv-liZ">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vtG-jv-liZ" id="Gmg-jn-kEv">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XJD-VD-od4">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Czu-c7-Dht" id="Be8-qj-nCH"/>
-                                    <outlet property="delegate" destination="Czu-c7-Dht" id="MwW-aa-nvz"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8Lv-QZ-KnR"/>
                         <color key="backgroundColor" red="0.88772755859999997" green="0.68694323300000004" blue="0.87003338340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="Sn0-8v-2nJ" id="yvq-hx-IcS"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="Ui9-Di-AIR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1J-wl-Ex2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,8 +192,8 @@ of your choosing.</string>
                                             <action selector="homeButtonPushed:" destination="GZ2-YI-WVV" id="Y5a-ap-CtW"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="logIcon" image="logIcon.png" width="369" id="1gb-3h-Isc"/>
-                                    <barButtonItem title="profileIcon" image="profile_icon.png" width="153" id="jwK-yp-iGD"/>
+                                    <barButtonItem title="logIcon" image="logIcon.png 01-13-44-672.png" width="369" id="1gb-3h-Isc"/>
+                                    <barButtonItem title="profileIcon" image="profile_icon.png 01-09-45-277.png" width="153" id="jwK-yp-iGD"/>
                                 </items>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1535,11 +1505,11 @@ of your choosing.</string>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="findIcon.png 14-11-32-792.png" width="29" height="27"/>
-        <image name="logIcon.png" width="29" height="27"/>
+        <image name="logIcon.png 01-13-44-672.png" width="29" height="27"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="person.icloud.fill" catalog="system" width="128" height="88"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
-        <image name="profile_icon.png" width="29" height="27"/>
+        <image name="profile_icon.png 01-09-45-277.png" width="29" height="27"/>
         <image name="umit-yildirim-9OB46apMbC4-unsplash.jpg" width="4032" height="2268"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
