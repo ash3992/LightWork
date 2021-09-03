@@ -93,7 +93,7 @@ class ZipCodeViewController: UIViewController,  UISearchBarDelegate,  UISearchRe
                       The return type is assumed to be a Bool since that's ehat .filter expects anyway
                       This filter and the one above that filters searchText are two ways of doingt he samething */
                      
-                     $0.state.range(of: scopeTitle) != nil
+                    $0.state.range(of: scopeTitle) != nil
                      
                  })
              }
