@@ -11,7 +11,6 @@
 		7DD2C104CA7F401555484367 /* Pods_LightWorkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA4F365F0F2D61A4251AF58 /* Pods_LightWorkTests.framework */; };
 		B84C430846EC48CAA3F1E5C0 /* Pods_LightWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A25B0E0139323AFB75E8BBE /* Pods_LightWork.framework */; };
 		BE3AACFE26D5FDB9007A210A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACFD26D5FDB9007A210A /* ProfileViewController.swift */; };
-		BE3FF96B26D71BD900F930AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE3FF96A26D71BD900F930AC /* GoogleService-Info.plist */; };
 		BE3FF97126D724AB00F930AC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF97026D724AB00F930AC /* SignInViewController.swift */; };
 		BE3FF99D26D85C0F00F930AC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */; };
 		BE3FF9A226D95A7500F930AC /* SignUpCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF9A126D95A7500F930AC /* SignUpCustomerViewController.swift */; };
@@ -24,6 +23,8 @@
 		BE3FFAB326DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFAB226DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift */; };
 		BE3FFABB26DF14B600F930AC /* SignUpBusinessHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFABA26DF14B600F930AC /* SignUpBusinessHoursViewController.swift */; };
 		BE3FFAC326E18B9E00F930AC /* SearchingContractorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFAC226E18B9E00F930AC /* SearchingContractorViewController.swift */; };
+		BE3FFACB26E1908600F930AC /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFACA26E1908600F930AC /* Business.swift */; };
+		BE528B4426E1BB5800101F20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE528B4326E1BB5800101F20 /* GoogleService-Info.plist */; };
 		BE5E43D526D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E43D426D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png */; };
 		BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */; };
 		BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */; };
@@ -64,7 +65,6 @@
 		800865FA2FD4F51EACE53020 /* Pods-LightWorkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWorkTests.release.xcconfig"; path = "Target Support Files/Pods-LightWorkTests/Pods-LightWorkTests.release.xcconfig"; sourceTree = "<group>"; };
 		852580EDCEC4649E08CD4BA7 /* Pods-LightWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWork.debug.xcconfig"; path = "Target Support Files/Pods-LightWork/Pods-LightWork.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3AACFD26D5FDB9007A210A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		BE3FF96A26D71BD900F930AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE3FF97026D724AB00F930AC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BE3FF9A126D95A7500F930AC /* SignUpCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCustomerViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +77,8 @@
 		BE3FFAB226DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBusinessDaysViewController.swift; sourceTree = "<group>"; };
 		BE3FFABA26DF14B600F930AC /* SignUpBusinessHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBusinessHoursViewController.swift; sourceTree = "<group>"; };
 		BE3FFAC226E18B9E00F930AC /* SearchingContractorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingContractorViewController.swift; sourceTree = "<group>"; };
+		BE3FFACA26E1908600F930AC /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		BE528B4326E1BB5800101F20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE5E43D426D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "findIcon.png 14-11-32-792.png"; path = "../../../findIcon.png 14-11-32-792.png"; sourceTree = "<group>"; };
 		BE5E43DC26D6C059007D69D5 /* logIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logIcon.png; sourceTree = "<group>"; };
 		BE5E43DD26D6C05D007D69D5 /* profile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_icon.png; sourceTree = "<group>"; };
@@ -176,10 +178,18 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		BE3FFACF26E1909800F930AC /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				BE3FFACA26E1908600F930AC /* Business.swift */,
+				BE3FF9D626D979D400F930AC /* ZipCode.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
 		BE65B1C626D5610B00E05EE0 = {
 			isa = PBXGroup;
 			children = (
-				BE3FF96A26D71BD900F930AC /* GoogleService-Info.plist */,
 				BE65B1D126D5610B00E05EE0 /* LightWork */,
 				BE65B1E826D5610E00E05EE0 /* LightWorkTests */,
 				BE65B1F326D5610E00E05EE0 /* LightWorkUITests */,
@@ -202,6 +212,8 @@
 		BE65B1D126D5610B00E05EE0 /* LightWork */ = {
 			isa = PBXGroup;
 			children = (
+				BE528B4326E1BB5800101F20 /* GoogleService-Info.plist */,
+				BE3FFACF26E1909800F930AC /* Objects */,
 				BE3FF96F26D721CF00F930AC /* View Controllers */,
 				BE6967CB26D5FAB100B64CAF /* Images */,
 				BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */,
@@ -216,7 +228,6 @@
 				BE6967C326D5964800B64CAF /* umit-yildirim-9OB46apMbC4-unsplash.jpg */,
 				BE6FE21D26D57F9000781282 /* Group 49.png */,
 				BE65B1E026D5610D00E05EE0 /* Info.plist */,
-				BE3FF9D626D979D400F930AC /* ZipCode.swift */,
 			);
 			path = LightWork;
 			sourceTree = "<group>";
@@ -365,12 +376,12 @@
 			files = (
 				BE65B1DF26D5610D00E05EE0 /* LaunchScreen.storyboard in Resources */,
 				BE6FE21E26D57F9000781282 /* Group 49.png in Resources */,
-				BE3FF96B26D71BD900F930AC /* GoogleService-Info.plist in Resources */,
 				BE3FF9DC26D97D7300F930AC /* zips.json in Resources */,
 				BE5E43D526D6BFCE007D69D5 /* findIcon.png 14-11-32-792.png in Resources */,
 				BE65B1DC26D5610D00E05EE0 /* Assets.xcassets in Resources */,
 				BE65B1DA26D5610B00E05EE0 /* Main.storyboard in Resources */,
 				BE6FE23E26D5843E00781282 /* profile_icon.png in Resources */,
+				BE528B4426E1BB5800101F20 /* GoogleService-Info.plist in Resources */,
 				BE6FE23F26D5843E00781282 /* logIcon.png in Resources */,
 				BE6967C426D5964800B64CAF /* umit-yildirim-9OB46apMbC4-unsplash.jpg in Resources */,
 			);
@@ -539,6 +550,7 @@
 				BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */,
 				BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */,
 				BE3AACFE26D5FDB9007A210A /* ProfileViewController.swift in Sources */,
+				BE3FFACB26E1908600F930AC /* Business.swift in Sources */,
 				BE3FFAB326DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift in Sources */,
 				BE3FFAC326E18B9E00F930AC /* SearchingContractorViewController.swift in Sources */,
 				BE3FF9A226D95A7500F930AC /* SignUpCustomerViewController.swift in Sources */,

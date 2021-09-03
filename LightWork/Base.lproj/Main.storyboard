@@ -129,6 +129,9 @@ of your choosing.</string>
                         <viewLayoutGuide key="safeArea" id="8Lv-QZ-KnR"/>
                         <color key="backgroundColor" red="0.88772755859999997" green="0.68694323300000004" blue="0.87003338340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Sn0-8v-2nJ" id="yvq-hx-IcS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1J-wl-Ex2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
