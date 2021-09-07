@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
@@ -24,6 +25,28 @@ class ProfileViewController: UIViewController {
         
     }
     
+    @IBAction func logOutButtonPushed(_ sender: Any) {
+        if Auth.auth().currentUser != nil {
+            let user = Auth.auth()
+          // User is signed in.
+            do {
+              try user.signOut()
+            } catch let signOutError as NSError {
+              print("Error signing out: %@", signOutError)
+            }
+          // ...
+        } else {
+          // No user is signed in.
+            print("something wrong")
+          // ...
+        }
+        
+        
+        let alert = UIAlertController(title: "Attention", message: "You have log out", preferredStyle: .alert)
+           self.present(alert, animated: true, completion: nil)
+           Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+        
+    }
     /*
     // MARK: - Navigation
 

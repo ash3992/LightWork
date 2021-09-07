@@ -47,10 +47,9 @@ class SignUpCustomerViewController: UIViewController, UITextFieldDelegate,UIImag
         navigationItem.title = "Sign up: Customer"
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
          view.addGestureRecognizer(tapGesture)
+        
         zipTextView.delegate = self
         submitButton.layer.cornerRadius = 14
-        
-        
         imagePickerController.delegate = self
         checkPermissions()
        

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
 class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
     func MessageFromSignUpCustomer(message: String) {
@@ -30,9 +33,56 @@ class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! ProfileViewController
         self.navigationController?.pushViewController(nextViewController, animated: true)*/
        
+    
+     
+        
+    
     }
     
+    
+    func showAlertAccountNeeded() {
+        let alert = UIAlertController(title: "Welcome to LightWork ", message: "Before you get started its best to make an account or log in first!", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in}))
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            //_ = self.navigationController?.popToRootViewController(animated: true)
+            self.segueToLogInPage()
+         
+        }))
+    }
+    
+    func segueToLogInPage(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+        
+    }
+    
+    @IBAction func findContracorButtonPushed(_ sender: Any) {
+        
+        if Auth.auth().currentUser != nil {
+            let user = Auth.auth().currentUser
+          // User is signed in.
+            print(user?.email)
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "JobDescriptionViewController") as! JobDescriptionViewController
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+          // ...
+        } else {
+            showAlertAccountNeeded()
+          // No user is signed in.
+            print("something wrong")
+          // ...
+        }
+        
+        
+       
 
+        
+        
+    }
+    
     
     // MARK: - Navigation
 
@@ -40,6 +90,7 @@ class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+       
       
     }
     

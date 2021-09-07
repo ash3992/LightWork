@@ -11,12 +11,12 @@ import Firebase
 import FirebaseFirestore
 
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     let database = Firestore.firestore()
-    let dropDownValues = ["General Contractor", "Carpenter", "Electrician", "Drywaller", "Plastering", "Painter", "Wallpaper Installer", "Heating and Air-Conditioning (HVAC)", "Mason", "Roofer", "Excavator", "Demolition", "Landscapers", "Concrete Specialist", "Ironworker", "Steelworker", "Tile Setting", "Floor Laying", "Glass and Glazing", "Special Trade Contractors"]
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,143 +24,72 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
         emailField.becomeFirstResponder()
         submitButton.layer.cornerRadius = 14
+        emailField.delegate = self
+        passwordField.delegate = self
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
          view.addGestureRecognizer(tapGesture)
         
-        let t = database.collection("/users").getDocuments { (querySnapshot, error) in
-            
-            for d in querySnapshot!.documents{
-                print(d.data())
-            }
-        }
-     
-        
-        
-        let docRef = database.document("/users/example")
-        docRef.getDocument { (snapshot, error) in
-            guard let data = snapshot?.data(), error == nil else{
-                return
-            }
-            print(data)
-        }
-        
-        writeData()
-        
-    }
-    func showCreateAccount(){
-        
-        
-        //account not created
-        print("account not created")
-        
-        FirebaseAuth.Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!, completion: { authResult, error in
-            
-          
-            guard error == nil else{
-                print(error!.localizedDescription)
-                //show account creation
-               // storgSelf.showCreateAccount()
-                
-                return
-            };do{
-                print("created")
-            }
-            
-            
-        })
-    }
-    func writeData(){
-        let docRef = database.document("/users/ashtonwatson101@gmail.com")
-      //  docRef.setData(["text":"working..."])
-        docRef.setData(["something":"haha", "dkdld": dropDownValues])
-        
     }
     
+    private func tagBasedTextField(_ textField: UITextField) {
+        let nextTextFieldTag = textField.tag + 1
+
+        if let nextTextField = textField.superview?.viewWithTag(nextTextFieldTag) as? UITextField {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.tagBasedTextField(textField)
+        return true
+    }
+    
+
+
     @IBAction func submitButtonPushed(_ sender: Any) {
         
-        FirebaseAuth.Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!, completion: {[weak self] result, error in
-            guard let storgSelf = self else{
-              //  print("We're in")
-                return
-            }
+        FirebaseAuth.Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { result, error in
             
             guard error == nil else{
                 print(error!.localizedDescription)
-                //show account creation
-                storgSelf.showCreateAccount()
+                self.showAlertAllInfoNeeded(messageToUser: error!.localizedDescription)
+              
                 
                 return
-            }
-            ;do {
+            };do {
                 
                 print("We're in")
               
+                self.showAlertSignInComplete()
             }
-            
-            
-            
-            
-            
             
         })
 
+    }
+    
+    func showAlertSignInComplete(){
         
-        //Validate the fields
-        /*let error = ""
-         //  let error = validateFields()
-           
-           if error != nil{
-               //there's somehting wrong with the fields, show error message
-               //showError(error!)
-           }
-           else{
-               
-               //create cleaned versions of the data
-               let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-               let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-               let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-               let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-               
-               //create the user
-               Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-                   
-                   //check for errors
-                   if  err != nil{
-                       // THere was an error creating the user
-                       self.showError("Error creating user")
-                   }
-                   else{
-                       // User was crewated successfully, noww store the first name and last name
-                       let db = Firestore.firestore()
-                       db.collection("users").addDocument(data: ["firstname":firstName, "lastname": lastName, "uid": result!.user.uid]) { (error) in
-                           
-                           if error != nil{
-                               //show error message
-                               self.showError("Error saving user data")
-                           }
-                       }
-                       //Transition to home Screen
-                       self.transitionToHome()
-                   }
-               }
-               
-               //transition to the home screen
-               
-           }*/
+        let alert = UIAlertController(title: "Welcome Back to LightWork ", message: "You have successfully login.", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            //_ = self.navigationController?.popToRootViewController(animated: true)
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
+                self.navigationController?.pushViewController(nextViewController, animated: true)
+         
+        }))
+        
     }
     
-   
-    
-
-    
-    /*
-     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func showAlertAllInfoNeeded(messageToUser : String){
+        //Method to alert the user of need info
+        let alert = UIAlertController(title: "Attention", message: messageToUser, preferredStyle: .alert)
+           self.present(alert, animated: true, completion: nil)
+           Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
     }
-    */
+    
 
 }

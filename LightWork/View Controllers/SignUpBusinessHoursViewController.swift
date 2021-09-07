@@ -141,6 +141,7 @@ class SignUpBusinessHoursViewController: UIViewController {
     }
     
     func timeArrayAdd(){
+        newTimeArray.removeAll()
        
         if(switch12Am.isOn == true){
             newTimeArray.append("12:00 am")

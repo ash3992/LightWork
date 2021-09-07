@@ -10,6 +10,8 @@
 		2A70246EFB0293066FB4336E /* Pods_LightWork_LightWorkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7A3DAF4F7EC92C5136F25E /* Pods_LightWork_LightWorkUITests.framework */; };
 		7DD2C104CA7F401555484367 /* Pods_LightWorkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA4F365F0F2D61A4251AF58 /* Pods_LightWorkTests.framework */; };
 		B84C430846EC48CAA3F1E5C0 /* Pods_LightWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A25B0E0139323AFB75E8BBE /* Pods_LightWork.framework */; };
+		BE33314826E58D7B00F8CC15 /* BusinessProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33314726E58D7A00F8CC15 /* BusinessProfileViewController.swift */; };
+		BE33316E26E6E51000F8CC15 /* BusinessAppoimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33316D26E6E51000F8CC15 /* BusinessAppoimentViewController.swift */; };
 		BE3AACFE26D5FDB9007A210A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACFD26D5FDB9007A210A /* ProfileViewController.swift */; };
 		BE3FF97126D724AB00F930AC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF97026D724AB00F930AC /* SignInViewController.swift */; };
 		BE3FF99D26D85C0F00F930AC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */; };
@@ -30,6 +32,8 @@
 		BE528B6A26E1E56500101F20 /* umit-yildirim-9OB46apMbC4-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE528B6926E1E56400101F20 /* umit-yildirim-9OB46apMbC4-unsplash.jpg */; };
 		BE528B6F26E1E5A400101F20 /* profile_icon.png 01-09-45-277.png in Resources */ = {isa = PBXBuildFile; fileRef = BE528B6E26E1E5A400101F20 /* profile_icon.png 01-09-45-277.png */; };
 		BE528B7426E1E69600101F20 /* logIcon.png 01-13-44-672.png in Resources */ = {isa = PBXBuildFile; fileRef = BE528B7326E1E69600101F20 /* logIcon.png 01-13-44-672.png */; };
+		BE528CC926E287E900101F20 /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE528CC826E287E900101F20 /* BusinessSearch.swift */; };
+		BE528CD126E43EE800101F20 /* JobDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE528CD026E43EE800101F20 /* JobDescriptionViewController.swift */; };
 		BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */; };
 		BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */; };
 		BE65B1DA26D5610B00E05EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE65B1D826D5610B00E05EE0 /* Main.storyboard */; };
@@ -64,6 +68,8 @@
 		3FD77DF7ACB3EE210342F2CB /* Pods-LightWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWork.release.xcconfig"; path = "Target Support Files/Pods-LightWork/Pods-LightWork.release.xcconfig"; sourceTree = "<group>"; };
 		800865FA2FD4F51EACE53020 /* Pods-LightWorkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWorkTests.release.xcconfig"; path = "Target Support Files/Pods-LightWorkTests/Pods-LightWorkTests.release.xcconfig"; sourceTree = "<group>"; };
 		852580EDCEC4649E08CD4BA7 /* Pods-LightWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWork.debug.xcconfig"; path = "Target Support Files/Pods-LightWork/Pods-LightWork.debug.xcconfig"; sourceTree = "<group>"; };
+		BE33314726E58D7A00F8CC15 /* BusinessProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessProfileViewController.swift; sourceTree = "<group>"; };
+		BE33316D26E6E51000F8CC15 /* BusinessAppoimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessAppoimentViewController.swift; sourceTree = "<group>"; };
 		BE3AACFD26D5FDB9007A210A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BE3FF97026D724AB00F930AC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +90,8 @@
 		BE528B6926E1E56400101F20 /* umit-yildirim-9OB46apMbC4-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "umit-yildirim-9OB46apMbC4-unsplash.jpg"; sourceTree = "<group>"; };
 		BE528B6E26E1E5A400101F20 /* profile_icon.png 01-09-45-277.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_icon.png 01-09-45-277.png"; sourceTree = "<group>"; };
 		BE528B7326E1E69600101F20 /* logIcon.png 01-13-44-672.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logIcon.png 01-13-44-672.png"; sourceTree = "<group>"; };
+		BE528CC826E287E900101F20 /* BusinessSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSearch.swift; sourceTree = "<group>"; };
+		BE528CD026E43EE800101F20 /* JobDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDescriptionViewController.swift; sourceTree = "<group>"; };
 		BE65B1CF26D5610B00E05EE0 /* LightWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE65B1D226D5610B00E05EE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +165,7 @@
 		BE3FF96F26D721CF00F930AC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE528CD026E43EE800101F20 /* JobDescriptionViewController.swift */,
 				BE3FFAB226DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift */,
 				BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */,
 				BE3FF97026D724AB00F930AC /* SignInViewController.swift */,
@@ -175,6 +184,7 @@
 		BE3FFACF26E1909800F930AC /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				BE528CC826E287E900101F20 /* BusinessSearch.swift */,
 				BE3FFACA26E1908600F930AC /* Business.swift */,
 				BE3FF9D626D979D400F930AC /* ZipCode.swift */,
 			);
@@ -214,6 +224,8 @@
 				BE65B1D426D5610B00E05EE0 /* SceneDelegate.swift */,
 				BE528B4926E1E3E300101F20 /* zips.json */,
 				BE65B1D826D5610B00E05EE0 /* Main.storyboard */,
+				BE33316D26E6E51000F8CC15 /* BusinessAppoimentViewController.swift */,
+				BE33314726E58D7A00F8CC15 /* BusinessProfileViewController.swift */,
 				BE3FF9B026D96A5A00F930AC /* ZipTableViewCell.swift */,
 				BE65B1DB26D5610D00E05EE0 /* Assets.xcassets */,
 				BE65B1DD26D5610D00E05EE0 /* LaunchScreen.storyboard */,
@@ -537,15 +549,19 @@
 				BE3FF99D26D85C0F00F930AC /* SignUpViewController.swift in Sources */,
 				BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */,
 				BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */,
+				BE33316E26E6E51000F8CC15 /* BusinessAppoimentViewController.swift in Sources */,
 				BE3AACFE26D5FDB9007A210A /* ProfileViewController.swift in Sources */,
+				BE528CD126E43EE800101F20 /* JobDescriptionViewController.swift in Sources */,
 				BE3FFACB26E1908600F930AC /* Business.swift in Sources */,
 				BE3FFAB326DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift in Sources */,
 				BE3FFAC326E18B9E00F930AC /* SearchingContractorViewController.swift in Sources */,
 				BE3FF9A226D95A7500F930AC /* SignUpCustomerViewController.swift in Sources */,
+				BE528CC926E287E900101F20 /* BusinessSearch.swift in Sources */,
 				BE3FFA4A26DC208E00F930AC /* SignUpBusinessViewController.swift in Sources */,
 				BE3FF97126D724AB00F930AC /* SignInViewController.swift in Sources */,
 				BE3FF9D726D979D400F930AC /* ZipCode.swift in Sources */,
 				BE65B20926D564D900E05EE0 /* HomeScreenViewController.swift in Sources */,
+				BE33314826E58D7B00F8CC15 /* BusinessProfileViewController.swift in Sources */,
 				BE3FFAAB26DDD9FB00F930AC /* BusinessPricingViewController.swift in Sources */,
 				BE3FF9B626D973B900F930AC /* ZipCodeViewController.swift in Sources */,
 				BE3FF9B126D96A5A00F930AC /* ZipTableViewCell.swift in Sources */,

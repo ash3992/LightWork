@@ -32,7 +32,7 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
     let dropDown = DropDown()
     var catogoryPicked : String!
     var imagePickerController = UIImagePickerController()
-    let dropDownValues = ["General Contractor", "Carpenter", "Electrician", "Drywaller", "Plastering", "Painter", "Wallpaper Installer", "Heating and Air-Conditioning (HVAC)", "Mason", "Roofer", "Excavator", "Demolition", "Landscapers", "Concrete Specialist", "Ironworker", "Steelworker", "Tile Setting", "Floor Laying", "Glass and Glazing", "Special Trade Contractors"]
+    let dropDownValues = ["General Contractor", "Carpenter", "Electrician", "Drywaller", "Plastering", "Painter", "Wallpaper Installer", "Heating and Air-Conditioning (HVAC)", "Mason", "Roofer", "Excavator","Plumbing", "Demolition", "Landscapers", "Concrete Specialist", "Ironworker", "Steelworker", "Tile Setting", "Floor Laying", "Glass and Glazing", "Special Trade Contractors"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +45,8 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
         
         dropDownLabel.text = "Please select a business category"
         dropDown.anchorView = dropDownView
-        let i = dropDownValues.sorted()
-        dropDown.dataSource = i
+        let dropDownValueSorted = dropDownValues.sorted()
+        dropDown.dataSource = dropDownValueSorted
         dropDown.bottomOffset = CGPoint(x: 0, y: (dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.topOffset = CGPoint(x: 0, y: -(dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.direction = .bottom
@@ -72,7 +72,7 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
     
     @IBAction func SubmitButtonPushed(_ sender: Any) {
         if (businessNameTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" || businessAddressView.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" || businessTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" || urlToSendProfile == nil || urlToSendBusinees == nil || catogoryPicked == nil){
-          // showAlertAllInfoNeeded()  USE THIS LATER!!!!
+           showAlertAllInfoNeeded()  
             print("Problem")
             
         }else{

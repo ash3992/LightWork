@@ -13,6 +13,7 @@ pod 'Firebase/Storage'
 pod 'FirebaseUI/Storage'
 pod 'DropDown'
 pod 'GooglePlaces', '4.2.0'
+pod 'FSCalendar'
 
 
   target 'LightWorkTests' do
