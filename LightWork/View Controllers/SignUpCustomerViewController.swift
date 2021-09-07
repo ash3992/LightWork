@@ -10,6 +10,7 @@ import Photos
 import FirebaseStorage
 import Firebase
 import FirebaseStorageUI
+import FirebaseFirestore
 
 protocol MesageForUserSignUpCustomer {
     func MessageFromSignUpCustomer(message: String)
