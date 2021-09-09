@@ -1,36 +1,81 @@
 //
-//  JobDescriptionViewController.swift
+//  JobDescriptionEditingViewController.swift
 //  LightWork
 //
-//  Created by Test User on 9/4/21.
+//  Created by Test User on 9/8/21.
 //
 
 import UIKit
 import GooglePlaces
 
-class JobDescriptionViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+// protocol used for sending data back
+protocol JobDescriptionDelegate: class {
+    func UserChangedJobDescription(info: JobDescrption)
+}
 
-    @IBOutlet weak var phoneNumberTextView: UITextField!
-    @IBOutlet weak var addressTextView: UITextField!
-    @IBOutlet weak var jobDescrptionTextView: UITextView!
+class JobDescriptionEditingViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+    
+    weak var delegate: JobDescriptionDelegate? = nil
+
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var jobDescriptionTextField: UITextView!
     @IBOutlet weak var wordCountLabel: UILabel!
-    @IBOutlet weak var submitButton: UIButton!
-    var jobDescription : JobDescrption?
+    @IBOutlet weak var saveButton: UIButton!
+    var jobDescription : JobDescrption!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(jobDescription.address)
         // Do any additional setup after loading the view.
-        navigationItem.title = "Job Description"
-        addressTextView.delegate = self
-        jobDescrptionTextView.delegate = self
-        phoneNumberTextView.delegate = self
-        submitButton.layer.cornerRadius = 14
-        jobDescription = nil
+        phoneNumberTextField.text = jobDescription.phoneNumber
+        addressTextField.text = jobDescription.address
+        jobDescriptionTextField.text = jobDescription.jobDescrption
+        saveButton.layer.cornerRadius = 14
+        
+        phoneNumberTextField.delegate = self
+        addressTextField.delegate = self
+        jobDescriptionTextField.delegate = self
+        
+        wordCountLabel.text = jobDescription.jobDescrption.count.description
         
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
          view.addGestureRecognizer(tapGesture)
+    
+        
         
     }
+    
+   
+    @IBAction func saveButtonPushed(_ sender: Any) {
+        
+        
+        
+        if (phoneNumberTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" || addressTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines ) == "" || jobDescriptionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
+            showAlertAllInfoNeeded()
+        }else{
+            
+            if phoneNumberTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines).isValidPhone == false{
+                showAlertPhoneNumFormat()
+            }else{
+                //segue all info is good
+                print("We good!")
+                jobDescription.address = addressTextField.text!
+                jobDescription.phoneNumber = phoneNumberTextField.text!
+                jobDescription.jobDescrption = jobDescriptionTextField.text!
+                
+              
+                delegate?.UserChangedJobDescription(info:jobDescription)
+                dismiss(animated: true, completion: nil)
+               
+            }
+            
+        }
+      
+    }
+  
+      
+    
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
@@ -38,9 +83,9 @@ class JobDescriptionViewController: UIViewController, UITextFieldDelegate, UITex
         wordCountLabel.text = numberOfChars.description
         return numberOfChars < 150
     }
-  
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-       if(textField == phoneNumberTextView){
+       if(textField == phoneNumberTextField){
         if let text = textField.text, let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(in: textRange, with: string)
             if textField.text?.count == 3 && updatedText.count == 4 {
@@ -63,7 +108,7 @@ class JobDescriptionViewController: UIViewController, UITextFieldDelegate, UITex
     }
     
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
-        if(textField == addressTextView){
+        if(textField == addressTextField){
         let autocompleteController = GMSAutocompleteViewController()
            autocompleteController.delegate = self
            present(autocompleteController, animated: true, completion: nil)
@@ -71,33 +116,12 @@ class JobDescriptionViewController: UIViewController, UITextFieldDelegate, UITex
         }
         return true
     }
+    
     private func validate(phoneNumber: String) -> Bool {
         let charcterSet  = NSCharacterSet(charactersIn: "+0123456789").inverted
         let inputString = phoneNumber.components(separatedBy: charcterSet)
         let filtered = inputString.joined(separator: "")
         return  phoneNumber == filtered
-    }
-    
-    @IBAction func submitButtonPushed(_ sender: Any) {
-        
-        if (phoneNumberTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" || addressTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines ) == "" || jobDescrptionTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
-            showAlertAllInfoNeeded()
-        }else{
-            
-            if phoneNumberTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines).isValidPhone == false{
-                showAlertPhoneNumFormat()
-            }else{
-                //segue all info is good
-                print("We good!")
-                self.jobDescription = JobDescrption(phoneNumber: phoneNumberTextView.text!, address: addressTextView.text!, jobDescrption: jobDescrptionTextView.text!)
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SearchingContractorViewController") as! SearchingContractorViewController
-                    nextViewController.jobDescription = self.jobDescription
-                    self.navigationController?.pushViewController(nextViewController, animated: true)
-            }
-            
-        }
-        
     }
     
     func showAlertAllInfoNeeded(){
@@ -113,14 +137,7 @@ class JobDescriptionViewController: UIViewController, UITextFieldDelegate, UITex
            self.present(alert, animated: true, completion: nil)
            Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
     }
-    
-    @IBAction func homeButtonPushed(_ sender: Any) {
-        
-        navigationController?.popViewController(animated: true)
-    }
-    
-    
-    
+
     /*
     // MARK: - Navigation
 
@@ -133,17 +150,17 @@ class JobDescriptionViewController: UIViewController, UITextFieldDelegate, UITex
 
 }
 extension String {
-    var isValidPhone: Bool {
+    var isValidPhones: Bool {
        let regularExpressionForPhone = "^\\d{3}-\\d{3}-\\d{4}$"
        let testPhone = NSPredicate(format:"SELF MATCHES %@", regularExpressionForPhone)
        return testPhone.evaluate(with: self)
     }
 }
-extension JobDescriptionViewController: GMSAutocompleteViewControllerDelegate {
+extension JobDescriptionEditingViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-    addressTextView.text = place.formattedAddress
+    addressTextField.text = place.formattedAddress
     dismiss(animated: true, completion: nil)
   }
 
@@ -165,5 +182,4 @@ extension JobDescriptionViewController: GMSAutocompleteViewControllerDelegate {
   func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
     UIApplication.shared.isNetworkActivityIndicatorVisible = false
   }
-
 }

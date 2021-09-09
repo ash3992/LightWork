@@ -11,6 +11,8 @@ import Firebase
 import FirebaseFirestore
 
 class BusinessProfileViewController: UIViewController {
+   
+    
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var submitButton: UIButton!
@@ -29,6 +31,7 @@ class BusinessProfileViewController: UIViewController {
     
     
     let database = Firestore.firestore()
+    var jobDescription : JobDescrption!
     var businessPicked : Business?
     var close = [String]()
     var emailBusiness : String!
@@ -56,7 +59,8 @@ class BusinessProfileViewController: UIViewController {
     @IBAction func submitButtonPushed(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BusinessAppoimentViewController") as! BusinessAppoimentViewController
-     
+        nextViewController.businessPicked = businessPicked
+        nextViewController.jobDescription = self.jobDescription
         self.navigationController?.pushViewController(nextViewController, animated: true)
         
     }

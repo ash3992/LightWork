@@ -18,6 +18,7 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
     let database = Firestore.firestore()
     var bussinessArray = [BusinessSearch]()
     var newBusiness : [BusinessSearch]!
+    var jobDescription : JobDescrption!
     var dropDownValues = ["General Contractor", "Carpenter", "Electrician", "Drywaller", "Plastering", "Painter", "Wallpaper Installer", "Heating and Air-Conditioning (HVAC)", "Mason", "Roofer", "Excavator", "Demolition","Plumbing", "Landscapers", "Concrete Specialist", "Ironworker", "Steelworker", "Tile Setting", "Floor Laying", "Glass and Glazing", "Special Trade Contractors"]
     var filterSources = [[BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch]()]
   
@@ -35,7 +36,7 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
         bussinessArray.removeAll()
        
         
-       database.collection("/businesses").getDocuments { (querySnapshot, error) in
+        database.collection("/businesses").getDocuments { (querySnapshot, error) in
             
             for business in querySnapshot!.documents{
             
@@ -48,7 +49,7 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
                 self.bussinessArray.append(BusinessSearch(name: name, catorgory: catogory, email: email))
                 print("\(catogory): \(name)")
               
-                
+            
             }
         
         self.newBusiness = self.bussinessArray
@@ -117,6 +118,7 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BusinessProfileViewController") as! BusinessProfileViewController
         nextViewController.emailBusiness = filterSources[indexPath.section][indexPath.row].email
+        nextViewController.jobDescription = self.jobDescription
             self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     

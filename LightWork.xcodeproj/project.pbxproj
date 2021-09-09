@@ -42,6 +42,8 @@
 		BE65B1EA26D5610E00E05EE0 /* LightWorkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1E926D5610E00E05EE0 /* LightWorkTests.swift */; };
 		BE65B1F526D5610E00E05EE0 /* LightWorkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B1F426D5610E00E05EE0 /* LightWorkUITests.swift */; };
 		BE65B20926D564D900E05EE0 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65B20826D564D900E05EE0 /* HomeScreenViewController.swift */; };
+		BE7DEEAC26E93FF10060D5E3 /* JobDescriptionEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DEEAB26E93FF10060D5E3 /* JobDescriptionEditingViewController.swift */; };
+		BE7DEEB126E94E700060D5E3 /* JobDescrption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DEEB026E94E700060D5E3 /* JobDescrption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		BE65B1F426D5610E00E05EE0 /* LightWorkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightWorkUITests.swift; sourceTree = "<group>"; };
 		BE65B1F626D5610E00E05EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE65B20826D564D900E05EE0 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		BE7DEEAB26E93FF10060D5E3 /* JobDescriptionEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDescriptionEditingViewController.swift; sourceTree = "<group>"; };
+		BE7DEEB026E94E700060D5E3 /* JobDescrption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDescrption.swift; sourceTree = "<group>"; };
 		CDA4F365F0F2D61A4251AF58 /* Pods_LightWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F135804EFC0F78D76CBA86E9 /* Pods-LightWorkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWorkTests.debug.xcconfig"; path = "Target Support Files/Pods-LightWorkTests/Pods-LightWorkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE7A3DAF4F7EC92C5136F25E /* Pods_LightWork_LightWorkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWork_LightWorkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				BE528CD026E43EE800101F20 /* JobDescriptionViewController.swift */,
+				BE7DEEAB26E93FF10060D5E3 /* JobDescriptionEditingViewController.swift */,
 				BE3FFAB226DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift */,
 				BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */,
 				BE3FF97026D724AB00F930AC /* SignInViewController.swift */,
@@ -187,6 +192,7 @@
 				BE528CC826E287E900101F20 /* BusinessSearch.swift */,
 				BE3FFACA26E1908600F930AC /* Business.swift */,
 				BE3FF9D626D979D400F930AC /* ZipCode.swift */,
+				BE7DEEB026E94E700060D5E3 /* JobDescrption.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -551,11 +557,13 @@
 				BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */,
 				BE33316E26E6E51000F8CC15 /* BusinessAppoimentViewController.swift in Sources */,
 				BE3AACFE26D5FDB9007A210A /* ProfileViewController.swift in Sources */,
+				BE7DEEB126E94E700060D5E3 /* JobDescrption.swift in Sources */,
 				BE528CD126E43EE800101F20 /* JobDescriptionViewController.swift in Sources */,
 				BE3FFACB26E1908600F930AC /* Business.swift in Sources */,
 				BE3FFAB326DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift in Sources */,
 				BE3FFAC326E18B9E00F930AC /* SearchingContractorViewController.swift in Sources */,
 				BE3FF9A226D95A7500F930AC /* SignUpCustomerViewController.swift in Sources */,
+				BE7DEEAC26E93FF10060D5E3 /* JobDescriptionEditingViewController.swift in Sources */,
 				BE528CC926E287E900101F20 /* BusinessSearch.swift in Sources */,
 				BE3FFA4A26DC208E00F930AC /* SignUpBusinessViewController.swift in Sources */,
 				BE3FF97126D724AB00F930AC /* SignInViewController.swift in Sources */,
