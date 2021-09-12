@@ -23,6 +23,8 @@ class JobDescriptionEditingViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var wordCountLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     var jobDescription : JobDescrption!
+    var lat: String!
+    var lon: String!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,6 +65,8 @@ class JobDescriptionEditingViewController: UIViewController, UITextFieldDelegate
                 jobDescription.address = addressTextField.text!
                 jobDescription.phoneNumber = phoneNumberTextField.text!
                 jobDescription.jobDescrption = jobDescriptionTextField.text!
+                jobDescription.lat = lat
+                jobDescription.lon = lon
                 
               
                 delegate?.UserChangedJobDescription(info:jobDescription)
@@ -161,6 +165,8 @@ extension JobDescriptionEditingViewController: GMSAutocompleteViewControllerDele
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
     addressTextField.text = place.formattedAddress
+    lat = place.coordinate.latitude.description
+    lon = place.coordinate.longitude.description
     dismiss(animated: true, completion: nil)
   }
 

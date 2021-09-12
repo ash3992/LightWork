@@ -805,15 +805,22 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
                  
                     let data = business.data()
                     
-                    let appoiments = data["appoiments"] as? [String] ?? self.appoimentStringHolder
+                    let appoiments = data["appoiments"] as? [String] ?? nil //self.appoimentStringHolder
                     
-                    if(appoiments[0] == "n/a"){
+                 /*   if(appoiments![0] == "n/a"){
                         self.appoimentStringHolder.removeAll()
                         self.appoimentStringHolder.append(rand)
                         self.database.collection("/businesses").document(self.businessPicked.email).setData(["appoiments": self.appoimentStringHolder], merge: true)
-                    }else{
+                    }*/
+                    if(appoiments == nil){
+                          self.appoimentStringHolder.removeAll()
+                          self.appoimentStringHolder.append(rand)
+                          self.database.collection("/businesses").document(self.businessPicked.email).setData(["appoiments": self.appoimentStringHolder], merge: true)
+                      
+                    }
+                    else{
                         self.appoimentStringHolder.removeAll()
-                        self.appoimentStringHolder = appoiments
+                        self.appoimentStringHolder = appoiments!
                         self.appoimentStringHolder.append(rand)
                         self.database.collection("/businesses").document(self.businessPicked.email).setData(["appoiments": self.appoimentStringHolder ], merge: true)
                         
@@ -831,27 +838,30 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
                  
                     let data = business.data()
                     
-                    let appoiments = data["appoiments"] as? [String] ?? self.appoimentStringHolder
+                    let appoiments = data["appoiments"] as? [String] ?? nil
                     let firstName = data["firstName"] as? String ?? ""
                     let lastName = data["lastName"] as? String ?? ""
                     
                     self.firstStringName = firstName
                     self.lastStringName = lastName
                     
-                    if(appoiments[0] == "n/a"){
-                        self.appoimentStringHolder.removeAll()
-                        self.appoimentStringHolder.append(rand)
+                    if(appoiments == nil){
+                          self.appoimentStringHolder.removeAll()
+                          self.appoimentStringHolder.append(rand)
                         self.database.collection("/businesses").document(user!.email!).setData(["appoiments": self.appoimentStringHolder], merge: true)
+                      
                     }else{
                         self.appoimentStringHolder.removeAll()
-                        self.appoimentStringHolder = appoiments
+                        self.appoimentStringHolder = appoiments!
                         self.appoimentStringHolder.append(rand)
-                        self.database.collection("/businesses").document(user!.email!).setData(["appoiments": self.appoimentStringHolder ], merge: true)
+                        self.database.collection("/businesses").document(user!.email!).setData(["appoiments": self.appoimentStringHolder], merge: true)
                         
                     }
                     
                  }
-                self.database.collection("/appoiments").document(rand).setData(["status": "Need approval",  "firstName": self.firstStringName, "lastName" : self.lastStringName, "address" : self.jobDescription.address, "date": self.userPickedDate!, "time": self.userPickedTime!, "phoneNumber": self.jobDescription.phoneNumber, "description": self.jobDescription.jobDescrption, "business name": self.businessPicked.businessName, "dayAndMonth": self.dayAndMonth!], merge: true)
+                //self.database.collection("/appoiments").document(rand).setData(["status": "Need approval",  "firstName": self.firstStringName, "lastName" : self.lastStringName, "address" : self.jobDescription.address, "date": self.userPickedDate!, "time": self.userPickedTime!, "phoneNumber": self.jobDescription.phoneNumber, "description": self.jobDescription.jobDescrption, "business name": self.businessPicked.businessName, "dayAndMonth": self.dayAndMonth!, "id" : rand], merge: true)
+                
+                self.database.collection("/appoiments").document(rand).setData(["status": "Business approval needed",  "firstName": self.firstStringName, "lastName" : self.lastStringName, "address" : self.jobDescription.address, "date": self.userPickedDate!, "time": self.userPickedTime!, "phoneNumber": self.jobDescription.phoneNumber, "description": self.jobDescription.jobDescrption, "business name": self.businessPicked.businessName, "dayAndMonth": self.dayAndMonth!, "userEmail": user!.email!, "busiEmail":self.businessPicked.email, "id" : rand, "lat" : self.jobDescription.lat, "lon" : self.jobDescription.lon], merge: true)
                 
                 
             }
@@ -863,20 +873,20 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
                  
                     let data = business.data()
                     
-                    let appoiments = data["appoiments"] as? [String] ?? self.appoimentStringHolder
+                    let appoiments = data["appoiments"] as? [String] ?? nil
                     let firstName = data["firstName"] as? String ?? ""
                     let lastName = data["lastName"] as? String ?? ""
                     
                     self.firstStringName = firstName
                     self.lastStringName = lastName
-                    
-                    if(appoiments[0] == "n/a"){
-                        self.appoimentStringHolder.removeAll()
-                        self.appoimentStringHolder.append(rand)
+                    if(appoiments == nil){
+                          self.appoimentStringHolder.removeAll()
+                          self.appoimentStringHolder.append(rand)
                         self.database.collection("/customers").document(user!.email!).setData(["appoiments": self.appoimentStringHolder], merge: true)
+                      
                     }else{
                         self.appoimentStringHolder.removeAll()
-                        self.appoimentStringHolder = appoiments
+                        self.appoimentStringHolder = appoiments!
                         self.appoimentStringHolder.append(rand)
                         self.database.collection("/customers").document(user!.email!).setData(["appoiments": self.appoimentStringHolder], merge: true)
                         
@@ -885,7 +895,7 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
                     }
                     
                  }
-                self.database.collection("/appoiments").document(rand).setData(["status": "Need approval",  "firstName": self.firstStringName, "lastName" : self.lastStringName, "address" : self.jobDescription.address, "date": self.userPickedDate!, "time": self.userPickedTime!, "phoneNumber": self.jobDescription.phoneNumber, "description": self.jobDescription.jobDescrption, "business name": self.businessPicked.businessName, "dayAndMonth": self.dayAndMonth!], merge: true)
+                    self.database.collection("/appoiments").document(rand).setData(["status": "Business approval needed",  "firstName": self.firstStringName, "lastName" : self.lastStringName, "address" : self.jobDescription.address, "date": self.userPickedDate!, "time": self.userPickedTime!, "phoneNumber": self.jobDescription.phoneNumber, "description": self.jobDescription.jobDescrption, "business name": self.businessPicked.businessName, "dayAndMonth": self.dayAndMonth!, "userEmail": user!.email!, "busiEmail":self.businessPicked.email, "id" : rand, "lat" : self.jobDescription.lat, "lon" : self.jobDescription.lon], merge: true)
 
                 
             }
@@ -924,15 +934,6 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
         self.present(nextViewController, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension Array where Element:Equatable {

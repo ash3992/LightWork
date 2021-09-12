@@ -46,6 +46,8 @@
 		BE7DEEB126E94E700060D5E3 /* JobDescrption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DEEB026E94E700060D5E3 /* JobDescrption.swift */; };
 		BEC01B8826EAE23500F8120E /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01B8726EAE23500F8120E /* LogTableViewController.swift */; };
 		BEC01B8D26EAE27B00F8120E /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01B8C26EAE27B00F8120E /* LogTableViewCell.swift */; };
+		BEC01B9626EBD90100F8120E /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01B9526EBD90100F8120E /* Appointment.swift */; };
+		BEC01B9B26EE9D1F00F8120E /* AppointmentDetailCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01B9A26EE9D1E00F8120E /* AppointmentDetailCustomerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		BE7DEEB026E94E700060D5E3 /* JobDescrption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDescrption.swift; sourceTree = "<group>"; };
 		BEC01B8726EAE23500F8120E /* LogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
 		BEC01B8C26EAE27B00F8120E /* LogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
+		BEC01B9526EBD90100F8120E /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		BEC01B9A26EE9D1E00F8120E /* AppointmentDetailCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailCustomerViewController.swift; sourceTree = "<group>"; };
 		CDA4F365F0F2D61A4251AF58 /* Pods_LightWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F135804EFC0F78D76CBA86E9 /* Pods-LightWorkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWorkTests.debug.xcconfig"; path = "Target Support Files/Pods-LightWorkTests/Pods-LightWorkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE7A3DAF4F7EC92C5136F25E /* Pods_LightWork_LightWorkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWork_LightWorkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +192,7 @@
 				BE33316D26E6E51000F8CC15 /* BusinessAppoimentViewController.swift */,
 				BE33314726E58D7A00F8CC15 /* BusinessProfileViewController.swift */,
 				BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */,
+				BEC01B9A26EE9D1E00F8120E /* AppointmentDetailCustomerViewController.swift */,
 				BEC01B8726EAE23500F8120E /* LogTableViewController.swift */,
 			);
 			path = "View Controllers";
@@ -200,6 +205,7 @@
 				BE3FFACA26E1908600F930AC /* Business.swift */,
 				BE3FF9D626D979D400F930AC /* ZipCode.swift */,
 				BE7DEEB026E94E700060D5E3 /* JobDescrption.swift */,
+				BEC01B9526EBD90100F8120E /* Appointment.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 				BE3FFABB26DF14B600F930AC /* SignUpBusinessHoursViewController.swift in Sources */,
 				BE3FF99D26D85C0F00F930AC /* SignUpViewController.swift in Sources */,
 				BE65B1D326D5610B00E05EE0 /* AppDelegate.swift in Sources */,
+				BEC01B9B26EE9D1F00F8120E /* AppointmentDetailCustomerViewController.swift in Sources */,
 				BE65B1D526D5610B00E05EE0 /* SceneDelegate.swift in Sources */,
 				BE33316E26E6E51000F8CC15 /* BusinessAppoimentViewController.swift in Sources */,
 				BE3AACFE26D5FDB9007A210A /* ProfileViewController.swift in Sources */,
@@ -584,6 +591,7 @@
 				BE3FFA4A26DC208E00F930AC /* SignUpBusinessViewController.swift in Sources */,
 				BE3FF97126D724AB00F930AC /* SignInViewController.swift in Sources */,
 				BE3FF9D726D979D400F930AC /* ZipCode.swift in Sources */,
+				BEC01B9626EBD90100F8120E /* Appointment.swift in Sources */,
 				BE65B20926D564D900E05EE0 /* HomeScreenViewController.swift in Sources */,
 				BE33314826E58D7B00F8CC15 /* BusinessProfileViewController.swift in Sources */,
 				BE3FFAAB26DDD9FB00F930AC /* BusinessPricingViewController.swift in Sources */,

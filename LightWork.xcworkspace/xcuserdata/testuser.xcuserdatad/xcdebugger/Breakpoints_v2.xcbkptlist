@@ -411,8 +411,8 @@
             filePath = "LightWork/View Controllers/JobDescriptionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "textView(_:shouldChangeTextIn:replacementText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -731,8 +731,8 @@
             filePath = "LightWork/View Controllers/JobDescriptionEditingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "saveButtonPushed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -747,8 +747,8 @@
             filePath = "LightWork/View Controllers/JobDescriptionEditingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "textView(_:shouldChangeTextIn:replacementText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1006,6 +1006,342 @@
             startingLineNumber = "868"
             endingLineNumber = "868"
             landmarkName = "requestButtonPushed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EAAC5DAE-B6DD-4B25-9A6A-EE94F04E2E70"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "834"
+            endingLineNumber = "834"
+            landmarkName = "requestButtonPushed(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EAAC5DAE-B6DD-4B25-9A6A-EE94F04E2E70 - 59b10103cb10be83"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in LightWork.BusinessAppoimentViewController.requestButtonPushed(Any) -&gt; ()"
+                  moduleName = "LightWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/testuser/Desktop/LightWork/LightWork/View%20Controllers/BusinessAppoimentViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "827"
+                  endingLineNumber = "827"
+                  offsetFromSymbolStart = "3104">
+               </Location>
+               <Location
+                  uuid = "EAAC5DAE-B6DD-4B25-9A6A-EE94F04E2E70 - 59e8943b582d9b3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #2 (__C.UIAlertAction) -&gt; () in LightWork.BusinessAppoimentViewController.requestButtonPushed(Any) -&gt; ()"
+                  moduleName = "LightWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/testuser/Desktop/LightWork/LightWork/View%20Controllers/BusinessAppoimentViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "830"
+                  endingLineNumber = "830"
+                  offsetFromSymbolStart = "426">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C7BE853-0923-489D-9865-BD6FFCBF59E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "810"
+            endingLineNumber = "810"
+            landmarkName = "requestButtonPushed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60747CB5-2538-4E5A-8BC5-730E80CB0AE6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "814"
+            endingLineNumber = "814"
+            landmarkName = "requestButtonPushed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8123EDFC-5D8B-4D72-ABD2-9DA90A3EE85B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "841"
+            endingLineNumber = "841"
+            landmarkName = "requestButtonPushed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C8EBCE4-8029-4338-9612-9BAC6A94439C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "801"
+            endingLineNumber = "801"
+            landmarkName = "requestButtonPushed(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9C8EBCE4-8029-4338-9612-9BAC6A94439C - 59b10103cb10ba25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in LightWork.BusinessAppoimentViewController.requestButtonPushed(Any) -&gt; ()"
+                  moduleName = "LightWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/testuser/Desktop/LightWork/LightWork/View%20Controllers/BusinessAppoimentViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "801"
+                  endingLineNumber = "801"
+                  offsetFromSymbolStart = "2218">
+               </Location>
+               <Location
+                  uuid = "9C8EBCE4-8029-4338-9612-9BAC6A94439C - fd366fab66b275d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #2 (__C.UIAlertAction) -&gt; () in LightWork.BusinessAppoimentViewController.requestButtonPushed(Any) -&gt; ()"
+                  moduleName = "LightWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/testuser/Desktop/LightWork/LightWork/View%20Controllers/BusinessAppoimentViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "804"
+                  endingLineNumber = "804"
+                  offsetFromSymbolStart = "327">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52D2C5EE-B45A-40B5-ACE8-AE0C1B436086"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "821"
+            endingLineNumber = "821"
+            landmarkName = "requestButtonPushed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA7BDAF7-DB83-40B2-B769-A2D2B6715055"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/LogTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "filterForPending(app:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "629220B1-E202-4581-801C-5C3A2C265040"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/LogTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "filterForPending(app:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "901EA422-1DB1-4180-9D1C-8C5ADAD3F99E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/LogTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "filterForPending(app:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F67D659C-805B-4E59-9677-6552F0C31578"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/LogTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "filterForPending(app:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70A4EABD-2D5D-429D-AABB-BBC543DD97B8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/LogTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "filterForPending(app:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF27BF92-36D2-4661-B591-4941CED4CAB5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/LogTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "filterForPending(app:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8CA1FFA-8CD0-44C7-BC39-8F2452CA0FF1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/LogTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "filterForAll(app:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D3164CD-F13D-42D3-B18F-C91C6A3B185C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/HomeScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "findContracorButtonPushed(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7D3164CD-F13D-42D3-B18F-C91C6A3B185C - 8eb6d8e7a504c96a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LightWork.HomeScreenViewController.findContracorButtonPushed(Any) -&gt; ()"
+                  moduleName = "LightWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/testuser/Desktop/LightWork/LightWork/View%20Controllers/HomeScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "850">
+               </Location>
+               <Location
+                  uuid = "7D3164CD-F13D-42D3-B18F-C91C6A3B185C - a70d5028cc567e73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in LightWork.HomeScreenViewController.findContracorButtonPushed(Any) -&gt; ()"
+                  moduleName = "LightWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/testuser/Desktop/LightWork/LightWork/View%20Controllers/HomeScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "321">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE4D4998-9C70-4F1E-8F7C-F1EAA6E10E13"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LightWork/View Controllers/HomeScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "findContracorButtonPushed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

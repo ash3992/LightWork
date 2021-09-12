@@ -19,11 +19,19 @@ class ProfileViewController: UIViewController {
     
     @IBAction func homeButtonPushed(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
          self.navigationController?.pushViewController(nextViewController, animated: true)
         
         
     }
+    @IBAction func logButtonPushed(_ sender: Any) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LogTableViewController") as! LogTableViewController
+        
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
     
     @IBAction func logOutButtonPushed(_ sender: Any) {
         if Auth.auth().currentUser != nil {

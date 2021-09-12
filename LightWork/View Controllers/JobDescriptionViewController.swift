@@ -16,6 +16,8 @@ class JobDescriptionViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var wordCountLabel: UILabel!
     @IBOutlet weak var submitButton: UIButton!
     var jobDescription : JobDescrption?
+    var lon: String!
+    var lat: String!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,7 +91,7 @@ class JobDescriptionViewController: UIViewController, UITextFieldDelegate, UITex
             }else{
                 //segue all info is good
                 print("We good!")
-                self.jobDescription = JobDescrption(phoneNumber: phoneNumberTextView.text!, address: addressTextView.text!, jobDescrption: jobDescrptionTextView.text!)
+                self.jobDescription = JobDescrption(phoneNumber: phoneNumberTextView.text!, address: addressTextView.text!, jobDescrption: jobDescrptionTextView.text!, lon: lon, lat: lat )
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SearchingContractorViewController") as! SearchingContractorViewController
                     nextViewController.jobDescription = self.jobDescription
@@ -119,17 +121,7 @@ class JobDescriptionViewController: UIViewController, UITextFieldDelegate, UITex
         navigationController?.popViewController(animated: true)
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension String {
@@ -144,6 +136,9 @@ extension JobDescriptionViewController: GMSAutocompleteViewControllerDelegate {
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
     addressTextView.text = place.formattedAddress
+    lon = place.coordinate.longitude.description
+    lat = place.coordinate.latitude.description
+    
     dismiss(animated: true, completion: nil)
   }
 
