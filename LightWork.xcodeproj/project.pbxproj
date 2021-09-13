@@ -48,6 +48,7 @@
 		BEC01B8D26EAE27B00F8120E /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01B8C26EAE27B00F8120E /* LogTableViewCell.swift */; };
 		BEC01B9626EBD90100F8120E /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01B9526EBD90100F8120E /* Appointment.swift */; };
 		BEC01B9B26EE9D1F00F8120E /* AppointmentDetailCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01B9A26EE9D1E00F8120E /* AppointmentDetailCustomerViewController.swift */; };
+		BEC01BA626EEE07F00F8120E /* AppointmentDetailBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01BA526EEE07F00F8120E /* AppointmentDetailBusinessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		BEC01B8C26EAE27B00F8120E /* LogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
 		BEC01B9526EBD90100F8120E /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		BEC01B9A26EE9D1E00F8120E /* AppointmentDetailCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailCustomerViewController.swift; sourceTree = "<group>"; };
+		BEC01BA526EEE07F00F8120E /* AppointmentDetailBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailBusinessViewController.swift; sourceTree = "<group>"; };
 		CDA4F365F0F2D61A4251AF58 /* Pods_LightWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F135804EFC0F78D76CBA86E9 /* Pods-LightWorkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWorkTests.debug.xcconfig"; path = "Target Support Files/Pods-LightWorkTests/Pods-LightWorkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE7A3DAF4F7EC92C5136F25E /* Pods_LightWork_LightWorkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWork_LightWorkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,23 +179,24 @@
 		BE3FF96F26D721CF00F930AC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BE528CD026E43EE800101F20 /* JobDescriptionViewController.swift */,
-				BE7DEEAB26E93FF10060D5E3 /* JobDescriptionEditingViewController.swift */,
-				BE3FFAB226DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift */,
-				BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */,
-				BE3FF97026D724AB00F930AC /* SignInViewController.swift */,
-				BE3FF9A126D95A7500F930AC /* SignUpCustomerViewController.swift */,
-				BE3FFABA26DF14B600F930AC /* SignUpBusinessHoursViewController.swift */,
-				BE65B20826D564D900E05EE0 /* HomeScreenViewController.swift */,
-				BE3FF9B526D973B900F930AC /* ZipCodeViewController.swift */,
-				BE3FFAAA26DDD9FB00F930AC /* BusinessPricingViewController.swift */,
-				BE3FFAC226E18B9E00F930AC /* SearchingContractorViewController.swift */,
-				BE3AACFD26D5FDB9007A210A /* ProfileViewController.swift */,
-				BE33316D26E6E51000F8CC15 /* BusinessAppoimentViewController.swift */,
-				BE33314726E58D7A00F8CC15 /* BusinessProfileViewController.swift */,
-				BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */,
+				BEC01BA526EEE07F00F8120E /* AppointmentDetailBusinessViewController.swift */,
 				BEC01B9A26EE9D1E00F8120E /* AppointmentDetailCustomerViewController.swift */,
+				BE33316D26E6E51000F8CC15 /* BusinessAppoimentViewController.swift */,
+				BE3FFAAA26DDD9FB00F930AC /* BusinessPricingViewController.swift */,
+				BE33314726E58D7A00F8CC15 /* BusinessProfileViewController.swift */,
+				BE65B20826D564D900E05EE0 /* HomeScreenViewController.swift */,
+				BE7DEEAB26E93FF10060D5E3 /* JobDescriptionEditingViewController.swift */,
+				BE528CD026E43EE800101F20 /* JobDescriptionViewController.swift */,
 				BEC01B8726EAE23500F8120E /* LogTableViewController.swift */,
+				BE3AACFD26D5FDB9007A210A /* ProfileViewController.swift */,
+				BE3FFAC226E18B9E00F930AC /* SearchingContractorViewController.swift */,
+				BE3FF97026D724AB00F930AC /* SignInViewController.swift */,
+				BE3FFAB226DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift */,
+				BE3FFABA26DF14B600F930AC /* SignUpBusinessHoursViewController.swift */,
+				BE3FFA4926DC208E00F930AC /* SignUpBusinessViewController.swift */,
+				BE3FF9A126D95A7500F930AC /* SignUpCustomerViewController.swift */,
+				BE3FF99C26D85C0F00F930AC /* SignUpViewController.swift */,
+				BE3FF9B526D973B900F930AC /* ZipCodeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				BE3FFAC326E18B9E00F930AC /* SearchingContractorViewController.swift in Sources */,
 				BEC01B8826EAE23500F8120E /* LogTableViewController.swift in Sources */,
 				BE3FF9A226D95A7500F930AC /* SignUpCustomerViewController.swift in Sources */,
+				BEC01BA626EEE07F00F8120E /* AppointmentDetailBusinessViewController.swift in Sources */,
 				BE7DEEAC26E93FF10060D5E3 /* JobDescriptionEditingViewController.swift in Sources */,
 				BE528CC926E287E900101F20 /* BusinessSearch.swift in Sources */,
 				BE3FFA4A26DC208E00F930AC /* SignUpBusinessViewController.swift in Sources */,

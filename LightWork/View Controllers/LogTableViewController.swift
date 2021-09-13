@@ -30,8 +30,17 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         navigationItem.title = "Pending Appointments"
         activityIndicator.style = .large
         activityIndicator.color = .red
+        
+        if (Auth.auth().currentUser == nil){
+            
+            navigationItem.title = "Please login to see appointments"
+            activityIndicator.stopAnimating()
+            
+        }else{
+            start()
+        }
      
-        start()
+       
         
     }
     func start(){
@@ -89,9 +98,11 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 let userEmail = document.data()!["userEmail"] as? String ?? ""
                 let busiEmail = document.data()!["busiEmail"] as? String ?? ""
                 let id = document.data()!["id"] as? String ?? ""
+                let lat = document.data()!["lat"] as? String ?? ""
+                let lon = document.data()!["lon"] as? String ?? ""
                 print("\(address) : \(phoneNumber)")
                 
-                self.appointmentListHolder.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id))
+                self.appointmentListHolder.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon))
                 self.masterList = self.appointmentListHolder
               } else {
                 print("Document does not exist in cache")
@@ -159,10 +170,12 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 let userEmail = document.data()!["userEmail"] as? String ?? ""
                 let busiEmail = document.data()!["busiEmail"] as? String ?? ""
                 let id = document.data()!["id"] as? String ?? ""
+                let lat = document.data()!["lat"] as? String ?? ""
+                let lon = document.data()!["lon"] as? String ?? ""
                 print("\(address) : \(phoneNumber)")
                 
                 if(status == "Business approval needed" || status == "Payment Needed" ){
-                    self.masterList.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id))
+                    self.masterList.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon))
                 }
                 
               
@@ -220,7 +233,8 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                     self.activityIndicator.stopAnimating()
                     let appInfo = self.masterList[indexPath.row]
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "JobDescriptionViewController") as! JobDescriptionViewController
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentDetailCustomerViewController") as! AppointmentDetailCustomerViewController
+                    nextViewController.appoimentClickedOn = appInfo
                     self.navigationController?.pushViewController(nextViewController, animated: true)
                 }else{
                     

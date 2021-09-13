@@ -65,8 +65,12 @@ class JobDescriptionEditingViewController: UIViewController, UITextFieldDelegate
                 jobDescription.address = addressTextField.text!
                 jobDescription.phoneNumber = phoneNumberTextField.text!
                 jobDescription.jobDescrption = jobDescriptionTextField.text!
-                jobDescription.lat = lat
-                jobDescription.lon = lon
+                if(lat != nil){
+                    jobDescription.lat = lat
+                    jobDescription.lon = lon
+                }
+                
+              
                 
               
                 delegate?.UserChangedJobDescription(info:jobDescription)
@@ -167,6 +171,8 @@ extension JobDescriptionEditingViewController: GMSAutocompleteViewControllerDele
     addressTextField.text = place.formattedAddress
     lat = place.coordinate.latitude.description
     lon = place.coordinate.longitude.description
+    jobDescription.lat = lat
+    jobDescription.lon = lon
     dismiss(animated: true, completion: nil)
   }
 
