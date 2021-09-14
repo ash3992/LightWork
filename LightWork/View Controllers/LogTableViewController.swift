@@ -236,10 +236,29 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentDetailCustomerViewController") as! AppointmentDetailCustomerViewController
                     nextViewController.appoimentClickedOn = appInfo
                     self.navigationController?.pushViewController(nextViewController, animated: true)
-                }else{
-                    
+                }/*else{
+                    self.activityIndicator.stopAnimating()
+                    let appInfo = self.masterList[indexPath.row]
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentDetailBusinessViewController") as! AppointmentDetailBusinessViewController
+                    nextViewController.appoimentClickedOn = appInfo
+                    self.navigationController?.pushViewController(nextViewController, animated: true)
                   
-                }
+                }*/
+            }
+        }
+        self.database.collection("/businesses").whereField("email", isEqualTo:user!.email!).getDocuments { (querySnapshot, error) in
+            for customer in querySnapshot!.documents{
+            
+                let data = customer.data()
+                    self.activityIndicator.stopAnimating()
+                    let appInfo = self.masterList[indexPath.row]
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentDetailBusinessViewController") as! AppointmentDetailBusinessViewController
+                    nextViewController.appoimentClickedOn = appInfo
+                    self.navigationController?.pushViewController(nextViewController, animated: true)
+                  
+                
             }
         }
         

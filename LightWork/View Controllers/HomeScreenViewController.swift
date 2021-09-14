@@ -19,6 +19,8 @@ class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
     
 
     @IBOutlet weak var findContractorButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var businnessAccountSignIn = false
     let database = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,12 +81,15 @@ class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
     
     
     @IBAction func findContracorButtonPushed(_ sender: Any) {
-        
+        activityIndicator.startAnimating()
+        activityIndicator.style = .large
+        activityIndicator.color = .cyan
         if Auth.auth().currentUser != nil {
             
             let user = Auth.auth().currentUser
             print(user?.email)
             self.database.collection("/customers").whereField("email", isEqualTo:user!.email!).getDocuments { (querySnapshot, error) in
+                self.businnessAccountSignIn = false
                 for customer in querySnapshot!.documents{
                 
                     let data = customer.data()
@@ -92,31 +97,35 @@ class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
                     let userStatus = data["userStatus"] as? String ?? ""
                     
                     if(userStatus == "customer"){
-                        
+                        self.activityIndicator.stopAnimating()
                         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "JobDescriptionViewController") as! JobDescriptionViewController
                         self.navigationController?.pushViewController(nextViewController, animated: true)
-                    }else{
-                        
-                        self.showAlertBusinessAccountNotVaild()
                     }
+                    
                 }
-                
-            
-          // User is signed in.
-          /*
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "JobDescriptionViewController") as! JobDescriptionViewController
-            self.navigationController?.pushViewController(nextViewController, animated: true)
+     
             }
             
             self.database.collection("/businesses").whereField("email", isEqualTo:user!.email!).getDocuments { (querySnapshot, error) in
+                self.businnessAccountSignIn = false
+                for customer in querySnapshot!.documents{
                 
-                self.showAlertBusinessAccountNotVaild()*/
+                    let data = customer.data()
+                    
+                  
+                        self.activityIndicator.stopAnimating()
+                        self.showAlertBusinessAccountNotVaild()
+                    
+                    
+                }
+                
+     
             }
             
-          // ...
+        
         } else {
+            self.activityIndicator.stopAnimating()
             showAlertAccountNeeded()
           // No user is signed in.
             print("something wrong")

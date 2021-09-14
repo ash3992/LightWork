@@ -65,6 +65,10 @@ of your choosing.</string>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-qR-MfS">
+                                <rect key="frame" x="197" y="577" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U2s-3d-LTN"/>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -88,6 +92,7 @@ of your choosing.</string>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="T01-Qa-cjg"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="cNe-qR-MfS" id="ccw-fl-uGe"/>
                         <outlet property="findContractorButton" destination="YNc-63-any" id="RaE-0U-U9m"/>
                     </connections>
                 </viewController>
@@ -758,7 +763,7 @@ of your choosing.</string>
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="GZ2-YI-WVV" customClass="ProfileViewController" customModule="LightWork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hd8-vk-gzK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VTl-iH-8kW">
@@ -810,7 +815,7 @@ of your choosing.</string>
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5e-rH-ALJ">
-                                <rect key="frame" x="0.0" y="772" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="826" width="414" height="70"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                 <constraints>
@@ -998,7 +1003,7 @@ of your choosing.</string>
         <!--Appointment Detail Business View Controller-->
         <scene sceneID="yTf-dO-ePS">
             <objects>
-                <viewController id="6gQ-lj-g1u" customClass="AppointmentDetailBusinessViewController" customModule="LightWork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppointmentDetailBusinessViewController" id="6gQ-lj-g1u" customClass="AppointmentDetailBusinessViewController" customModule="LightWork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ntD-V1-8OS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1077,6 +1082,7 @@ of your choosing.</string>
                                 </state>
                                 <connections>
                                     <action selector="SubmitButtonPushed:" destination="GzL-i6-top" eventType="touchUpInside" id="zf4-oX-neE"/>
+                                    <action selector="declineButtonPushed:" destination="6gQ-lj-g1u" eventType="touchUpInside" id="LGm-o4-ROS"/>
                                     <action selector="nextButtonPushed:" destination="trw-WC-Xjx" eventType="touchUpInside" id="Kg8-HG-uNq"/>
                                     <action selector="nextButtonPushed:" destination="zk1-xd-x8J" eventType="touchUpInside" id="kI9-k8-TzC"/>
                                     <action selector="submitButtonPushed:" destination="n6L-fK-OVi" eventType="touchUpInside" id="4rn-6v-YCy"/>
@@ -1093,6 +1099,7 @@ of your choosing.</string>
                                 </state>
                                 <connections>
                                     <action selector="SubmitButtonPushed:" destination="GzL-i6-top" eventType="touchUpInside" id="D1o-3D-svl"/>
+                                    <action selector="acceptButtonPushed:" destination="6gQ-lj-g1u" eventType="touchUpInside" id="aNJ-uu-Yso"/>
                                     <action selector="nextButtonPushed:" destination="trw-WC-Xjx" eventType="touchUpInside" id="P6m-xg-tNO"/>
                                     <action selector="nextButtonPushed:" destination="zk1-xd-x8J" eventType="touchUpInside" id="cy8-Rr-BlL"/>
                                     <action selector="submitButtonPushed:" destination="2Vx-sI-lnw" eventType="touchUpInside" id="5vg-gG-jm3"/>
@@ -1106,13 +1113,13 @@ of your choosing.</string>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzI-dR-1m0">
                                 <rect key="frame" x="121" y="153" width="275" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1122,34 +1129,34 @@ of your choosing.</string>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/00/0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkY-cN-ziX">
                                 <rect key="frame" x="77" y="263" width="317" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/00/0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvk-h5-W61">
                                 <rect key="frame" x="77" y="310" width="317" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000-000-0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hop-8I-qsF">
                                 <rect key="frame" x="166" y="354" width="228" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn3-Rb-SgX">
                                 <rect key="frame" x="94" y="107" width="275" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1157,6 +1164,17 @@ of your choosing.</string>
                         <viewLayoutGuide key="safeArea" id="bkT-h4-x9H"/>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="acceptButton" destination="9US-c7-XmA" id="am7-7g-MaM"/>
+                        <outlet property="addressLabel" destination="r70-lv-XBp" id="Hkh-jk-lII"/>
+                        <outlet property="cusNameLabel" destination="LzI-dR-1m0" id="6XQ-5i-pna"/>
+                        <outlet property="dateLabel" destination="YkY-cN-ziX" id="fMk-5r-doE"/>
+                        <outlet property="declineButton" destination="mfG-Qe-zXf" id="ibU-gA-StJ"/>
+                        <outlet property="jobDescription" destination="mxz-fq-WqG" id="qPP-hV-7pT"/>
+                        <outlet property="phoneLabel" destination="hop-8I-qsF" id="kTb-2k-1rh"/>
+                        <outlet property="statusLabel" destination="yn3-Rb-SgX" id="hyU-ry-OFK"/>
+                        <outlet property="timeLabel" destination="zvk-h5-W61" id="cHM-9M-X15"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="StK-Ua-ts3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1310,31 +1328,31 @@ of your choosing.</string>
             <objects>
                 <viewController id="n6L-fK-OVi" customClass="SignUpViewController" customModule="LightWork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ulq-jb-b99">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yXg-cf-QSh">
-                                <rect key="frame" x="36" y="301" width="342" height="34"/>
+                                <rect key="frame" x="36" y="306" width="342" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2bn-wk-tck">
-                                <rect key="frame" x="36" y="360" width="342" height="34"/>
+                                <rect key="frame" x="36" y="365" width="342" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7dp-ez-4jX">
-                                <rect key="frame" x="36" y="419" width="342" height="34"/>
+                                <rect key="frame" x="36" y="424" width="342" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yXV-k4-w3A">
-                                <rect key="frame" x="36" y="477" width="342" height="34"/>
+                                <rect key="frame" x="36" y="482" width="342" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHd-bE-nvK">
-                                <rect key="frame" x="41" y="18" width="336" height="254"/>
+                                <rect key="frame" x="41" y="106" width="336" height="171"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Type in your first name, last name, email, and password to create an account. Please also check if you are a businness owner or not.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1342,13 +1360,13 @@ of your choosing.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you a business owner?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYh-A7-OVd">
-                                <rect key="frame" x="36" y="534" width="203" height="21"/>
+                                <rect key="frame" x="36" y="539" width="203" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k78-a9-Nz8">
-                                <rect key="frame" x="263" y="586" width="115" height="30"/>
+                                <rect key="frame" x="263" y="591" width="115" height="30"/>
                                 <color key="backgroundColor" red="0.88772755859999997" green="0.68694323300000004" blue="0.87003338340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1359,7 +1377,7 @@ of your choosing.</string>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qmx-GA-u7M">
-                                <rect key="frame" x="308" y="529" width="51" height="31"/>
+                                <rect key="frame" x="308" y="534" width="51" height="31"/>
                                 <color key="onTintColor" red="0.59215686270000001" green="0.92549019610000005" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                         </subviews>
@@ -2533,28 +2551,28 @@ of your choosing.</string>
             <objects>
                 <viewController id="uHX-Qd-8dh" customClass="SignInViewController" customModule="LightWork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C6p-fQ-6SS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B8z-bA-dyT">
-                                <rect key="frame" x="40" y="383" width="343" height="34"/>
+                                <rect key="frame" x="40" y="388" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EAW-jo-Qll">
-                                <rect key="frame" x="40" y="316" width="343" height="34"/>
+                                <rect key="frame" x="40" y="321" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type in your email and password to login." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dh-5T-Wk8">
-                                <rect key="frame" x="40" y="58" width="336" height="211"/>
+                                <rect key="frame" x="40" y="146" width="336" height="128"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMb-XZ-9XW">
-                                <rect key="frame" x="267" y="444" width="116" height="30"/>
+                                <rect key="frame" x="267" y="449" width="116" height="30"/>
                                 <color key="backgroundColor" red="0.88772755859999997" green="0.68694323300000004" blue="0.87003338340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2595,7 +2613,7 @@ of your choosing.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kAg-Nk-smT"/>
+        <segue reference="dxu-aC-z8O"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
