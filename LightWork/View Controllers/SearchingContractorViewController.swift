@@ -6,19 +6,30 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 
-class SearchingContractorViewController: UIViewController, UISearchBarDelegate,  UISearchResultsUpdating, UISearchControllerDelegate, UITableViewDelegate, UITableViewDataSource  {
+class SearchingContractorViewController: UIViewController, UISearchBarDelegate,  UISearchResultsUpdating, UISearchControllerDelegate, UITableViewDelegate, UITableViewDataSource, CanRecive  {
+    
+    func passDataBack(data: String) {
+        print(data)
+        distancePicked = Double(data)
+        newRadiusPicked(distance: Double(data)!)
+    }
+    
   
 
     @IBOutlet weak var tableView: UITableView!
     var searchController = UISearchController(searchResultsController: nil)
     let database = Firestore.firestore()
     var bussinessArray = [BusinessSearch]()
+    var locationBussinessArray = [BusinessSearch]()
     var newBusiness : [BusinessSearch]!
     var jobDescription : JobDescrption!
+    var distancePicked: Double!
     var dropDownValues = ["General Contractor", "Carpenter", "Electrician", "Drywaller", "Plastering", "Painter", "Wallpaper Installer", "Heating and Air-Conditioning (HVAC)", "Mason", "Roofer", "Excavator", "Demolition","Plumbing", "Landscapers", "Concrete Specialist", "Ironworker", "Steelworker", "Tile Setting", "Floor Laying", "Glass and Glazing", "Special Trade Contractors"]
     var filterSources = [[BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch](), [BusinessSearch]()]
   
@@ -27,15 +38,19 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+      
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(action))
+       
         searchController.dimsBackgroundDuringPresentation = false
         searchController.definesPresentationContext = true
         searchController.searchResultsUpdater = self
         searchController.searchBar.scopeButtonTitles = ["Search by Company Name", "Search by Category"]
         searchController.searchBar.delegate = self
+        
         navigationItem.searchController = searchController
         bussinessArray.removeAll()
        
-        
+        navigationItem.hidesSearchBarWhenScrolling = false
         database.collection("/businesses").getDocuments { (querySnapshot, error) in
             
             for business in querySnapshot!.documents{
@@ -45,21 +60,161 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
                 let name = data["businessName"] as? String ?? ""
                 let catogory = data["catogory"] as? String ?? ""
                 let email = data["email"] as? String ?? ""
+                let address = data["address"] as? String ?? "''"
                
-                self.bussinessArray.append(BusinessSearch(name: name, catorgory: catogory, email: email))
+                self.bussinessArray.append(BusinessSearch(name: name, catorgory: catogory, email: email, address: address))
                 print("\(catogory): \(name)")
               
             
             }
         
         self.newBusiness = self.bussinessArray
-        
-        self.filter()
-        self.tableView.reloadData()
+            self.locationDetermine(distanceNum: 30.00)
+      //  self.filter()
+     //   self.tableView.reloadData()
         }
         
     
        // tableView.reloadData()
+        
+    }
+    
+    func newRadiusPicked(distance : Double){
+        bussinessArray.removeAll()
+        database.collection("/businesses").getDocuments { (querySnapshot, error) in
+            
+            for business in querySnapshot!.documents{
+            
+                //print( d.data().)
+                let data = business.data()
+                let name = data["businessName"] as? String ?? ""
+                let catogory = data["catogory"] as? String ?? ""
+                let email = data["email"] as? String ?? ""
+                let address = data["address"] as? String ?? "''"
+               
+                self.bussinessArray.append(BusinessSearch(name: name, catorgory: catogory, email: email, address: address))
+                print("\(catogory): \(name)")
+              
+            
+            }
+        
+       self.newBusiness = self.bussinessArray
+        self.locationDetermine(distanceNum: distance)
+        }
+    }
+    func locationDetermine(distanceNum : Double){
+        locationBussinessArray.removeAll()
+        for i in newBusiness{
+            let geocoder = CLGeocoder()
+            geocoder.geocodeAddressString(i.address) {
+                placemarks, error in
+                let placemark = placemarks?.first
+                let lat = placemark?.location?.coordinate.latitude
+                let lon = placemark?.location?.coordinate.longitude
+                let p1 = CLLocation(latitude: lat! , longitude: lon!)
+                let l1 = Double(self.jobDescription.lat)
+                let l2 = Double(self.jobDescription.lon)
+                let p2 = CLLocation(latitude: l1!, longitude: l2!)
+                let distanceInMeters = p1.distance(from: p2)
+                let distance = distanceInMeters/1609.344
+                
+                print(distance," miles")
+              //  print(self.distancePicked.description)
+                
+                if(distanceNum == 30.0){
+                    if(distance <= 30.0){
+                        self.locationBussinessArray.append(BusinessSearch(name: i.name, catorgory: i.catorgory, email: i.email, address: i.address))
+                        self.newBusiness = self.locationBussinessArray
+                        self.filter()
+                        self.tableView.reloadData()
+                    }
+                }else if(distanceNum == 50.0){
+                    
+                    if(distance <= 50.0){
+                        self.locationBussinessArray.append(BusinessSearch(name: i.name, catorgory: i.catorgory, email: i.email, address: i.address))
+                        self.newBusiness = self.locationBussinessArray
+                        self.filter()
+                        self.tableView.reloadData()
+                    }
+                    
+                }else if(distanceNum == 75.0){
+                    
+                    if(distance <= 75.00){
+                        self.locationBussinessArray.append(BusinessSearch(name: i.name, catorgory: i.catorgory, email: i.email, address: i.address))
+                        self.newBusiness = self.locationBussinessArray
+                        self.filter()
+                        self.tableView.reloadData()
+                    }
+                    
+                }else if(distanceNum == 100.0){
+                    
+                    if(distance <= 100.0){
+                        self.locationBussinessArray.append(BusinessSearch(name: i.name, catorgory: i.catorgory, email: i.email, address: i.address))
+                        self.newBusiness = self.locationBussinessArray
+                        self.filter()
+                        self.tableView.reloadData()
+                    }
+                    
+                }else if(distanceNum == 150.0){
+                    
+                    if(distance <= 150.0){
+                        self.locationBussinessArray.append(BusinessSearch(name: i.name, catorgory: i.catorgory, email: i.email, address: i.address))
+                        self.newBusiness = self.locationBussinessArray
+                        self.filter()
+                        self.tableView.reloadData()
+                    }
+                    
+                }else if(distanceNum == 0.0){
+                    
+                  //  if(distance <= 50.00){
+                        self.locationBussinessArray.append(BusinessSearch(name: i.name, catorgory: i.catorgory, email: i.email, address: i.address))
+                        self.newBusiness = self.locationBussinessArray
+                        self.filter()
+                        self.tableView.reloadData()
+                   // }
+                    
+                }else {
+                    
+                    if(distance <= 30.0){
+                        self.locationBussinessArray.append(BusinessSearch(name: i.name, catorgory: i.catorgory, email: i.email, address: i.address))
+                        self.newBusiness = self.locationBussinessArray
+                        self.filter()
+                        self.tableView.reloadData()
+                    }
+                    
+                    
+                }
+                
+               /* if(d <= 30.00){
+                    self.locationBussinessArray.append(BusinessSearch(name: i.name, catorgory: i.catorgory, email: i.email, address: i.address))
+                    self.newBusiness = self.locationBussinessArray
+                    self.filter()
+                    self.tableView.reloadData()
+                }*/
+                            }
+            print(distanceNum.description)
+            print(locationBussinessArray.count)
+        }
+       // newBusiness = locationBussinessArray
+      //  filter()
+       // tableView.reloadData()
+
+       /* let p1 = CLLocation(latitude: 26.7153, longitude: 80.0534)
+        let p2 = CLLocation(latitude: 28.5384, longitude: 81.3789)
+        var distanceInMeters = p1.distance(from: p2)
+       var d = distanceInMeters/1609.344*/
+    }
+    override func viewDidAppear(_ animated: Bool) {
+       // searchController.searchBar.becomeFirstResponder()
+    }
+    @objc func action(sender: UIBarButtonItem) {
+        // Function body goes here
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "FilterDistanceViewController") as! FilterDistanceViewController
+        // self.navigationController?.pushViewController(nextViewController, animated: true)
+        nextViewController.delegate = self
+     
+         self.present(nextViewController, animated: true, completion: nil)
         
     }
     func filter(){

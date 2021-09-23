@@ -32,12 +32,29 @@ class AppointmentDetailBusinessViewController: UIViewController {
         phoneLabel.text = appoimentClickedOn.phoneNumber
         addressLabel.text = appoimentClickedOn.address
         jobDescription.text = appoimentClickedOn.description
+        acceptButton.setTitleColor(.systemGray, for: .disabled)
+        declineButton.setTitleColor(.systemGray, for: .disabled)
+        
+        if (appoimentClickedOn.status == "Customer Decline"||appoimentClickedOn.status == "Business Decline"){
+            declineButton.isEnabled = false
+            acceptButton.isEnabled = false
+        }
         
     }
     
     @IBAction func declineButtonPushed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentDeclineBusinessViewController") as! AppointmentDeclineBusinessViewController
+           // nextViewController.jobDescription = self.jobDescription
+        nextViewController.appoimentClickedOn = appoimentClickedOn
+            self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     @IBAction func acceptButtonPushed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentAcceptBusinessViewController") as! AppointmentAcceptBusinessViewController
+           // nextViewController.jobDescription = self.jobDescription
+        nextViewController.appoimentClickedOn = appoimentClickedOn
+            self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     /*

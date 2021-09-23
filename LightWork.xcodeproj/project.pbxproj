@@ -49,6 +49,9 @@
 		BEC01B9626EBD90100F8120E /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01B9526EBD90100F8120E /* Appointment.swift */; };
 		BEC01B9B26EE9D1F00F8120E /* AppointmentDetailCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01B9A26EE9D1E00F8120E /* AppointmentDetailCustomerViewController.swift */; };
 		BEC01BA626EEE07F00F8120E /* AppointmentDetailBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01BA526EEE07F00F8120E /* AppointmentDetailBusinessViewController.swift */; };
+		BEC01BAE26F2744B00F8120E /* AppointmentAcceptBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01BAD26F2744B00F8120E /* AppointmentAcceptBusinessViewController.swift */; };
+		BEC01BB326F274A000F8120E /* AppointmentDeclineBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01BB226F274A000F8120E /* AppointmentDeclineBusinessViewController.swift */; };
+		BEC01BDF26FAD10100F8120E /* FilterDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC01BDE26FAD10100F8120E /* FilterDistanceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +123,10 @@
 		BEC01B9526EBD90100F8120E /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		BEC01B9A26EE9D1E00F8120E /* AppointmentDetailCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailCustomerViewController.swift; sourceTree = "<group>"; };
 		BEC01BA526EEE07F00F8120E /* AppointmentDetailBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailBusinessViewController.swift; sourceTree = "<group>"; };
+		BEC01BAD26F2744B00F8120E /* AppointmentAcceptBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentAcceptBusinessViewController.swift; sourceTree = "<group>"; };
+		BEC01BB226F274A000F8120E /* AppointmentDeclineBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDeclineBusinessViewController.swift; sourceTree = "<group>"; };
+		BEC01BBD26F9270100F8120E /* LightWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LightWork.entitlements; sourceTree = "<group>"; };
+		BEC01BDE26FAD10100F8120E /* FilterDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDistanceViewController.swift; sourceTree = "<group>"; };
 		CDA4F365F0F2D61A4251AF58 /* Pods_LightWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F135804EFC0F78D76CBA86E9 /* Pods-LightWorkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWorkTests.debug.xcconfig"; path = "Target Support Files/Pods-LightWorkTests/Pods-LightWorkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE7A3DAF4F7EC92C5136F25E /* Pods_LightWork_LightWorkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWork_LightWorkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,11 +186,14 @@
 		BE3FF96F26D721CF00F930AC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEC01BAD26F2744B00F8120E /* AppointmentAcceptBusinessViewController.swift */,
+				BEC01BB226F274A000F8120E /* AppointmentDeclineBusinessViewController.swift */,
 				BEC01BA526EEE07F00F8120E /* AppointmentDetailBusinessViewController.swift */,
 				BEC01B9A26EE9D1E00F8120E /* AppointmentDetailCustomerViewController.swift */,
 				BE33316D26E6E51000F8CC15 /* BusinessAppoimentViewController.swift */,
 				BE3FFAAA26DDD9FB00F930AC /* BusinessPricingViewController.swift */,
 				BE33314726E58D7A00F8CC15 /* BusinessProfileViewController.swift */,
+				BEC01BDE26FAD10100F8120E /* FilterDistanceViewController.swift */,
 				BE65B20826D564D900E05EE0 /* HomeScreenViewController.swift */,
 				BE7DEEAB26E93FF10060D5E3 /* JobDescriptionEditingViewController.swift */,
 				BE528CD026E43EE800101F20 /* JobDescriptionViewController.swift */,
@@ -238,6 +248,7 @@
 		BE65B1D126D5610B00E05EE0 /* LightWork */ = {
 			isa = PBXGroup;
 			children = (
+				BEC01BBD26F9270100F8120E /* LightWork.entitlements */,
 				BEC01B9126EAE2C200F8120E /* Table Cells */,
 				BE528B4326E1BB5800101F20 /* GoogleService-Info.plist */,
 				BE3FFACF26E1909800F930AC /* Objects */,
@@ -583,6 +594,7 @@
 				BE3AACFE26D5FDB9007A210A /* ProfileViewController.swift in Sources */,
 				BEC01B8D26EAE27B00F8120E /* LogTableViewCell.swift in Sources */,
 				BE7DEEB126E94E700060D5E3 /* JobDescrption.swift in Sources */,
+				BEC01BDF26FAD10100F8120E /* FilterDistanceViewController.swift in Sources */,
 				BE528CD126E43EE800101F20 /* JobDescriptionViewController.swift in Sources */,
 				BE3FFACB26E1908600F930AC /* Business.swift in Sources */,
 				BE3FFAB326DEBE2C00F930AC /* SignUpBusinessDaysViewController.swift in Sources */,
@@ -600,6 +612,8 @@
 				BE33314826E58D7B00F8CC15 /* BusinessProfileViewController.swift in Sources */,
 				BE3FFAAB26DDD9FB00F930AC /* BusinessPricingViewController.swift in Sources */,
 				BE3FF9B626D973B900F930AC /* ZipCodeViewController.swift in Sources */,
+				BEC01BAE26F2744B00F8120E /* AppointmentAcceptBusinessViewController.swift in Sources */,
+				BEC01BB326F274A000F8120E /* AppointmentDeclineBusinessViewController.swift in Sources */,
 				BE3FF9B126D96A5A00F930AC /* ZipTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -777,7 +791,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LightWork/LightWork.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6V7J5Z9N2;
 				INFOPLIST_FILE = LightWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -796,7 +812,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LightWork/LightWork.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6V7J5Z9N2;
 				INFOPLIST_FILE = LightWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

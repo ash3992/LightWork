@@ -7,6 +7,9 @@
 
 import UIKit
 import MapKit
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
 class AppointmentDetailCustomerViewController: UIViewController {
 
@@ -16,12 +19,20 @@ class AppointmentDetailCustomerViewController: UIViewController {
     @IBOutlet weak var jobDescription: UITextView!
     @IBOutlet weak var address: UITextView!
     @IBOutlet weak var businessNote: UITextView!
-    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
+   
+ 
+    @IBOutlet weak var declineButton: UIButton!
+    
+    @IBOutlet weak var decimalAmount: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var appoimentClickedOn : Appointment!
+    let database = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
-        submitButton.layer.cornerRadius = 14
+        
+       acceptButton.layer.cornerRadius = 14
+        declineButton.layer.cornerRadius = 14
         
         activityIndicator.startAnimating()
        // navigationItem.title = "Pending Appointments"
@@ -55,13 +66,73 @@ class AppointmentDetailCustomerViewController: UIViewController {
         total.text! = "n/a"
         status.text = appoimentClickedOn.status
         businessNote.text = "n/a"
-        submitButton.isEnabled = false
-        submitButton.setTitleColor(.systemGray, for: .disabled)
+        acceptButton.isEnabled = false
+        declineButton.isEnabled = false
+        acceptButton.setTitleColor(.systemGray, for: .disabled)
+        declineButton.setTitleColor(.systemGray, for: .disabled)
         activityIndicator.stopAnimating()
+        
+        statusCheck()
         
     }
     
+    func statusCheck(){
+        
+        if(appoimentClickedOn.status == "Customer final approval needed"){
+            
+            navigationItem.title = appoimentClickedOn.businessName
+            status.text = "Your approval is needed to book the appoiment"
+            total.text = appoimentClickedOn.price
+            businessNote.text = appoimentClickedOn.businessNote
+            acceptButton.isEnabled = true
+            declineButton.isEnabled = true
+            print(appoimentClickedOn.price.removeFirst())
+           // let stringPrice = appoimentClickedOn.price.removeFirst()
+          var stringPrice =  appoimentClickedOn.price.remove(at: appoimentClickedOn.price.startIndex)
+          
+            let price = Decimal(string: String(stringPrice))
+            print(price)
+        var priceToSend = price! * 0.10
+          //  var m = 250.30 * 0.10
+            decimalAmount.text = "$ \(priceToSend.description)"
+            
+            
+        }
+        
+        
+    }
 
+    @IBAction func acceptButtonPushed(_ sender: Any) {
+        showAlertAccept()
+        
+    }
+    @IBAction func declineButtonPushed(_ sender: Any) {
+        
+        showAlertDecline()
+    }
+    func showAlertDecline(){
+        let alert = UIAlertController(title: "Decline Appointment?", message: "Are you sure you want to decline this appointment? You'll have to book another one if you changed your mind.", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            self.database.collection("/appoiments").document(self.appoimentClickedOn.id).setData(["status": "Customer Decline"], merge: true)
+            _ = self.navigationController?.popToRootViewController(animated: true)
+         
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { action in }))
+        
+    }
+    func showAlertAccept(){
+        let alert = UIAlertController(title: "Verify Appointment?", message: "Are you sure you want to verify this appointment? You'll have to pay a downpayment of \(decimalAmount.text!) to book your appointment.", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            self.database.collection("/appoiments").document(self.appoimentClickedOn.id).setData(["status": "Customer Accept"], merge: true)
+            self.database.collection("/appoiments").document(self.appoimentClickedOn.id).setData(["downPayment": self.decimalAmount.text!], merge: true)
+            _ = self.navigationController?.popToRootViewController(animated: true)
+         
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { action in }))
+        
+    }
     /*
     // MARK: - Navigation
 

@@ -24,9 +24,11 @@ class Appointment {
     var id : String
     var lat : String
     var lon : String
+    var price : String
+    var businessNote : String
     
     
-    init(address: String, phoneNumber: String, businessName: String, date: String, dayAndMonth: String, description: String, firstName: String, lastName: String, status: String, time: String, userEmail: String, busiEmail : String, id: String, lat: String, lon: String){
+    init(address: String, phoneNumber: String, businessName: String, date: String, dayAndMonth: String, description: String, firstName: String, lastName: String, status: String, time: String, userEmail: String, busiEmail : String, id: String, lat: String, lon: String, price: String, businessNote: String){
         
         self.address = address
         self.phoneNumber = phoneNumber
@@ -43,6 +45,8 @@ class Appointment {
         self.id = id
         self.lat = lat
         self.lon = lon
+        self.price = price
+        self.businessNote = businessNote
         
     }
     

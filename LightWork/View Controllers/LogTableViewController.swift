@@ -82,7 +82,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
             let docRef = database.collection("/appoiments").document(i)
            
             
-            docRef.getDocument(source: .cache) { (document, error) in
+            docRef.getDocument(source: .default) { (document, error) in
               if let document = document {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 let address = document.data()!["address"] as? String ?? ""
@@ -100,9 +100,12 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 let id = document.data()!["id"] as? String ?? ""
                 let lat = document.data()!["lat"] as? String ?? ""
                 let lon = document.data()!["lon"] as? String ?? ""
+                let price = document.data()!["price"] as? String ?? ""
+                let businessNote = document.data()!["businessNote"] as? String ?? ""
+                
                 print("\(address) : \(phoneNumber)")
                 
-                self.appointmentListHolder.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon))
+                self.appointmentListHolder.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon, price: price, businessNote: businessNote))
                 self.masterList = self.appointmentListHolder
               } else {
                 print("Document does not exist in cache")
@@ -139,6 +142,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
             print("Finished")
         case 2:
             print("Canceled")
+            filterForDecline(app: appointmentListString)
         case 3:
             print("Upcoming")
         case 4:
@@ -155,7 +159,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
             let docRef = database.collection("/appoiments").document(i)
            
             
-            docRef.getDocument(source: .cache) { (document, error) in
+            docRef.getDocument(source: .default) { (document, error) in
               if let document = document {
                 let address = document.data()!["address"] as? String ?? ""
                 let phoneNumber = document.data()!["phoneNumber"] as? String ?? ""
@@ -172,13 +176,62 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 let id = document.data()!["id"] as? String ?? ""
                 let lat = document.data()!["lat"] as? String ?? ""
                 let lon = document.data()!["lon"] as? String ?? ""
+                let price = document.data()!["price"] as? String ?? ""
+                let businessNote = document.data()!["businessNote"] as? String ?? ""
+                
                 print("\(address) : \(phoneNumber)")
                 
-                if(status == "Business approval needed" || status == "Payment Needed" ){
-                    self.masterList.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon))
+                if(status == "Business approval needed" || status == "Payment Needed" || status == "Customer final approval needed"){
+                    self.masterList.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon, price: price, businessNote: businessNote))
+                    
                 }
                 
               
+              } else {
+                print("Document does not exist in cache")
+              }
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
+            }
+            
+                
+            }
+        
+    }
+    func filterForDecline(app : [String]){
+        navigationItem.title = "Decline Appointments"
+        masterList.removeAll()
+        for i in app{
+            let docRef = database.collection("/appoiments").document(i)
+           
+            
+            docRef.getDocument(source: .default) { (document, error) in
+              if let document = document {
+                let address = document.data()!["address"] as? String ?? ""
+                let phoneNumber = document.data()!["phoneNumber"] as? String ?? ""
+                let businessName = document.data()!["business name"] as? String ?? ""
+                let date = document.data()!["date"] as? String ?? ""
+                let dayAndMonth = document.data()!["dayAndMonth"] as? String ?? ""
+                let description = document.data()!["description"] as? String ?? ""
+                let firstName = document.data()!["firstName"] as? String ?? ""
+                let lastName = document.data()!["lastName"] as? String ?? ""
+                let status = document.data()!["status"] as? String ?? ""
+                let time = document.data()!["time"] as? String ?? ""
+                let userEmail = document.data()!["userEmail"] as? String ?? ""
+                let busiEmail = document.data()!["busiEmail"] as? String ?? ""
+                let id = document.data()!["id"] as? String ?? ""
+                let lat = document.data()!["lat"] as? String ?? ""
+                let lon = document.data()!["lon"] as? String ?? ""
+                let price = document.data()!["price"] as? String ?? ""
+                let businessNote = document.data()!["businessNote"] as? String ?? ""
+                
+                print("\(address) : \(phoneNumber)")
+                
+                if(status == "Customer Decline" || status == "Business Decline" ){
+                    self.masterList.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon, price: price, businessNote: businessNote))
+                }
+                
+                
               } else {
                 print("Document does not exist in cache")
               }
