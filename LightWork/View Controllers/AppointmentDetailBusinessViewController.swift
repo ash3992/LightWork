@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
 class AppointmentDetailBusinessViewController: UIViewController {
 
@@ -18,6 +21,7 @@ class AppointmentDetailBusinessViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var jobDescription: UITextView!
+    let database = Firestore.firestore()
     var appoimentClickedOn : Appointment!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +38,32 @@ class AppointmentDetailBusinessViewController: UIViewController {
         jobDescription.text = appoimentClickedOn.description
         acceptButton.setTitleColor(.systemGray, for: .disabled)
         declineButton.setTitleColor(.systemGray, for: .disabled)
+        navigationItem.title = "\(appoimentClickedOn.firstName) \(appoimentClickedOn.lastName)"
         
         if (appoimentClickedOn.status == "Customer Decline"||appoimentClickedOn.status == "Business Decline"){
             declineButton.isEnabled = false
             acceptButton.isEnabled = false
         }
+        
+        if(appoimentClickedOn.status == "Approved!"){
+            acceptButton.isEnabled = true
+            acceptButton.setTitle("Job Finished", for: .normal)
+            declineButton.setTitle("Cancel Job", for: .normal)
+            declineButton.isEnabled = true
+        }
+        
+        if(appoimentClickedOn.status == "Customer final approval needed"){
+            acceptButton.isEnabled = false
+            declineButton.isEnabled = false
+            
+        }
+        
+        if(appoimentClickedOn.status == "Completed Job"){
+            declineButton.isEnabled = false
+            acceptButton.isEnabled = false
+            
+        }
+        
         
     }
     
@@ -50,13 +75,51 @@ class AppointmentDetailBusinessViewController: UIViewController {
             self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     @IBAction func acceptButtonPushed(_ sender: Any) {
+        
+        if(acceptButton.titleLabel!.text == "Job Finished"){
+            print("JOb DONE!!!!!!")
+            showAlertJobFinished()
+        }else{
+            
+        
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentAcceptBusinessViewController") as! AppointmentAcceptBusinessViewController
            // nextViewController.jobDescription = self.jobDescription
         nextViewController.appoimentClickedOn = appoimentClickedOn
             self.navigationController?.pushViewController(nextViewController, animated: true)
+        }
     }
     
+    func showAlertJobFinished(){
+        let alert = UIAlertController(title: "Verify Finsihed Job.", message: "Are you finished with this job?", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+          
+            self.database.collection("/appoiments").document(self.appoimentClickedOn.id).setData(["status": "Completed Job"], merge: true)
+            
+            _ = self.navigationController?.popToRootViewController(animated: true)
+         
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { action in }))
+        
+    }
+    @IBAction func findIconPressed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @IBAction func logIconPressed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LogTableViewController") as! LogTableViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @IBAction func profileIconPressed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
     /*
     // MARK: - Navigation
 

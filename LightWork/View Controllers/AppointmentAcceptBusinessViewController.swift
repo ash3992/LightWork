@@ -25,6 +25,7 @@ class AppointmentAcceptBusinessViewController: UIViewController, UITextFieldDele
         moneyTextView.delegate = self
         noteToCustomerTextView.delegate = self
         acceptButton.layer.cornerRadius = 14
+        navigationItem.title = "Approve Appointment"
         
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
          view.addGestureRecognizer(tapGesture)
@@ -71,7 +72,7 @@ class AppointmentAcceptBusinessViewController: UIViewController, UITextFieldDele
            Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
     }
     func showAlertAccept(){
-        let alert = UIAlertController(title: "Verify Appointment?", message: "Are you sure you want to verify this appointment? The customer will have to finalize this appointment with a downpayment of 10% of the total price for the job.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Verify Appointment?", message: "Are you sure you want to approve this appointment? The customer will have to finalize this appointment by approving of the price you enter in of \(moneyTextView.text!). He/She will be notified their appointment has been approved.", preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
           

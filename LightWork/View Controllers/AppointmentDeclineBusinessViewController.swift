@@ -21,6 +21,7 @@ class AppointmentDeclineBusinessViewController: UIViewController, UITextViewDele
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationItem.title = "Decline Appointment"
         declineButton.layer.cornerRadius = 14
         noteToCustomerTextView.delegate = self
     }
@@ -50,6 +51,7 @@ class AppointmentDeclineBusinessViewController: UIViewController, UITextViewDele
         self.present(alert, animated: true, completion: nil)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             self.database.collection("/appoiments").document(self.appoimentClickedOn.id).setData(["status": "Business Decline"], merge: true)
+            self.database.collection("/appoiments").document(self.appoimentClickedOn.id).setData(["businessNote": self.noteToCustomerTextView.text!], merge: true)
             _ = self.navigationController?.popToRootViewController(animated: true)
          
         }))

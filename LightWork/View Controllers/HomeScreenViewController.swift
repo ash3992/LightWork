@@ -33,6 +33,12 @@ class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
         findContractorButton.layer.cornerRadius = 14
         self.navigationItem.setHidesBackButton(true, animated: false)
         
+        if Auth.auth().currentUser == nil {
+            
+            showAlertAccountNeeded()
+            
+        }
+        
        /*let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "FilterDistanceViewController") as! FilterDistanceViewController
         self.present(nextViewController, animated: true, completion: nil)*/

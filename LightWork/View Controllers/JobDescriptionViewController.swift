@@ -121,7 +121,12 @@ class JobDescriptionViewController: UIViewController, UITextFieldDelegate, UITex
         navigationController?.popViewController(animated: true)
     }
     
-
+    @IBAction func logIconPressed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LogTableViewController") as! LogTableViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
 
 }
 extension String {

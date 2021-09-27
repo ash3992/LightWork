@@ -19,6 +19,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
     var appointmentListString = [String]()
     var appointmentListHolder = [Appointment]()
     var masterList = [Appointment]()
+    var list = [Appointment]()
     
   
     override func viewDidLoad() {
@@ -45,7 +46,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
     }
     func start(){
       
-       
+        activityIndicator.startAnimating()
         noAppoints.append("nothing")
         let user = Auth.auth().currentUser
         database.collection("/businesses").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
@@ -131,25 +132,226 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
         
+    func startPending(){
+      
+        activityIndicator.startAnimating()
+        noAppoints.append("nothing")
+        let user = Auth.auth().currentUser
+        database.collection("/businesses").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
+             
+             for business in querySnapshot!.documents{
+             
+                let data = business.data()
+                let appoint = data["appoiments"] as? [String] ?? self.noAppoints
+                self.appointmentListString = appoint
+             }
+            self.filterForPending(app: self.appointmentListString)
+            
+        }
+        
+        database.collection("/customers").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
+             
+             for business in querySnapshot!.documents{
+             
+                let data = business.data()
+                let appoint = data["appoiments"] as? [String] ?? self.noAppoints
+                self.appointmentListString = appoint
+                
+                
+             }
+            self.filterForPending(app: self.appointmentListString)
+            
+        }
+    }
+    func startDecline(){
+      
+        activityIndicator.startAnimating()
+        noAppoints.append("nothing")
+        let user = Auth.auth().currentUser
+        database.collection("/businesses").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
+             
+             for business in querySnapshot!.documents{
+             
+                let data = business.data()
+                let appoint = data["appoiments"] as? [String] ?? self.noAppoints
+                self.appointmentListString = appoint
+             }
+            self.filterForDecline(app: self.appointmentListString)
+        }
+        
+        database.collection("/customers").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
+             
+             for business in querySnapshot!.documents{
+             
+                let data = business.data()
+                let appoint = data["appoiments"] as? [String] ?? self.noAppoints
+                self.appointmentListString = appoint
+                
+                
+             }
+            self.filterForDecline(app: self.appointmentListString)
+            
+        }
+    }
+    func startApprove(){
+      
+        activityIndicator.startAnimating()
+        noAppoints.append("nothing")
+        let user = Auth.auth().currentUser
+        database.collection("/businesses").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
+             
+             for business in querySnapshot!.documents{
+             
+                let data = business.data()
+                let appoint = data["appoiments"] as? [String] ?? self.noAppoints
+                self.appointmentListString = appoint
+             }
+            self.filterForApprove(app: self.appointmentListString)
+        }
+        
+        database.collection("/customers").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
+             
+             for business in querySnapshot!.documents{
+             
+                let data = business.data()
+                let appoint = data["appoiments"] as? [String] ?? self.noAppoints
+                self.appointmentListString = appoint
+                
+                
+             }
+            self.filterForApprove(app: self.appointmentListString)
+            
+        }
+    }
+    func startFinished(){
+      
+        activityIndicator.startAnimating()
+        noAppoints.append("nothing")
+        let user = Auth.auth().currentUser
+        database.collection("/businesses").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
+             
+             for business in querySnapshot!.documents{
+             
+                let data = business.data()
+                let appoint = data["appoiments"] as? [String] ?? self.noAppoints
+                self.appointmentListString = appoint
+             }
+            self.filterForFinished(app: self.appointmentListString)
+        }
+        
+        database.collection("/customers").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
+             
+             for business in querySnapshot!.documents{
+             
+                let data = business.data()
+                let appoint = data["appoiments"] as? [String] ?? self.noAppoints
+                self.appointmentListString = appoint
+                
+                
+             }
+            self.filterForFinished(app: self.appointmentListString)
+            
+        }
+    }
+    func startAll(){
+      
+        activityIndicator.startAnimating()
+        noAppoints.append("nothing")
+        let user = Auth.auth().currentUser
+        database.collection("/businesses").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
+             
+             for business in querySnapshot!.documents{
+             
+                let data = business.data()
+                let appoint = data["appoiments"] as? [String] ?? self.noAppoints
+                self.appointmentListString = appoint
+             }
+            self.filterForAll(app: self.appointmentListString)
+            
+        }
+        
+        database.collection("/customers").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
+             
+             for business in querySnapshot!.documents{
+             
+                let data = business.data()
+                let appoint = data["appoiments"] as? [String] ?? self.noAppoints
+                self.appointmentListString = appoint
+                
+                
+             }
+            self.filterForAll(app: self.appointmentListString)
+            
+        }
+    }
+    
     
     
     @IBAction func segmentedControlPressed(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             print("Pending")
-            filterForPending(app: appointmentListString)
+            startPending()
         case 1:
             print("Finished")
+            startFinished()
         case 2:
             print("Canceled")
-            filterForDecline(app: appointmentListString)
+            startDecline()
         case 3:
-            print("Upcoming")
+            print("Approve")
+            startApprove()
         case 4:
             print("All")
-            filterForAll(app: appointmentListString)
+            startAll()
         default: break;
         }
+    }
+    func filterForApprove(app : [String]){
+        navigationItem.title = "Approved Appointments"
+        masterList.removeAll()
+        for i in app{
+            let docRef = database.collection("/appoiments").document(i)
+           
+            
+            docRef.getDocument(source: .server) { (document, error) in
+              if let document = document {
+                let address = document.data()!["address"] as? String ?? ""
+                let phoneNumber = document.data()!["phoneNumber"] as? String ?? ""
+                let businessName = document.data()!["business name"] as? String ?? ""
+                let date = document.data()!["date"] as? String ?? ""
+                let dayAndMonth = document.data()!["dayAndMonth"] as? String ?? ""
+                let description = document.data()!["description"] as? String ?? ""
+                let firstName = document.data()!["firstName"] as? String ?? ""
+                let lastName = document.data()!["lastName"] as? String ?? ""
+                let status = document.data()!["status"] as? String ?? ""
+                let time = document.data()!["time"] as? String ?? ""
+                let userEmail = document.data()!["userEmail"] as? String ?? ""
+                let busiEmail = document.data()!["busiEmail"] as? String ?? ""
+                let id = document.data()!["id"] as? String ?? ""
+                let lat = document.data()!["lat"] as? String ?? ""
+                let lon = document.data()!["lon"] as? String ?? ""
+                let price = document.data()!["price"] as? String ?? ""
+                let businessNote = document.data()!["businessNote"] as? String ?? ""
+                
+                print("\(address) : \(phoneNumber)")
+                
+                if(status == "Approved!"){
+                    self.masterList.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon, price: price, businessNote: businessNote))
+                    
+                }
+                
+              
+              } else {
+                print("Document does not exist in cache")
+              }
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
+            }
+            
+                
+            }
+        
     }
     
     func filterForPending(app : [String]){
@@ -159,7 +361,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
             let docRef = database.collection("/appoiments").document(i)
            
             
-            docRef.getDocument(source: .default) { (document, error) in
+            docRef.getDocument(source: .server) { (document, error) in
               if let document = document {
                 let address = document.data()!["address"] as? String ?? ""
                 let phoneNumber = document.data()!["phoneNumber"] as? String ?? ""
@@ -198,6 +400,52 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
             }
         
     }
+    func filterForFinished(app : [String]){
+        navigationItem.title = "Finished Appointments"
+        masterList.removeAll()
+        for i in app{
+            let docRef = database.collection("/appoiments").document(i)
+           
+            
+            docRef.getDocument(source: .server) { (document, error) in
+              if let document = document {
+                let address = document.data()!["address"] as? String ?? ""
+                let phoneNumber = document.data()!["phoneNumber"] as? String ?? ""
+                let businessName = document.data()!["business name"] as? String ?? ""
+                let date = document.data()!["date"] as? String ?? ""
+                let dayAndMonth = document.data()!["dayAndMonth"] as? String ?? ""
+                let description = document.data()!["description"] as? String ?? ""
+                let firstName = document.data()!["firstName"] as? String ?? ""
+                let lastName = document.data()!["lastName"] as? String ?? ""
+                let status = document.data()!["status"] as? String ?? ""
+                let time = document.data()!["time"] as? String ?? ""
+                let userEmail = document.data()!["userEmail"] as? String ?? ""
+                let busiEmail = document.data()!["busiEmail"] as? String ?? ""
+                let id = document.data()!["id"] as? String ?? ""
+                let lat = document.data()!["lat"] as? String ?? ""
+                let lon = document.data()!["lon"] as? String ?? ""
+                let price = document.data()!["price"] as? String ?? ""
+                let businessNote = document.data()!["businessNote"] as? String ?? ""
+                
+                print("\(address) : \(phoneNumber)")
+                
+                if(status == "Completed Job"){
+                    self.masterList.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon, price: price, businessNote: businessNote))
+                    
+                }
+                
+              
+              } else {
+                print("Document does not exist in cache")
+              }
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
+            }
+            
+                
+            }
+        
+    }
     func filterForDecline(app : [String]){
         navigationItem.title = "Decline Appointments"
         masterList.removeAll()
@@ -205,7 +453,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
             let docRef = database.collection("/appoiments").document(i)
            
             
-            docRef.getDocument(source: .default) { (document, error) in
+            docRef.getDocument(source: .server) { (document, error) in
               if let document = document {
                 let address = document.data()!["address"] as? String ?? ""
                 let phoneNumber = document.data()!["phoneNumber"] as? String ?? ""
@@ -253,11 +501,18 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LogTableViewCell", for: indexPath) as? LogTableViewCell
             else{return tableView.dequeueReusableCell(withIdentifier: "LogTableViewCell", for: indexPath)}
-        cell.addressTextView?.text = removeDuplicateElements(post: masterList)[indexPath.row].address
-        cell.businessNameTitle?.text = removeDuplicateElements(post: masterList)[indexPath.row].businessName
-        cell.statusTextView?.text = (" \(removeDuplicateElements(post: masterList)[indexPath.row].status)")
-        cell.dateTextView?.text = removeDuplicateElements(post: masterList)[indexPath.row].dayAndMonth
-        cell.timeTextView?.text = removeDuplicateElements(post: masterList)[indexPath.row].time
+        let m = removeDuplicateElements(post: masterList)[indexPath.row]
+        // list = removeDuplicateElements(post: masterList)[indexPath.row];
+        cell.addressTextView?.text = m.address
+        cell.businessNameTitle?.text = m.businessName
+        cell.statusTextView?.text = (" \(m.status)")
+        cell.dateTextView?.text = m.dayAndMonth
+        cell.timeTextView?.text = m.time
+     /*   cell.addressTextView?.text = removeDuplicateElements(post: masterList)[indexPath.row].address
+               cell.businessNameTitle?.text = removeDuplicateElements(post: masterList)[indexPath.row].businessName
+               cell.statusTextView?.text = (" \(removeDuplicateElements(post: masterList)[indexPath.row].status)")
+               cell.dateTextView?.text = removeDuplicateElements(post: masterList)[indexPath.row].dayAndMonth
+               cell.timeTextView?.text = removeDuplicateElements(post: masterList)[indexPath.row].time*/
         
         return cell
     }
@@ -284,7 +539,11 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 if(userStatus == "customer"){
                     
                     self.activityIndicator.stopAnimating()
-                    let appInfo = self.masterList[indexPath.row]
+                   // let appInfo = self.masterList[indexPath.row]
+                    let appInfo = self.removeDuplicateElements(post: self.masterList)[indexPath.row]
+                    print(appInfo.address)
+                    print(appInfo.id)
+                    print(appInfo.description)
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentDetailCustomerViewController") as! AppointmentDetailCustomerViewController
                     nextViewController.appoimentClickedOn = appInfo
@@ -305,7 +564,10 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
             
                 let data = customer.data()
                     self.activityIndicator.stopAnimating()
-                    let appInfo = self.masterList[indexPath.row]
+                    let appInfo = self.removeDuplicateElements(post: self.masterList)[indexPath.row]
+                print(appInfo.address)
+                print(appInfo.id)
+                print(appInfo.description)
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentDetailBusinessViewController") as! AppointmentDetailBusinessViewController
                     nextViewController.appoimentClickedOn = appInfo

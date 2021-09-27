@@ -20,7 +20,8 @@ class AppointmentDetailCustomerViewController: UIViewController {
     @IBOutlet weak var address: UITextView!
     @IBOutlet weak var businessNote: UITextView!
     @IBOutlet weak var acceptButton: UIButton!
-   
+    @IBOutlet weak var timeAndDateLabel: UILabel!
+    
  
     @IBOutlet weak var declineButton: UIButton!
     
@@ -31,6 +32,8 @@ class AppointmentDetailCustomerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+     //   navigationItem.title = appoimentClickedOn.businessName
+        navigationItem.title = appoimentClickedOn.businessName
        acceptButton.layer.cornerRadius = 14
         declineButton.layer.cornerRadius = 14
         
@@ -38,7 +41,7 @@ class AppointmentDetailCustomerViewController: UIViewController {
        // navigationItem.title = "Pending Appointments"
         activityIndicator.style = .large
         activityIndicator.color = .cyan
-        
+        timeAndDateLabel.text = "\(appoimentClickedOn.dayAndMonth) at \(appoimentClickedOn.time)"
 
         // Do any additional setup after loading the view.
         // 1)
@@ -80,23 +83,34 @@ class AppointmentDetailCustomerViewController: UIViewController {
         
         if(appoimentClickedOn.status == "Customer final approval needed"){
             
-            navigationItem.title = appoimentClickedOn.businessName
-            status.text = "Your approval is needed to book the appoiment"
+            
+            status.text = "Your final approval is needed to book the appointment"
             total.text = appoimentClickedOn.price
             businessNote.text = appoimentClickedOn.businessNote
             acceptButton.isEnabled = true
             declineButton.isEnabled = true
-            print(appoimentClickedOn.price.removeFirst())
-           // let stringPrice = appoimentClickedOn.price.removeFirst()
-          var stringPrice =  appoimentClickedOn.price.remove(at: appoimentClickedOn.price.startIndex)
+            
+         //   print(appoimentClickedOn.price.removeFirst())
+     //      // let stringPrice = appoimentClickedOn.price.removeFirst()
+    //      var stringPrice =  appoimentClickedOn.price.remove(at: appoimentClickedOn.price.startIndex)
           
-            let price = Decimal(string: String(stringPrice))
-            print(price)
-        var priceToSend = price! * 0.10
+      //      let price = Decimal(string: String(stringPrice))
+     //       print(price)
+      //  var priceToSend = price! * 0.10
           //  var m = 250.30 * 0.10
-            decimalAmount.text = "$ \(priceToSend.description)"
+         //   decimalAmount.text = "$ \(priceToSend.description)"
             
             
+        }
+        
+        if(appoimentClickedOn.status == "Approved!"){
+            total.text = appoimentClickedOn.price
+            businessNote.text = appoimentClickedOn.businessNote
+            
+        }
+        
+        if(appoimentClickedOn.status == "Customer Decline" || appoimentClickedOn.status == "Business Decline"){
+            businessNote.text = appoimentClickedOn.businessNote
         }
         
         
@@ -122,17 +136,35 @@ class AppointmentDetailCustomerViewController: UIViewController {
         
     }
     func showAlertAccept(){
-        let alert = UIAlertController(title: "Verify Appointment?", message: "Are you sure you want to verify this appointment? You'll have to pay a downpayment of \(decimalAmount.text!) to book your appointment.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Verify Appointment?", message: "Are you sure you want to approve this appointment? The estimated cost for this job is \(appoimentClickedOn.price). \(appoimentClickedOn.businessName) will be notified the appointment has been approved.", preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            self.database.collection("/appoiments").document(self.appoimentClickedOn.id).setData(["status": "Customer Accept"], merge: true)
-            self.database.collection("/appoiments").document(self.appoimentClickedOn.id).setData(["downPayment": self.decimalAmount.text!], merge: true)
+            self.database.collection("/appoiments").document(self.appoimentClickedOn.id).setData(["status": "Approved!"], merge: true)
+            
             _ = self.navigationController?.popToRootViewController(animated: true)
          
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { action in }))
         
     }
+    @IBAction func findIconPressed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    @IBAction func logIconPressed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LogTableViewController") as! LogTableViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    @IBAction func profileIconPressed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

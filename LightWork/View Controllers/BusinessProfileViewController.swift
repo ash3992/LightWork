@@ -55,7 +55,22 @@ class BusinessProfileViewController: UIViewController {
         
         
     }
+    @IBAction func profileIconPushed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
     
+    @IBAction func logIconPushed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LogTableViewController") as! LogTableViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    @IBAction func findIconPushed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
     @IBAction func submitButtonPushed(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BusinessAppoimentViewController") as! BusinessAppoimentViewController

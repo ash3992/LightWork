@@ -51,6 +51,8 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Availability"
         requestButton.layer.cornerRadius = 14
         timeLabel.text = "Time:"
         calendar.delegate = self
@@ -777,7 +779,7 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
       
       
             if(self.userPickedTime !=  nil && self.userPickedDate != nil){
-                let alert = UIAlertController(title: "Attention", message: "Are you sure want to request an appointment for \(userPickedTime!) on \(userPickedDate!). You'll be notified once \(businessPicked.businessName) approves your selcted time and date..", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Attention", message: "Are you sure want to request an appointment for \(userPickedTime!) on \(userPickedDate!). You'll be notified once \(businessPicked.businessName) approves your selcted time and date.", preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in}))
                 

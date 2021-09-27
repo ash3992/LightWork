@@ -35,6 +35,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.lastNameTextField.delegate = self
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
+        let backButton = UIBarButtonItem()
+        backButton.title = "Back"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     private func tagBasedTextField(_ textField: UITextField) {
