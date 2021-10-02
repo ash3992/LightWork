@@ -148,28 +148,12 @@ class SignUpCustomerViewController: UIViewController, UITextFieldDelegate,UIImag
         docRef.setData(["firstName":"\(personArray[0])", "lastName": "\(personArray[1])", "email":"\(personArray[2])", "profile":"\(photoString!)", "zipCode":"\(zipString!)", "userStatus": "customer"])
         
     }
-    
-   /* func gettingImage(){
-        //Use this to get photo
-        
-        let storage = Storage.storage()
-     //   let data = Data()
-        let storageRef = storage.reference()
-        
-        let ref = storageRef.child("UploadPhotoOne")
-        
-        imageView.sd_setImage(with: ref)
-    }*/
-    
- 
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
             print(url)
-            
             urlToSend = url
-            
-          //  uploadToCloud(fileURL: url)
         }
         
     if let pickedImage = info[.originalImage] as? UIImage {

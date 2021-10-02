@@ -39,41 +39,13 @@ class FilterDistanceViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         var distanceInMeters = p1.distance(from: p2)
        var d = distanceInMeters/1609.344
-        //print(d.description)
-        
-        
-    /*    let sourceP  = CLLocationCoordinate2DMake(p1.coordinate.latitude, p1.coordinate.longitude)
-        let destP           = CLLocationCoordinate2DMake(p2.coordinate.latitude, p2.coordinate.longitude)
-        let source          = MKPlacemark(coordinate: sourceP)
-        let destination     = MKPlacemark(coordinate: destP)
-        request.source      = MKMapItem(placemark: source)
-        request.destination = MKMapItem(placemark: destination)
 
-        // Specify the transportation type
-        request.transportType = MKDirectionsTransportType.automobile;
-
-        // If you're open to getting more than one route,
-        // requestsAlternateRoutes = true; else requestsAlternateRoutes = false;
-        request.requestsAlternateRoutes = true
-
-        let directions = MKDirections(request: request)
-
-        // Now we have the routes, we can calculate the distance using
-            directions.calculate { (response, error) in
-            if let response = response, let route = response.routes.first {
-                print(route.distance) // You could have this returned in an async approach
-            }
-        }*/
     }
     @IBAction func saveButtonPushed(_ sender: Any) {
-     //   navigationController?.popViewController(animated: true)
-       // navigationController?.popToRootViewController(animated: true)
         delegate?.passDataBack(data: numData)
         dismiss(animated: true, completion: nil)
     }
-    @objc func a(){
-        
-    }
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -104,14 +76,5 @@ class FilterDistanceViewController: UIViewController, UIPickerViewDelegate, UIPi
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -70,12 +70,9 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
         
         self.newBusiness = self.bussinessArray
             self.locationDetermine(distanceNum: 30.00)
-      //  self.filter()
-     //   self.tableView.reloadData()
+
         }
-        
-    
-       // tableView.reloadData()
+
         
     }
     

@@ -65,7 +65,6 @@ class SignUpBusinessHoursViewController: UIViewController {
         let alert = UIAlertController(title: "Times", message: "Please select the times you'll be available on your chosen days starting with \(dayArray[currentpostion]).", preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            //_ = self.navigationController?.popToRootViewController(animated: true)
          
         }))
     }
@@ -74,7 +73,6 @@ class SignUpBusinessHoursViewController: UIViewController {
         let alert = UIAlertController(title: "Times", message: "Please select at least one avaiable time for \(dayArray[currentpostion]).", preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            //_ = self.navigationController?.popToRootViewController(animated: true)
          
         }))
     }
@@ -82,7 +80,6 @@ class SignUpBusinessHoursViewController: UIViewController {
         let alert = UIAlertController(title: "Times", message: "Please now select your times for \(dayArray[currentpostion]).", preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            //_ = self.navigationController?.popToRootViewController(animated: true)
          
         }))
 
@@ -345,14 +342,6 @@ class SignUpBusinessHoursViewController: UIViewController {
     switch10Pm.isOn = false
     switch11Pm.isOn = false
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

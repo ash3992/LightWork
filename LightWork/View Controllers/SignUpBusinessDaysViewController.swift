@@ -89,42 +89,5 @@ class SignUpBusinessDaysViewController: UIViewController {
            Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
     }
     
-/*    func uploadToCloud(fileURL : URL){
-        
-        let storage = Storage.storage()
-        //let data = Data()
-        let storageRef = storage.reference()
-        let localFile = fileURL
-        photoString = "userPhoto:\(Date().timeIntervalSinceReferenceDate)"
-        let photoRef = storageRef.child(photoString)
-        
-        
-        _ = photoRef.putFile(from: localFile, metadata: nil) { (metadata, err) in
-            guard metadata != nil else{
-                print(err?.localizedDescription ?? "cant find error")
-                return
-            }
-            print("Photo Upload")
-            print(Date().timeIntervalSinceReferenceDate)
-        }
-        writeDataToDatabase()
-    }
-    
-    func writeDataToDatabase(){
-        let docRef = database.document("/customers/\(personArray[2])")
-        docRef.setData(["firstName":"\(personArray[0])", "lastName": "\(personArray[1])", "email":"\(personArray[2])", "profile":"\(photoString!)", "zipCode":"\(zipString!)", "userStatus": "customer"])
-        
-    }*/
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

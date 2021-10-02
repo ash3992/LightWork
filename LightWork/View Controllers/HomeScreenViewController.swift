@@ -12,9 +12,8 @@ import FirebaseFirestore
 
 class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
     func MessageFromSignUpCustomer(message: String) {
-        //if message != ""{
             print(message)
-      //  }
+     
     }
     
 
@@ -38,11 +37,6 @@ class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
             showAlertAccountNeeded()
             
         }
-        
-       /*let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "FilterDistanceViewController") as! FilterDistanceViewController
-        self.present(nextViewController, animated: true, completion: nil)*/
-        
     
     }
     
@@ -53,7 +47,6 @@ class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in}))
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            //_ = self.navigationController?.popToRootViewController(animated: true)
             self.segueToLogInPage()
          
         }))
@@ -141,18 +134,7 @@ class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
         
         
     }
-    
-  
-    
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-       
-      
-    }
     
 
 }

@@ -82,25 +82,11 @@ class AppointmentDetailCustomerViewController: UIViewController {
     func statusCheck(){
         
         if(appoimentClickedOn.status == "Customer final approval needed"){
-            
-            
             status.text = "Your final approval is needed to book the appointment"
             total.text = appoimentClickedOn.price
             businessNote.text = appoimentClickedOn.businessNote
             acceptButton.isEnabled = true
             declineButton.isEnabled = true
-            
-         //   print(appoimentClickedOn.price.removeFirst())
-     //      // let stringPrice = appoimentClickedOn.price.removeFirst()
-    //      var stringPrice =  appoimentClickedOn.price.remove(at: appoimentClickedOn.price.startIndex)
-          
-      //      let price = Decimal(string: String(stringPrice))
-     //       print(price)
-      //  var priceToSend = price! * 0.10
-          //  var m = 250.30 * 0.10
-         //   decimalAmount.text = "$ \(priceToSend.description)"
-            
-            
         }
         
         if(appoimentClickedOn.status == "Approved!"){
@@ -162,17 +148,5 @@ class AppointmentDetailCustomerViewController: UIViewController {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

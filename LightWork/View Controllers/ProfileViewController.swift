@@ -42,11 +42,9 @@ class ProfileViewController: UIViewController {
             } catch let signOutError as NSError {
               print("Error signing out: %@", signOutError)
             }
-          // ...
         } else {
           // No user is signed in.
             print("something wrong")
-          // ...
         }
         
         
@@ -55,14 +53,6 @@ class ProfileViewController: UIViewController {
            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

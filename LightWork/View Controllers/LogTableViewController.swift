@@ -115,17 +115,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 self.tableView.reloadData()
             }
             
-            /*database.collection("/appoiments").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
-                 
-                 for business in querySnapshot!.documents{
-                 
-                    let data = business.data()
-                    let appoint = data["appoiments"] as? [String] ?? self.noAppoints
-                    self.appointmentList = appoint
-                    
-                    
-                 }
-                self.m(app: appointmentList)*/
                 
             }
             
@@ -501,18 +490,14 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LogTableViewCell", for: indexPath) as? LogTableViewCell
             else{return tableView.dequeueReusableCell(withIdentifier: "LogTableViewCell", for: indexPath)}
-        let m = removeDuplicateElements(post: masterList)[indexPath.row]
-        // list = removeDuplicateElements(post: masterList)[indexPath.row];
-        cell.addressTextView?.text = m.address
-        cell.businessNameTitle?.text = m.businessName
-        cell.statusTextView?.text = (" \(m.status)")
-        cell.dateTextView?.text = m.dayAndMonth
-        cell.timeTextView?.text = m.time
-     /*   cell.addressTextView?.text = removeDuplicateElements(post: masterList)[indexPath.row].address
-               cell.businessNameTitle?.text = removeDuplicateElements(post: masterList)[indexPath.row].businessName
-               cell.statusTextView?.text = (" \(removeDuplicateElements(post: masterList)[indexPath.row].status)")
-               cell.dateTextView?.text = removeDuplicateElements(post: masterList)[indexPath.row].dayAndMonth
-               cell.timeTextView?.text = removeDuplicateElements(post: masterList)[indexPath.row].time*/
+        let cellTableView = removeDuplicateElements(post: masterList)[indexPath.row]
+       
+        cell.addressTextView?.text = cellTableView.address
+        cell.businessNameTitle?.text = cellTableView.businessName
+        cell.statusTextView?.text = (" \(cellTableView.status)")
+        cell.dateTextView?.text = cellTableView.dayAndMonth
+        cell.timeTextView?.text = cellTableView.time
+
         
         return cell
     }
@@ -539,7 +524,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 if(userStatus == "customer"){
                     
                     self.activityIndicator.stopAnimating()
-                   // let appInfo = self.masterList[indexPath.row]
+                  
                     let appInfo = self.removeDuplicateElements(post: self.masterList)[indexPath.row]
                     print(appInfo.address)
                     print(appInfo.id)
@@ -548,15 +533,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentDetailCustomerViewController") as! AppointmentDetailCustomerViewController
                     nextViewController.appoimentClickedOn = appInfo
                     self.navigationController?.pushViewController(nextViewController, animated: true)
-                }/*else{
-                    self.activityIndicator.stopAnimating()
-                    let appInfo = self.masterList[indexPath.row]
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentDetailBusinessViewController") as! AppointmentDetailBusinessViewController
-                    nextViewController.appoimentClickedOn = appInfo
-                    self.navigationController?.pushViewController(nextViewController, animated: true)
-                  
-                }*/
+                }
             }
         }
         self.database.collection("/businesses").whereField("email", isEqualTo:user!.email!).getDocuments { (querySnapshot, error) in
@@ -597,16 +574,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

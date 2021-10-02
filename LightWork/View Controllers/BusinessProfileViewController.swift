@@ -80,8 +80,6 @@ class BusinessProfileViewController: UIViewController {
         
     }
     func getBusinessInfo(){
-        
-      //  database.collection("/businesses").document(emailBusiness!).
        
         close.append("Closed")
         
@@ -112,11 +110,6 @@ class BusinessProfileViewController: UIViewController {
         
                 self.businessPicked = Business(businessName: businessName, address: address, email: email, firstName: firstName, lastName: lastName, catgory: catogory, pricing: pricingDescription, description: description, profilePicture: profilePic, businessPicture: businessPicture, monDay: mon, tuesDay: tue, wednesDay: wed, thursDay: thur, friDay: fri, saturDay: sat, sunDay: sun)
                
-                 
-            
-
-
-               //  self.bussinessArray.append(BusinessSearch(name: name, catorgory: catogory, email: email))
                  print("\(catogory): \(businessName)")
                
                 setText()
@@ -126,40 +119,6 @@ class BusinessProfileViewController: UIViewController {
     }
         
         func setText(){
-            
-           /* @IBOutlet weak var profileImage: UIImageView!
-            @IBOutlet weak var submitButton: UIButton!
-            @IBOutlet weak var businessNameText: UILabel!
-            @IBOutlet weak var addressTextView: UITextView!
-            @IBOutlet weak var businessDescriptionTextView: UITextView!
-            @IBOutlet weak var hoursTextView: UITextView!
-            @IBOutlet weak var monTime: UILabel!
-            @IBOutlet weak var tueTime: UILabel!
-            @IBOutlet weak var wedTime: UILabel!
-            @IBOutlet weak var thurTime: UILabel!
-            @IBOutlet weak var firTime: UILabel!
-            @IBOutlet weak var satTime: UILabel!
-            @IBOutlet weak var sunTime: UILabel!*/
-            
-            
-            
-            /*   var businessName: String
-               var address: String
-               var email: String
-               var firstName: String
-               var lastName: String
-               var catgory: String
-               var pricing: String
-               var description: String
-               var profilePicture: String
-               var businessPicture: String
-               var monDay: [String]
-               var tuesDay: [String]
-               var wednesDay: [String]
-               var thursDay: [String]
-               var friDay: [String]
-               var saturDay: [String]
-               var sunDay: [String]*/
             
             navigationItem.title = businessPicked?.businessName
             businessNameText.text = businessPicked?.businessName
@@ -249,17 +208,7 @@ class BusinessProfileViewController: UIViewController {
             // imageView.sd_setImage(with: ref)
             profileImage.sd_setImage(with: ref)
          }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+ 
 
     }
     

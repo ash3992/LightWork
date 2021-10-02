@@ -269,14 +269,6 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
                                     self.newTimesArray.append(i)
                                 }
                                 
-                                
-                                
-                                //////////////////////
-                                
-                                
-                                
-                                
-                                //ROFJDFJWKJSKLSLKFSKLFSL
                             }
                         }
                         self.numberOfButtons = self.newTimesArray.removeDuplicates().count
@@ -706,8 +698,6 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
         print("Hello \(sender.tag) is Selected\(sender.currentTitle)")
         if(newTimesArray[sender.tag] != "Close"){
         print(newTimesArray[sender.tag])
-            //timeLabel.text = "Time: \(newTimesArray[sender.tag])"
-           // userPickedTime = newTimesArray[sender.tag]
             timeLabel.text = "Time: \(sender.currentTitle!)"
             userPickedTime = sender.currentTitle!
             
@@ -861,7 +851,6 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
                     }
                     
                  }
-                //self.database.collection("/appoiments").document(rand).setData(["status": "Need approval",  "firstName": self.firstStringName, "lastName" : self.lastStringName, "address" : self.jobDescription.address, "date": self.userPickedDate!, "time": self.userPickedTime!, "phoneNumber": self.jobDescription.phoneNumber, "description": self.jobDescription.jobDescrption, "business name": self.businessPicked.businessName, "dayAndMonth": self.dayAndMonth!, "id" : rand], merge: true)
                 
                 self.database.collection("/appoiments").document(rand).setData(["status": "Business approval needed",  "firstName": self.firstStringName, "lastName" : self.lastStringName, "address" : self.jobDescription.address, "date": self.userPickedDate!, "time": self.userPickedTime!, "phoneNumber": self.jobDescription.phoneNumber, "description": self.jobDescription.jobDescrption, "business name": self.businessPicked.businessName, "dayAndMonth": self.dayAndMonth!, "userEmail": user!.email!, "busiEmail":self.businessPicked.email, "id" : rand, "lat" : self.jobDescription.lat, "lon" : self.jobDescription.lon], merge: true)
                 

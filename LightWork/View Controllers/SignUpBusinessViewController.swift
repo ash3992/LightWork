@@ -160,16 +160,6 @@ class SignUpBusinessViewController: UIViewController, UITextFieldDelegate, UITex
            present(autocompleteController, animated: true, completion: nil)
             return true
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -177,9 +167,6 @@ extension SignUpBusinessViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.
   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-  //  print("Place name: \(place.formattedAddress)")
- //   print("Place ID: \(place.placeID)")
-   // print("Place attributions: \(place.attributions)")
     businessAddressView.text = place.formattedAddress
     dismiss(animated: true, completion: nil)
   }
