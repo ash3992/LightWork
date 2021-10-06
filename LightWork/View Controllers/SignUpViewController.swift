@@ -130,8 +130,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 self.textView.text = error!.localizedDescription
                 print(error!.localizedDescription)
                 //show account creation
-               // storgSelf.showCreateAccount()
-                
+                               
                 return
             };do{
                 print("created")
@@ -140,7 +139,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     self.personArray.append(self.firstNameTextField.text!)
                     self.personArray.append(self.lastNameTextField.text!)
                     self.personArray.append(self.emailTextField.text!)
-                  //  personArray.append(passwordTextField.text!)
+             
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpCustomerViewController") as! SignUpCustomerViewController
                     nextViewController.personArray = self.personArray

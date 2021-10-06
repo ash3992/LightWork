@@ -51,8 +51,6 @@ class JobDescriptionEditingViewController: UIViewController, UITextFieldDelegate
    
     @IBAction func saveButtonPushed(_ sender: Any) {
         
-        
-        
         if (phoneNumberTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" || addressTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines ) == "" || jobDescriptionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
             showAlertAllInfoNeeded()
         }else{
@@ -146,15 +144,6 @@ class JobDescriptionEditingViewController: UIViewController, UITextFieldDelegate
            Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension String {

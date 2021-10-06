@@ -210,7 +210,7 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
             }else {
                 if(day == "Monday"){
                     if(self.businessPicked.monDay[0] == "Closed"){
-                     //Make label say not open today\
+                     //Make label say not open today
                         self.newTimesArray.append("Close")
                         self.numberOfButtons = self.newTimesArray.count
                         self.buttonTitle = self.newTimesArray
@@ -601,7 +601,6 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
                 }  else if(day == "Saturday"){
                     if(self.businessPicked.saturDay[0] == "Closed"){
                      //Make label say not open today
-                       // self.newTimesArray.removeAll()
                         self.newTimesArray.append("Close")
                         self.numberOfButtons = self.newTimesArray.count
                         self.buttonTitle = self.newTimesArray
@@ -792,18 +791,12 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
             
                 self.database.collection("/businesses").whereField("email", isEqualTo:self.businessPicked.email).getDocuments { (querySnapshot, error) in
              
-                //  businessPicked.email
                  for business in querySnapshot!.documents{
                  
                     let data = business.data()
                     
-                    let appoiments = data["appoiments"] as? [String] ?? nil //self.appoimentStringHolder
-                    
-                 /*   if(appoiments![0] == "n/a"){
-                        self.appoimentStringHolder.removeAll()
-                        self.appoimentStringHolder.append(rand)
-                        self.database.collection("/businesses").document(self.businessPicked.email).setData(["appoiments": self.appoimentStringHolder], merge: true)
-                    }*/
+                    let appoiments = data["appoiments"] as? [String] ?? nil
+            
                     if(appoiments == nil){
                           self.appoimentStringHolder.removeAll()
                           self.appoimentStringHolder.append(rand)
@@ -825,7 +818,6 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
             
             self.database.collection("/businesses").whereField("email", isEqualTo:user!.email!).getDocuments { (querySnapshot, error) in
              
-                //  businessPicked.email
                  for business in querySnapshot!.documents{
                  
                     let data = business.data()
@@ -858,8 +850,7 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
             }
             
                 self.database.collection("/customers").whereField("email", isEqualTo:user!.email!).getDocuments { (querySnapshot, error) in
-             
-                //  businessPicked.email
+          
                  for business in querySnapshot!.documents{
                  
                     let data = business.data()
@@ -890,7 +881,6 @@ class BusinessAppoimentViewController: UIViewController, FSCalendarDelegate, Job
 
                 
             }
-           // self.showAlertAppointmentWasMaded()
             self.navigationController?.popToRootViewController(animated: true)
            
                     

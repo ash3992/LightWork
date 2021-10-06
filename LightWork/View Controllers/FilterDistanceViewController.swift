@@ -29,16 +29,12 @@ class FilterDistanceViewController: UIViewController, UIPickerViewDelegate, UIPi
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-      //  navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(a))
         saveButton.layer.cornerRadius = 14
         self.picker.delegate = self
         self.picker.dataSource = self
         self.picker.setValue(UIColor.white, forKeyPath: "textColor")
         pickerData = ["30 miles",  "50 miles", "75 miles", "100 miles", "150 miles", "All"]
     picker.selectRow(3, inComponent: 0, animated: true)
-        
-        var distanceInMeters = p1.distance(from: p2)
-       var d = distanceInMeters/1609.344
 
     }
     @IBAction func saveButtonPushed(_ sender: Any) {

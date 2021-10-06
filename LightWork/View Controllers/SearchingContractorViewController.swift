@@ -55,7 +55,6 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
             
             for business in querySnapshot!.documents{
             
-                //print( d.data().)
                 let data = business.data()
                 let name = data["businessName"] as? String ?? ""
                 let catogory = data["catogory"] as? String ?? ""
@@ -82,7 +81,6 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
             
             for business in querySnapshot!.documents{
             
-                //print( d.data().)
                 let data = business.data()
                 let name = data["businessName"] as? String ?? ""
                 let catogory = data["catogory"] as? String ?? ""
@@ -116,7 +114,7 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
                 let distance = distanceInMeters/1609.344
                 
                 print(distance," miles")
-              //  print(self.distancePicked.description)
+        
                 
                 if(distanceNum == 30.0){
                     if(distance <= 30.0){
@@ -163,12 +161,11 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
                     
                 }else if(distanceNum == 0.0){
                     
-                  //  if(distance <= 50.00){
                         self.locationBussinessArray.append(BusinessSearch(name: i.name, catorgory: i.catorgory, email: i.email, address: i.address))
                         self.newBusiness = self.locationBussinessArray
                         self.filter()
                         self.tableView.reloadData()
-                   // }
+                 
                     
                 }else {
                     
@@ -182,33 +179,18 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
                     
                 }
                 
-               /* if(d <= 30.00){
-                    self.locationBussinessArray.append(BusinessSearch(name: i.name, catorgory: i.catorgory, email: i.email, address: i.address))
-                    self.newBusiness = self.locationBussinessArray
-                    self.filter()
-                    self.tableView.reloadData()
-                }*/
+           
                             }
             print(distanceNum.description)
             print(locationBussinessArray.count)
         }
-       // newBusiness = locationBussinessArray
-      //  filter()
-       // tableView.reloadData()
-
-       /* let p1 = CLLocation(latitude: 26.7153, longitude: 80.0534)
-        let p2 = CLLocation(latitude: 28.5384, longitude: 81.3789)
-        var distanceInMeters = p1.distance(from: p2)
-       var d = distanceInMeters/1609.344*/
+ 
     }
-    override func viewDidAppear(_ animated: Bool) {
-       // searchController.searchBar.becomeFirstResponder()
-    }
+   
     @objc func action(sender: UIBarButtonItem) {
         // Function body goes here
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
          let nextViewController = storyBoard.instantiateViewController(withIdentifier: "FilterDistanceViewController") as! FilterDistanceViewController
-        // self.navigationController?.pushViewController(nextViewController, animated: true)
         nextViewController.delegate = self
      
          self.present(nextViewController, animated: true, completion: nil)
@@ -287,15 +269,11 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "catogoryTableViewCell", for: indexPath)
         
-      //  let currentPost = filterSources[indexPath.section][indexPath.row]
         if filterSources[indexPath.section].count != 0{
             cell.textLabel?.text = filterSources[indexPath.section][indexPath.row].name
             cell.detailTextLabel?.text = filterSources[indexPath.section][indexPath.row].catorgory
         }
-        
-      /*  if filterSources[indexPath.section] != nil{
-            cell.textLabel?.text = filterSources[indexPath.section][indexPath.row].name
-        }*/
+  
        
 
         return cell
@@ -359,14 +337,6 @@ class SearchingContractorViewController: UIViewController, UISearchBarDelegate, 
                     }
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

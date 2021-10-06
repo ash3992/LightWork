@@ -189,7 +189,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
-            landmarkName = "submitButtonPushed(_:)"
+            landmarkName = "validatePassword(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -205,7 +205,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "submitButtonPushed(_:)"
+            landmarkName = "validatePassword(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -221,7 +221,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
             endingLineNumber = "101"
-            landmarkName = "submitButtonPushed(_:)"
+            landmarkName = "validatePassword(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -308,22 +308,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C7222A0E-F54E-46EA-BE6F-AF319FB99D23"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1F78FD5E-3A68-43C4-AAD9-323F7704D762"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -331,8 +315,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "updateSearchResults(for:)"
             landmarkType = "7">
             <Locations>
@@ -379,8 +363,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "updateSearchResults(for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -395,8 +379,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "updateSearchResults(for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -747,8 +731,8 @@
             filePath = "LightWork/View Controllers/JobDescriptionEditingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "textView(_:shouldChangeTextIn:replacementText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1019,8 +1003,8 @@
             filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "826"
-            endingLineNumber = "826"
+            startingLineNumber = "819"
+            endingLineNumber = "819"
             landmarkName = "requestButtonPushed(_:)"
             landmarkType = "7">
             <Locations>
@@ -1060,38 +1044,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2C7BE853-0923-489D-9865-BD6FFCBF59E0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "802"
-            endingLineNumber = "802"
-            landmarkName = "requestButtonPushed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "60747CB5-2538-4E5A-8BC5-730E80CB0AE6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "806"
-            endingLineNumber = "806"
-            landmarkName = "requestButtonPushed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8123EDFC-5D8B-4D72-ABD2-9DA90A3EE85B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1099,8 +1051,8 @@
             filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "833"
-            endingLineNumber = "833"
+            startingLineNumber = "825"
+            endingLineNumber = "825"
             landmarkName = "requestButtonPushed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1115,8 +1067,8 @@
             filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "793"
-            endingLineNumber = "793"
+            startingLineNumber = "792"
+            endingLineNumber = "792"
             landmarkName = "requestButtonPushed(_:)"
             landmarkType = "7">
             <Locations>
@@ -1163,8 +1115,8 @@
             filePath = "LightWork/View Controllers/BusinessAppoimentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "813"
-            endingLineNumber = "813"
+            startingLineNumber = "806"
+            endingLineNumber = "806"
             landmarkName = "requestButtonPushed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1467,8 +1419,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "locationDetermine(distanceNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1483,40 +1435,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "locationDetermine(distanceNum:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B4475DF5-CC50-4455-BFB0-12890DAD749E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
-            landmarkName = "locationDetermine(distanceNum:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "49D9305D-CAAA-4F9E-8F5E-1E24825020D5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "locationDetermine(distanceNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1531,8 +1451,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "locationDetermine(distanceNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1547,8 +1467,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "locationDetermine(distanceNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1563,8 +1483,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "locationDetermine(distanceNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1579,8 +1499,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "locationDetermine(distanceNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1611,8 +1531,8 @@
             filePath = "LightWork/View Controllers/FilterDistanceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1627,8 +1547,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "locationDetermine(distanceNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1643,8 +1563,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "locationDetermine(distanceNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1767,8 +1687,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "locationDetermine(distanceNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1783,8 +1703,8 @@
             filePath = "LightWork/View Controllers/SearchingContractorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "locationDetermine(distanceNum:)"
             landmarkType = "7">
          </BreakpointContent>

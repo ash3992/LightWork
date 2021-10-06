@@ -38,13 +38,13 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
             activityIndicator.stopAnimating()
             
         }else{
-            start()
+            startTableViewLoad()
         }
      
        
         
     }
-    func start(){
+    func startTableViewLoad(){
       
         activityIndicator.startAnimating()
         noAppoints.append("nothing")

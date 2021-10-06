@@ -198,14 +198,9 @@ class BusinessProfileViewController: UIViewController {
         
         func gettingImage(){
              //Use this to get photo
-             
              let storage = Storage.storage()
-          //   let data = Data()
              let storageRef = storage.reference()
-             
             let ref = storageRef.child(businessPicked!.profilePicture)
-             
-            // imageView.sd_setImage(with: ref)
             profileImage.sd_setImage(with: ref)
          }
  

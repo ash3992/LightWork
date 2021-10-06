@@ -84,7 +84,6 @@ class AppointmentDetailBusinessViewController: UIViewController {
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentAcceptBusinessViewController") as! AppointmentAcceptBusinessViewController
-           // nextViewController.jobDescription = self.jobDescription
         nextViewController.appoimentClickedOn = appoimentClickedOn
             self.navigationController?.pushViewController(nextViewController, animated: true)
         }

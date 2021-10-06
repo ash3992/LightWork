@@ -31,8 +31,6 @@ class AppointmentDetailCustomerViewController: UIViewController {
     let database = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-     //   navigationItem.title = appoimentClickedOn.businessName
         navigationItem.title = appoimentClickedOn.businessName
        acceptButton.layer.cornerRadius = 14
         declineButton.layer.cornerRadius = 14

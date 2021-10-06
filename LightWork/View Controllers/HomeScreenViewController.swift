@@ -125,7 +125,6 @@ class HomeScreenViewController: UIViewController, MesageForUserSignUpCustomer {
             showAlertAccountNeeded()
           // No user is signed in.
             print("something wrong")
-          // ...
         }
         
         
