@@ -1,4 +1,5 @@
 Release Candidate
+
 •Description
 IOS base project currently in development. LightWork, an app used by small businesses to help connect better with customers and also assist with everyday bothersome tasks. My goal for this application is to help local businesses connect better with customers and make bothersome tasks easier to deal with. Tasks like appointment booking, and estimation making will be accomplished through this app.
 
