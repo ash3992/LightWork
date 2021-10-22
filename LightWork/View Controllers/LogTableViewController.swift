@@ -17,23 +17,19 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
     let database = Firestore.firestore()
     var noAppoints = [String]()
     var appointmentListString = [String]()
-    var appointmentListHolder = [Appointment]()
     var masterList = [Appointment]()
-    var list = [Appointment]()
     
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: false)
         activityIndicator.startAnimating()
         navigationItem.title = "Pending Appointments"
         activityIndicator.style = .large
         activityIndicator.color = .red
         
+        //Checks to see if user is log in
         if (Auth.auth().currentUser == nil){
-            
             navigationItem.title = "Please login to see appointments"
             activityIndicator.stopAnimating()
             
@@ -45,20 +41,17 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     func startTableViewLoad(){
-      
         activityIndicator.startAnimating()
         noAppoints.append("nothing")
         let user = Auth.auth().currentUser
         database.collection("/businesses").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
-             
+            
              for business in querySnapshot!.documents{
-             
                 let data = business.data()
                 let appoint = data["appoiments"] as? [String] ?? self.noAppoints
                 self.appointmentListString = appoint
              }
             self.filterForPending(app: self.appointmentListString)
-            
         }
         
         database.collection("/customers").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
@@ -68,7 +61,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 let data = business.data()
                 let appoint = data["appoiments"] as? [String] ?? self.noAppoints
                 self.appointmentListString = appoint
-                
                 
              }
             self.filterForPending(app: self.appointmentListString)
@@ -85,7 +77,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
             
             docRef.getDocument(source: .default) { (document, error) in
               if let document = document {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 let address = document.data()!["address"] as? String ?? ""
                 let phoneNumber = document.data()!["phoneNumber"] as? String ?? ""
                 let businessName = document.data()!["business name"] as? String ?? ""
@@ -106,8 +97,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 print("\(address) : \(phoneNumber)")
                 
-                self.appointmentListHolder.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon, price: price, businessNote: businessNote))
-                self.masterList = self.appointmentListHolder
+                self.masterList.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon, price: price, businessNote: businessNote))
               } else {
                 print("Document does not exist in cache")
               }
@@ -137,7 +127,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
             self.filterForPending(app: self.appointmentListString)
             
         }
-        
         database.collection("/customers").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
              
              for business in querySnapshot!.documents{
@@ -171,12 +160,9 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         database.collection("/customers").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
              
              for business in querySnapshot!.documents{
-             
                 let data = business.data()
                 let appoint = data["appoiments"] as? [String] ?? self.noAppoints
                 self.appointmentListString = appoint
-                
-                
              }
             self.filterForDecline(app: self.appointmentListString)
             
@@ -190,7 +176,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         database.collection("/businesses").whereField("email", isEqualTo: user!.email!).getDocuments { (querySnapshot, error) in
              
              for business in querySnapshot!.documents{
-             
                 let data = business.data()
                 let appoint = data["appoiments"] as? [String] ?? self.noAppoints
                 self.appointmentListString = appoint
@@ -302,7 +287,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         for i in app{
             let docRef = database.collection("/appoiments").document(i)
            
-            
             docRef.getDocument(source: .server) { (document, error) in
               if let document = document {
                 let address = document.data()!["address"] as? String ?? ""
@@ -327,20 +311,18 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 if(status == "Approved!"){
                     self.masterList.append(Appointment(address:address, phoneNumber: phoneNumber, businessName: businessName, date: date, dayAndMonth: dayAndMonth, description: description, firstName: firstName, lastName: lastName, status: status, time: time, userEmail: userEmail, busiEmail: busiEmail, id: id, lat: lat, lon: lon, price: price, businessNote: businessNote))
-                    
                 }
                 
               
-              } else {
+              }
+              else {
                 print("Document does not exist in cache")
               }
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
             }
             
-                
             }
-        
     }
     
     func filterForPending(app : [String]){
@@ -430,8 +412,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
             }
-            
-                
             }
         
     }
@@ -440,8 +420,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         masterList.removeAll()
         for i in app{
             let docRef = database.collection("/appoiments").document(i)
-           
-            
             docRef.getDocument(source: .server) { (document, error) in
               if let document = document {
                 let address = document.data()!["address"] as? String ?? ""
@@ -475,15 +453,11 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
             }
-            
                 
             }
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        print(appointmentListHolder.count)
-     //   return appointmentListHolder.count
         return(removeDuplicateElements(post: masterList).count)
     }
     
@@ -491,7 +465,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LogTableViewCell", for: indexPath) as? LogTableViewCell
             else{return tableView.dequeueReusableCell(withIdentifier: "LogTableViewCell", for: indexPath)}
         let cellTableView = removeDuplicateElements(post: masterList)[indexPath.row]
-       
         cell.addressTextView?.text = cellTableView.address
         cell.businessNameTitle?.text = cellTableView.businessName
         cell.statusTextView?.text = (" \(cellTableView.status)")
@@ -501,6 +474,7 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         
         return cell
     }
+    
     func removeDuplicateElements(post: [Appointment]) -> [Appointment] {
         var uniquePosts = [Appointment]()
         for posts in post {
@@ -510,21 +484,19 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         }
         return uniquePosts
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         activityIndicator.startAnimating()
         let user = Auth.auth().currentUser
        
         self.database.collection("/customers").whereField("email", isEqualTo:user!.email!).getDocuments { (querySnapshot, error) in
             for customer in querySnapshot!.documents{
-            
                 let data = customer.data()
-                
                 let userStatus = data["userStatus"] as? String ?? ""
                 
                 if(userStatus == "customer"){
                     
                     self.activityIndicator.stopAnimating()
-                  
                     let appInfo = self.removeDuplicateElements(post: self.masterList)[indexPath.row]
                     print(appInfo.address)
                     print(appInfo.id)
@@ -539,18 +511,14 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         self.database.collection("/businesses").whereField("email", isEqualTo:user!.email!).getDocuments { (querySnapshot, error) in
             for customer in querySnapshot!.documents{
             
-                let data = customer.data()
+                    _ = customer.data()
                     self.activityIndicator.stopAnimating()
                     let appInfo = self.removeDuplicateElements(post: self.masterList)[indexPath.row]
-                print(appInfo.address)
-                print(appInfo.id)
-                print(appInfo.description)
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AppointmentDetailBusinessViewController") as! AppointmentDetailBusinessViewController
                     nextViewController.appoimentClickedOn = appInfo
                     self.navigationController?.pushViewController(nextViewController, animated: true)
                   
-                
             }
         }
         
@@ -560,7 +528,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
-        
         self.navigationController?.pushViewController(nextViewController, animated: true)
         
         
@@ -569,7 +536,6 @@ class LogTableViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func profileIconPressed(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        
         self.navigationController?.pushViewController(nextViewController, animated: true)
         
     }

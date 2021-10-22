@@ -28,8 +28,8 @@ class JobDescriptionEditingViewController: UIViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(jobDescription.address)
-        // Do any additional setup after loading the view.
+        
+        
         phoneNumberTextField.text = jobDescription.phoneNumber
         addressTextField.text = jobDescription.address
         jobDescriptionTextField.text = jobDescription.jobDescrption
@@ -123,12 +123,12 @@ class JobDescriptionEditingViewController: UIViewController, UITextFieldDelegate
         return true
     }
     
-    private func validate(phoneNumber: String) -> Bool {
+   /* private func validate(phoneNumber: String) -> Bool {
         let charcterSet  = NSCharacterSet(charactersIn: "+0123456789").inverted
         let inputString = phoneNumber.components(separatedBy: charcterSet)
         let filtered = inputString.joined(separator: "")
         return  phoneNumber == filtered
-    }
+    }*/
     
     func showAlertAllInfoNeeded(){
         //Method to alert the user of need info
@@ -146,13 +146,15 @@ class JobDescriptionEditingViewController: UIViewController, UITextFieldDelegate
 
 
 }
-extension String {
+/*extension String {
     var isValidPhones: Bool {
        let regularExpressionForPhone = "^\\d{3}-\\d{3}-\\d{4}$"
        let testPhone = NSPredicate(format:"SELF MATCHES %@", regularExpressionForPhone)
        return testPhone.evaluate(with: self)
     }
-}
+}*/
+
+//Api Extension
 extension JobDescriptionEditingViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.
